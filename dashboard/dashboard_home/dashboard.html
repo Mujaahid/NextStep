@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- <link rel="stylesheet" th:href="@{/assets/css/profile_page/dashboard.css}">
+    <link rel="stylesheet" th:href="@{/assets/fontawesome/all.min.css}"> -->
+
+    <link rel="stylesheet" href="dashboard_home.css">
+    <link rel="stylesheet" href="../all.min copy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+    -->
+</head> 
+<body>
+    <div class="mainWrapper">
+        <div class="notification_modal_background">
+            <div class="notification_modal">
+                <div class="notification_header">
+                    <h5>Notification</h5>
+                    <div class="close_notifi">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="notification_body">
+                    <div class="notifications">
+                        <div class="notifi_profile">
+                            <img src="../images/userProfileImageOne.jpg" alt="">
+                        </div>
+                        <div class="notifi_name">
+                            <p><span>Abdullah</span> Has followed you.</p>
+                        </div>
+                    </div>
+                    <div class="notifications">
+                        <div class="notifi_video">
+                            <img src="../images/thumbnails/thumbnailTen.webp" alt="">
+                        </div>
+                        <div class="notifi_name">
+                            <p><span>Abdullah</span> Has liked "The Beauty of Quentin Tarantino"</p>
+                        </div>
+                    </div>
+                    <div class="notifi_dates">
+                        <p>Yesterday</p>
+                    </div>
+                    <div class="notifications">
+                        <div class="notifi_video">
+                            <img src="../images/thumbnails/thumbnailNine.webp" alt="">
+                        </div>
+                        <div class="notifi_name">
+                            <p><span>Abdullah</span> Has liked "Top Gun"</p>
+                        </div>
+                    </div>
+                    <div class="notifications">
+                        <div class="notifi_video">
+                            <img src="../images/thumbnails/thumbnailOne.webp" alt="">
+                        </div>
+                        <div class="notifi_name">
+                            <p><span>Abdullah</span> Has liked "The Beauty of James Gray"</p>
+                        </div>
+                    </div>
+                    <div class="notifications">
+                        <div class="notifi_doc">
+                            <img src="../images/fileImages/fileImageFive.jpeg" alt="">
+                        </div>
+                        <div class="notifi_name">
+                            <p><span>Abdullah</span> Has liked "The Beauty of Quentin Tarantino"</p>
+                        </div>
+                    </div>
+                    <div class="notification_footer">
+                        <a href="">
+                            <p>View More.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}"></h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div class="settings">
+                <div class="settings_list">
+                    <div class="settings_list_items">
+                        <a href="https://www.youtube.com/" class="link_list_item" th:href="@{/home}">
+                            <i class="fas fa-home setting_icons"></i>
+                            <h5>Home</h5>
+                        </a>
+                    </div>
+                    <div class="settings_list_items">
+                        <a class="link_list_item" href="">
+                            <i class="far fa-envelope setting_icons"></i>
+                            <h5>Messages</h5>
+                        </a>
+                    </div>
+                    <div class="settings_list_items">
+                        <a class="link_list_item" href="">
+                            <i class="fas fa-headset setting_icons"></i>
+                            <h5>Settings</h5>
+                        </a>
+                    </div>
+                    <div class="settings_list_items">
+                        <a class="link_list_item" href="">
+                            <i class="fas fa-cog setting_icons"></i>
+                            <h5>Support</h5>
+                        </a>
+                    </div>
+                    <div class="settings_list_items">
+                        <a class="link_list_item" href="">
+                            <i class="far fa-file-alt setting_icons"></i>
+                            <h5>Terms</h5>
+                        </a>
+                    </div>
+                    <div class="settings_list_items">
+                        <a class="link_list_item" th:href="@{/logout}" >
+                            <i class="fas fa-sign-out-alt setting_icons"></i>
+                            <h5>Log out</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="main_dashboard"> 
+                <div class="profile-wrapper">
+                    <!-- <a th:href="@{/users/profile/update/student_profile_details}"> -->
+                    <h4>Porfile.</h4>
+                    <div class="profile-header">
+                        <div class="profile_image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <div class="profile-title">
+                            <h2 th:text="${username}"></h2>
+                            <p th:text="${student.careerSpecialty}"></p>
+                            <div class="follow_wrapper">
+                                <div class="followers">
+                                    <h2 th:text="${profile.followers}">0</h2>
+                                    <p>followers</p>
+                                </div>
+                                <div class="following">
+                                    <h2>50</h2>
+                                    <p>following</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile_bio_wrapper">
+                            <p class="profile-bio">Blade Runner 2049 is a 2017 American neo-noir science fiction film directed by Denis Villeneuve and written by Hampton Fancher and Michael Green. A sequel to the 1982 film Blade Runner, the film stars Ryan Gosling and Harrison Ford, with Ana de Armas,Sylvia Hoeks, Robin Wright, Mackenzie Davis, Carla Juri, Lennie James, Dave Bautista, and Jared Leto in supporting roles. Ford and Edward James Olmos reprise their roles from the original film. Gosling plays K, a Nexus-9 replicant "blade runner" who uncovers a secret that threatens to destabilize society and the course of civilization.</p>
+                            <div id="read-more-btn">
+                                <p>View more</p>
+                            </div>
+                        </div>
+                        <div class="profile_footer">
+                            <div class="personal_site">
+                                <i class="fas fa-globe"></i>
+                                <p>www.NextStep.com</p>
+                            </div>
+                            <div class="none_site">
+                                <p>No Personal Site</p>
+                            </div>
+                            <div class="none_social">
+                                <p>No Social Media</p>
+                            </div>
+                            <div class="social_media">
+                                <div class="social_icon">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <div class="social_icon">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                <div class="social_icon">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="portfolio-wrapper">
+                    <h4>Portfolio.</h4>
+                    <div class="portfolio_body">
+                        <div class="protfolio_image_preview" style="display: block;">
+                            <div class="portfolio_image_container">
+                                <div class="image_primary image_preview">
+                                    <p class="none_upload">No uploads</p>
+                                    <i class="far fa-images protfolio_icon"></i>
+                                    <img src="/images/userProfileImageFive.jpg" alt="">
+                                    <!-- <img th:src="@{${secondImg.filePath}}" alt=""> -->
+                                </div>
+                                <div class="image_secondary image_preview">
+                                    <img th:src="@{${firstImg.filePath}}" alt="">
+                                </div>
+                                <div class="image_tertiary image_preview">
+                                    <img th:src="@{${thirdImg.filePath}}" alt="">
+                                </div>
+                            </div>
+                            <div class="portfolio_attribute">
+                                <p>Image Post: 12,334</p>
+                                <div class="thumbs_up_down">
+                                    <p><i class="far fa-thumbs-up"></i>: 42,324</p>
+                                    <p><i class="far fa-thumbs-down"></i>: 5,425</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="protfolio_video_preview" style="display: none;">
+                            <a href="Portfolio/portfolio.html">
+                                <div class="protfolio_video_container">
+                                    <div class="video_primary video_preview">
+                                        <i class="fas fa-play protfolio_icon"></i>
+                                        <img th:src="@{/users/profile_page/images/thumbnails/thumbnailTen.webp}" alt="">
+                                    </div>
+                                    <div class="video_secondary video_preview">
+                                        <img th:src="@{/users/profile_page/images/thumbnails/thumbnailTwo.webp}" alt="">
+                                    </div>
+                                    <div class="video_tertiary video_preview">
+                                        <img th:src="@{/users/profile_page/images/thumbnails/thumbnailThree.webp}" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="portfolio_attribute">
+                                <p>Videos Post: 42,933</p>
+                                <div class="thumbs_up_down">
+                                    <p><i class="far fa-thumbs-up"></i>: 424,324</p>
+                                    <p><i class="far fa-thumbs-down"></i>: 9,425</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="friends-wrapper">
+                    <a th:href="@{/users/profile/friends}">
+                        <h4>Friends.</h4>
+                        <div class="friends_body">
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageFour.jpg}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>Mujaahid</h4></div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageThree.webp}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>Signal man</h4></div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageFive.jpg}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>Syed</h4></div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageSeven.jpg}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>Hamzah</h4></div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageOne.jpg}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>ecma_Script</h4></div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageSix.jpg}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>ecma_Script</h4></div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageOne.jpg}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>ecma_Script</h4></div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend_avatar">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageSix.jpg}" alt="">
+                                </div>
+                                <div class="friend_name"><h4>ecma_Script</h4></div>
+                            </div>
+                        </div>
+                        <div class="friends_none_body">
+                            <p>Find Friends</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="credit-wrapper">
+                    <h4>Credit.</h4>
+                    <div class="credit_body">
+                        <div class="credit_amount">
+                            <p>Total credit</p>
+                            <p>5,000crd.</p>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="outer_bar_wrapper">
+                                <div class="credit_progress">
+                                    <p>5,000 / 6,000.</p>
+                                </div>
+                                <div class="outer_bar">
+                                    <div class="inner_bar progress_bar_one" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="credit_image">
+                                <img th:src="@{/assets/users/profile_page/SVG/Asset 2.svg}" alt="">
+                                <img src="svg/Asset 2.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="outer_bar_wrapper">
+                                <div class="credit_progress">
+                                    <p>5,000 / 8,000.</p>
+                                </div>
+                                <div class="outer_bar">
+                                    <div class="inner_bar progress_bar_two" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="credit_image">
+                                <img th:src="@{/assets/users/profile_page/SVG/Credit_two.svg}" alt="">
+                                <img src="svg/Credit_two.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="outer_bar_wrapper">
+                                <div class="credit_progress">
+                                    <p>5,000 / 10,000.</p>
+                                </div>
+                                <div class="outer_bar">
+                                    <div class="inner_bar progress_bar_three" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                            <div class="credit_image">
+                                <img th:src="@{/assets/users/profile_page/SVG/Credit_three.svg}" alt="">
+                                <img src="svg/Credit_three.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more_footer">
+                        <p><a href="#">View more.</a></p>
+                    </div>
+                </div>
+
+                <div class="message-wrapper">
+                    <h4>Message.</h4>
+                    <div class="message_body">
+                        <div class="tagged_message message_one">
+                            <div class="tagged_profile">
+                                <img th:src="@{/users/profile_page/images/userProfileImageFive.jpg}" alt="">
+                            </div>
+                            <div class="tagged_message_body">
+                                <div class="tagged_user">
+                                    <h5>E.C</h5>
+                                </div>
+                                <div class="tagged_comment">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam soluta asperiores totam! Quo sint velit itaque, neque nam aut incidunt.</p>
+                                </div>
+                                <div class="tagged_footer">
+                                    <div class="tagged_date">
+                                        <i class="far fa-clock"></i>
+                                        <p>4 Days ago</p>
+                                    </div>
+                                    <div class="tagged_rate"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tagged_message message_one">
+                            <div class="tagged_profile">
+                                <img th:src="@{/users/profile_page/images/userProfileImageFive.jpg}" alt="">
+                            </div>
+                            <div class="tagged_message_body">
+                                <div class="tagged_user">
+                                    <h5>E.C</h5>
+                                </div>
+                                <div class="tagged_comment">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam soluta asperiores totam! Quo sint velit itaque, neque nam aut incidunt.</p>
+                                </div>
+                                <div class="tagged_footer">
+                                    <div class="tagged_date">
+                                        <i class="far fa-clock"></i>
+                                        <p>4 Days ago</p>
+                                    </div>
+                                    <div class="tagged_rate"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tagged_message message_one">
+                            <div class="tagged_profile">
+                                <img th:src="@{/users/profile_page/images/userProfileImageFive.jpg}" alt="">
+                            </div>
+                            <div class="tagged_message_body">
+                                <div class="tagged_user">
+                                    <h5>E.C</h5>
+                                </div>
+                                <div class="tagged_comment">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam soluta asperiores totam! Quo sint velit itaque, neque nam aut incidunt.</p>
+                                </div>
+                                <div class="tagged_footer">
+                                    <div class="tagged_date">
+                                        <i class="far fa-clock"></i>
+                                        <p>4 Days ago</p>
+                                    </div>
+                                    <div class="tagged_rate"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="tagged_message message_two">
+                            <div class="tagged_message_body">
+                                <div class="tagged_footer">
+                                    <div class="tagged_date">
+                                        <i class="far fa-clock"></i>
+                                        <p>4 Days ago</p>
+                                    </div>
+                                    <div class="tagged_rate"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tagged_message message_three">
+                            <div class="tagged_message_body">
+                                <div class="tagged_footer">
+                                    <div class="tagged_date">
+                                        <i class="far fa-clock"></i>
+                                        <p>4 Days ago</p>
+                                    </div>
+                                    <div class="tagged_rate"></div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="view-more_footer">
+                        <p><a href="#">View more.</a></p>
+                    </div>
+                    <!-- <div class="message_none">
+                        <p>No Tagged Messages</p>
+                    </div> -->
+                </div>
+
+                <div class="job-opt-wrapper">
+                    <h4>Jobs.</h4>
+                    <div class="job-opt-list">
+                        <a href="https://stackoverflow.com/jobs/519612/senior-frontend-engineer-at-sustainable-start-finn">
+                            <div class="job_options">
+                                <div class="job-profile">
+                                    <img th:src="@{/users/profile_page/images/userProfileImageFour.jpg}" alt="">
+                                </div>
+                                <div class="job-title">
+                                    <h5>(Senior) Frontend Engineer at sustainable start-up (m/f/x) - Munich or Remote</h5>
+                                    <div class="job-description">
+                                        <div class="company_location">
+                                            <p>Apple</p>
+                                            <p> <i class="fas location_icon fa-map-marker-alt"></i>Los Altos, California</p>
+                                        </div>
+                                        <div class="job-pay">
+                                            <p>$5,000 - 6,200</p>
+                                        </div>
+                                        <div class="job-requirements">
+                                            <div class="job-requirements-chips">
+                                                <p>Javascript</p>
+                                            </div>
+                                            <div class="job-requirements-chips">
+                                                <p>react.js</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="job_options">
+                            <div class="job-profile">
+                                <img th:src="@{/users/profile_page/images/userProfileImageFour.jpg}" alt="">
+                            </div>
+                            <div class="job-title">
+                                <h5>Senior Front End developer</h5>
+                                <div class="job-description">
+                                    <div class="company_location">
+                                        <p>Apple</p>
+                                        <p> <i class="fas location_icon fa-map-marker-alt"></i>Los Altos, California</p>
+                                    </div>
+                                    <div class="job-requirements">
+                                        <div class="job-requirements-chips">
+                                            <p>Javascript</p>
+                                        </div>
+                                        <div class="job-requirements-chips">
+                                            <p>react.js</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job_none">
+                        <p>No Jobs Listed</p>
+                    </div>
+                    <div class="view-more_footer">
+                        <p><a href="#">View more.</a></p>
+                    </div>
+                </div>
+
+                <div class="video-wrapper">
+                    <h4>Similar Content.</h4>
+                    <div class="video-list">
+                        <a href="">
+                            <div class="video-opt">
+                                <div class="video-profile">
+                                    <img src="../images/thumbnails/thumbnailOne.webp" alt="">
+                                </div>
+                                <div class="video-title">
+                                    <h5>The Beauty of James Gray</h5>
+                                    <p>The Beauty Of</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="video-opt">
+                                <div class="video-profile">
+                                    <img src="../images/thumbnails/thumbnailTwo.webp" alt="">
+                                </div>
+                                <div class="video-title">
+                                    <h5>The Beauty of David Fincher</h5>
+                                    <p>The Beauty Of</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="video-opt">
+                                <div class="video-profile">
+                                    <img src="../images/thumbnails/thumbnailThree.webp" alt="">
+                                </div>
+                                <div class="video-title">
+                                    <h5>The Beauty of James Cameron and a longer title</h5>
+                                    <p>The Beauty Of</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="video-opt">
+                                <div class="video-profile">
+                                    <img src="../images/thumbnails/thumbnailSeven.webp" alt="">
+                                </div>
+                                <div class="video-title">
+                                    <h5>The Beauty of Horror Cinema</h5>
+                                    <p>The Beauty Of</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="video-opt">
+                                <div class="video-profile">
+                                    <img src="../images/thumbnails/thumbnailEight.webp" alt="">
+                                </div>
+                                <div class="video-title">
+                                    <h5>The Beauty of Gris</h5>
+                                    <p>The Beauty Of</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="dashboard_home.js"></script>
+    <!-- <script th:src="@{/assets/js/profile_page/dashboard.js}"></script>
+    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6de653bf6f445965',m:'YMrao1QFm6qCd8pExJ8zFFF8GpyE_j0IQmkXrePffo4-1645009802-0-AeY5DnzOBmfRYZ1tTkh9oWTG4GSg0Qqy6sb/Mw1Hi6clOYSM+h+SW2RZQ9UPdoGjYq1KbjxGlvDcqNOI2W6urhLRpURufAmtLyO8R0ugEE2gjTu4BbDuwRlCYIBC6Ke/pVhq1cLjs8qDRbiwRAYz3I1lpYj8hcx+9TQBCMJTFGw+/SAHNLHJ7xDIzDObyeCEwFPTynIuyulGJ+0ezmMEBlE=',s:[0x9f3ec3450c,0x4c690cf858],}})();</script> -->
+</body>
+</html>

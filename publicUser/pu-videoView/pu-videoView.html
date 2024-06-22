@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="pu-videoView.css">
+    <script src="https:kit.fontawesome.com/fd07ffd6f7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="notificationPopup">
+        <p><span class="usernameInPopup spanUsername"></span> Will Be Notified.</p>
+    </div>
+
+    <div class="videoView-previewModal">
+       
+    </div>
+    <div class="mainWrapper">
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}" class="navUsername">WhatUp</h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-video">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="videoView-wrapper">
+            <div class="videoView-header">
+                <div class="videoView-modal">
+                    <div class="videoView">
+                        <div class="videoWrapper">
+                            <i class="fas videoIcon animatingPlayButton fa-play"></i>
+                            <i class="fas videoIcon animatingPauseButton fa-pause"></i>
+                    
+                    
+                            <div class="videoControls">
+                                <div class="videoBarWrapper">
+                                    <div class="videoBar">
+                                        <div class="progressBar" style="width: 0px;"></div>
+                                    </div>
+                                    <div class="timeTrackerWrapper">
+                                        <div class="timeTracker">
+                                            <p>00:00</p>
+                                        </div>
+                                        <i class="fas arrowDownTracker fa-caret-down"></i>
+                                    </div>
+                                </div>
+                                <div class="bottomControls">
+                                    <div class="playControls">
+                                        <i class="fas videoIcon back-button fa-backward"></i>
+                                        <div class="play-pause">
+                                            <i class="fas videoIcon playButton fa-play"></i>
+                                            <i class="fas videoIcon pauseButton fa-pause"></i>
+                                        </div>
+                                        <i class="fas videoIcon skip-button fa-forward"></i>
+                                        <div class="volumeSettingWrapper">
+                                            <div class="volumeIcon">
+                                                <i class="fas fullVolIcon fa-volume-up"></i>
+                                                <i class="fas muteIcon fa-volume-mute" style="display: none;"></i>
+                                                <i class="fas quiteIcon fa-volume-down" style="display: none;"></i>
+                                            </div>
+                                            <div class="volumeSetting">
+                                                <div class="volumeTrack">
+                                                    <div class="volumeProgress">
+                                                        <div class="volumeDot"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="currentTime">00:00</span>
+                                        <span class="dash">/ </span>
+                                        <span class="duration">00:00</span>
+                                    </div>
+                                    <div class="videoSettingsWrapper">
+                                        <div class="videoSettingsWrapper">
+                                            <i class="fas settingsButton videoIcon fa-cog"></i>
+                                            <div class="settingModal">
+                    
+                                                <div class="openSpeedWrapperHeading QualityHeader">
+                                                    <i class="fas fa-chevron-down"></i>
+                                                    <p>Speed</p>
+                                                </div>
+                                                <div class="closeSpeedWrapperHeading QualityHeader" style="display: none;">
+                                                    <i class="fas fa-chevron-up"></i>
+                                                    <p>Speed</p>
+                                                </div>
+                                                <div class="speedWrapper">
+                                                    <div class="speedSettings">
+                                                        <span class="speed-control">0.25</span>
+                                                        <span class="speed-control">0.5</span>
+                                                        <span class="speed-control">0.75</span>
+                                                        <span class="speed-control">Normal</span>
+                                                        <span class="speed-control">1.25</span>
+                                                        <span class="speed-control">1.5</span>
+                                                        <span class="speed-control">1.75</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas videoIcon expandButton fa-expand"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <video id="video" poster="" src="https://next-step-demo.s3.us-east-2.amazonaws.com/zhaolusi/videos/%E4%B8%AD%E5%9C%8B%E7%BE%8E%E9%BA%97%E7%9A%84%E5%9C%B0%E6%96%B9"></video>
+                        </div>
+                    </div>
+                    <div class="videoView-producerWrapper">
+                        <div class="videoView-producer">
+                            <div class="videoView-producerProfile">
+                                <img src="https:mir-s3-cdn-cf.behance.net/user/230/6377471274354937.62d44ae10d38b.png" alt="">
+                            </div>
+                            <div class="videoView-producerCredit">
+                                <div class="videoView-name">
+                                    <h3>Name of the Project</h3>
+                                </div>
+                                 <div class="nameOfUser">
+                                    <p class="usernameInPopup"></p>
+                                </div>
+                                <div class="videoView-buttonWrapper">
+                                    <p>1.29k Followers</p>
+                                    <div class="videoView-buttonRight">
+                                        <div class="likeDislike">
+                                            <div class="likeButton">
+                                                <p class="likeCount">0</p>
+                                                <i class="far likedIcon fa-thumbs-up"></i>  
+                                                <i style="display: none;" class="fas likedFillIcon fa-thumbs-up"></i>
+                                            </div>
+                                            <div class="dislikeButton">
+                                                <p class="dislikeCount">0</p>
+                                                <i class="far dislikedIcon fa-thumbs-down"></i>
+                                                <i style="display: none;" class="fas dislikedFillIcon fa-thumbs-down"></i>
+                                            </div>
+                                        </div>
+                                        <div class="follow-btn">
+                                            <p>Follow</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="videoView-description">
+                            <div class="description-header">
+                                <p>101,545,009 views</p>
+                                <p>Sep 16, 2007 </p>
+                            </div>
+                            <p class="DescriptionBox">Description</p>
+                            <div class="truncate">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus id, iure accusamus quae optio sapiente facere inventore dolore animi, officiis corporis perferendis, odio laboriosam praesentium quas asperiores sint fuga cum? Quisquam, amet placeat corporis deleniti error ut omnis iste mollitia, est sunt nostrum. Accusamus illum voluptate corrupti repellat iure minus a iusto itaque totam laudantium consequatur earum, culpa fuga deserunt ab? In totam unde incidunt magni animi corporis nesciunt perferendis aliquam architecto? Magni in voluptas eligendi neque aperiam quidem officia impedit doloribus, soluta asperiores voluptatem eveniet ut sequi doloremque, rerum molestias quas laborum quis. Aliquam repellendus recusandae obcaecati odit unde!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="videoView-commentSection">
+
+                </div>
+            </div>
+            <div class="videoView-comment">
+                <div class="comment-header">
+                    <div class="comment-amount">
+                        <p>14k</p>
+                    <i class="far fa-comments"></i>
+                    </div>
+                    <div class="arrowUp">
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                    <div class="arrowDown">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <div class="comment-input">
+                        <input class="userComment" type="text" placeholder="Add A Comment">
+                    </div>
+                    <div class="comment-body">
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="other-content">
+            <div class="otherContent-header">
+                <h3>Similar Content</h3>
+            </div>
+            <div class="otherContent-body">
+                <div class="similarContent-item">
+                    <div class="similarContent-preview">
+                        <i class="fas previewPlayButton fa-play"></i>
+                        <img src="https://i.ytimg.com/vi/4M_qmA_-IoY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBXsxly_Hwzo1bAyQGKxdGTvfXGw" alt="">
+                    </div>
+                    <div class="similarContent-title">
+                        <p class="nameProject">Name of the Project</p>
+                        <div class="similarContent-profile">
+                            <div class="similarContent-profile-pic">
+                                <img src="https:mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <h5>Name of the Creator</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="similarContent-item">
+                    <a href="">
+                        <div class="similarContent-preview">
+                            <i class="fas previewPlayButton fa-play"></i>
+                            <img src="https://i.ytimg.com/vi/_gjtkAmdHA0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBfDIFXu9r_keoztPVWGB0_Sq1-Nw" alt="">
+                        </div>
+                        <div class="similarContent-title">
+                            <p class="nameProject">Name of the Project</p>
+                            <div class="similarContent-profile">
+                                <div class="similarContent-profile-pic">
+                                    <img src="https:mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                                </div>
+                                <h5>Name of the Creator</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="similarContent-item">
+                    <a href="">
+                        <div class="similarContent-preview">
+                            <i class="fas previewPlayButton fa-play"></i>
+                            <img src="https://i.ytimg.com/vi/6c61WQTbulQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAlrYelDzye-3G9ykr12FGs1QgHcA" alt="">
+                        </div>
+                        <div class="similarContent-title">
+                            <p class="nameProject">Name of the Project</p>
+                            <div class="similarContent-profile">
+                                <div class="similarContent-profile-pic">
+                                    <img src="https:mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                                </div>
+                                <h5>Name of the Creator</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="similarContent-item">
+                    <a href="">
+                        <div class="similarContent-preview">
+                            <i class="fas previewPlayButton fa-play"></i>
+                            <img src="https://i.ytimg.com/vi/cEIGYr16zqU/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCCna2jVYRT5X17OPez_dJMw4Xrgg" alt="">
+                        </div>
+                        <div class="similarContent-title">
+                            <p class="nameProject">Name of the Project</p>
+                            <div class="similarContent-profile">
+                                <div class="similarContent-profile-pic">
+                                    <img src="https:mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                                </div>
+                                <h5>Name of the Creator</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="similarContent-item">
+                    <div class="similarContent-preview">
+                        <i class="fas previewPlayButton fa-play"></i>
+                        <img src="https://i.ytimg.com/vi/aZMnmqCfk54/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCRfXsCO9aYgGpS4A3rWQYBaeqNKw" alt="">
+                    </div>
+                    <div class="similarContent-title">
+                        <p class="nameProject">Name of the Project</p>
+                        <div class="similarContent-profile">
+                            <div class="similarContent-profile-pic">
+                                <img src="https:mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <h5>Name of the Creator</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https:code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="pu-videoView.js"></script>
+
+</body>
+</html>

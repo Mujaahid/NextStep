@@ -1,0 +1,1031 @@
+* {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+button {
+    background: none;
+    border: none;
+    padding: 10px 30px;
+    margin: 10px;
+    outline: none;
+    border-radius: 20px;
+}
+.remove-user-select {
+    user-select: none;
+    -webkit-user-select: none;
+}
+.red {
+    background: #cf4545;
+    color: #e6eef8;
+}
+.paragraph {
+    line-height: 1.3em;
+    padding-top: 1em;
+    font-size: 18px;
+}
+.paragraph_main {
+    text-align: left;
+}
+.mainWrapper {
+    overflow: hidden;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    padding: 1em;
+    color: #8E9BB4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_logo {
+    padding-left: 30px;
+}
+.nav_item button {
+    border: #8E9BB4 1px solid;
+    border-radius: 30px;
+    padding: 10px;
+    color: #8E9BB4;
+    cursor: pointer;
+}
+/* Main Slide */
+.main_slide {
+    background: #e6eef8;
+    height: 100vh;
+    overflow: hidden;
+}
+.parallax_wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px auto 150px 300px;
+}
+.title {
+    position: absolute;
+    animation: title_animation 3s ease-in-out;
+    left: 0; 
+    right: 0; 
+    top: 35%;
+    margin-left: auto; 
+    margin-right: auto; 
+    color: #8E9BB4;
+    text-align: center;
+}
+@keyframes title_animation {
+        0% {
+        transform: matrix(0.9, 0, 0, 1, 0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+    }
+}
+.title h1 {
+    font-size: 10vw;
+    color: #cf4545;
+}
+.red_icon_one {
+    animation: fade_in 2s ease-in-out;
+    transform: rotate(-30deg);
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 4/5;
+    width: 200px;
+}
+.doc_icons {
+    animation: fade_in 2s ease-in-out;
+    transform: rotate(30deg);
+    z-index: 4;
+    position: relative;
+    grid-column: 2/-1;
+    grid-row: 4/5;
+    right: 0%;
+    width: 250px;
+    filter: blur(2px);
+}
+.red_chat_icon {
+    animation: fade_in 2s ease-in-out;
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    width: 90px;
+    transform: translate(140%, 30%) rotate(-10deg);
+}
+.handShake_icon {
+    animation: fade_in 2s ease-in-out;
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 40px;
+    transform: translate(140%, -10%) rotate(10deg);
+}
+.red_chat_icon img, .doc_icons img, .red_icon_one img, .handShake_icon img  {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Main Slide */
+
+/* Nextstep explain */
+.nextstep_slide {
+    background: #cf4545;
+    padding: 5em 1em;
+}
+.nextstep_paragraph {
+    max-width: 600px;
+    margin: auto;
+    padding: 1em;
+    text-align: center;
+    font-size: 20px;
+    color: #e6eef8;
+    line-height: 1.3em;
+}
+.nextstep_paragraph h2 {
+    font-size: 50px;
+    line-height: 1.3em;
+    padding-bottom: 5px;
+}
+/* Nextstep explain */
+
+/* Roles */
+.user_roles {
+    background: #e6eef8;
+}
+.roles_flex {
+    display: flex;
+    flex-direction: column;
+}
+.students, .business {
+    color: #8E9BB4;
+    padding: 3em 3em;
+    text-align: left;
+    margin: 1em;
+}
+.students h1, .business h1 {
+    font-size: 40px;
+}
+/* Roles */
+
+/* Jobs types */
+.offers_slide {
+    background: #e6eef8;
+    padding: 1em;
+    color: #8E9BB4;
+}
+.offers {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+.offers h2{
+    font-size: 45px;
+    padding-bottom: 5px;
+}
+.title_flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.offer_title_animation {
+    margin-left: 5px;
+}
+.offer_title_animation h2 {
+    font-size: 25px;
+}
+.job_types_wrapper {
+    display: flex;
+    padding: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mobile_hidden {
+    display: none;
+}
+.job_type {
+    text-align: center;
+    width: 100%;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 20px;
+    border: #e6eef8 2px solid;
+    box-shadow:  4px 4px 10px #BCCAE4, -4px -4px 10px #ffffff, 
+    inset 2px 2px 8px #BCCAE4, inset -2px -2px 8px #ffffff;
+}
+.job_type h2 {
+    padding-bottom: 10px;
+}
+.job_option_btn_wrapper {
+    text-align: center;
+    padding-bottom: 3em;
+}
+.job_button  {
+    color: #8E9BB4;
+    padding: 15px;
+    border-radius: 20px;
+    background: var(--primary-color);
+    border: #e6eef8 solid 3px;
+    box-shadow:  7px 7px 14px #BCCAE4, -7px -7px 14px #ffffff;
+}
+.job_button:hover {
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+    box-shadow:  4px 4px 10px #BCCAE4, -4px -4px 10px #ffffff, 
+    inset 2px 2px 8px #BCCAE4, inset -2px -2px 8px #ffffff;
+}
+/* Jobs types */
+
+/* Networking */
+.networking_slide {
+    background: #22232D;
+    padding: 5em 1em;
+    display: flex;
+    flex-direction: column;
+}
+.networking_paragraph h2 {
+    font-size: 45px;
+    line-height: 1.3em;
+    text-align: center;
+}
+.networking_paragraph {
+    max-width: 600px;
+    color: #8E9BB4;
+    font-size: 20px;
+    margin: 0px auto 3em auto;
+    line-height: 1.3em;
+}
+.paragraph_net {
+    padding: 1em 1.5em;
+}
+.networking_image_wrapper {
+    margin-left: 3em;
+    height: 500px;
+    min-width: 300px;
+    margin: auto;
+    position: relative;
+}
+.chat_box img, .group_icon img, .chat_icon_second img, .team_work_icon img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+.chat_box_one {
+    position: absolute;
+    max-width: 400px;
+    z-index: 2;
+    right: 0px;
+    animation: chat_box_one 20s linear infinite;
+}
+.chat_box_two {
+    transform: rotate(-10deg);
+    position: absolute;
+    max-width: 300px;
+    bottom: 10px;
+    left: 20px;
+    animation: chat_box_two 20s linear infinite;
+}
+.chat_icon_second {
+    width: 80px;
+    top: 50%;
+    z-index: 5;
+    position: absolute;
+    animation: small_icon_two 5s linear infinite;
+}
+.group_icon {
+    width: 40px;
+    z-index: 3;
+    top: 20px;
+    left: 50px;
+    position: absolute;
+    animation: small_icon 5s linear infinite;
+}
+.team_work_icon {
+    width: 80px;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    animation: small_icon_three 10s linear infinite;
+}
+/* @keyframes chat_box_one {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes chat_box_two {
+    0% {
+        transform: translateY(0) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-10%) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+} */
+@keyframes small_icon {
+    0% {
+        transform: translateY(0) rotate(10deg);
+    }
+    50% {
+        transform: translateY(50%) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(10deg);
+    }
+}
+@keyframes small_icon_two {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes small_icon_three {
+    0% {
+        transform: translateY(0) rotate(10deg);
+    }
+    50% {
+        transform: translateY(-100%) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(10deg);
+    }
+}
+/* Networking */
+
+/* Credit */
+/* Main credit and paragraph */
+.credit_slide {
+    padding: 1em;
+    height: 100%;
+    display: grid;
+    overflow: hidden;
+    align-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows:  420px 350px auto;
+}
+.credit_card_container {
+    position: relative;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    height: 400px;
+    width: 300px;
+    margin: 3em auto 0px auto;
+}
+.credit_cards {
+    width: 250px;
+    position: absolute;
+}
+.primary_credit_card {
+    z-index: 3;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.secondary_credit_card {
+    z-index: 2;
+    transform: rotate(-20deg);
+    top: 30px;
+    right: 60px;
+}
+.tertiary_credit_card {
+    z-index: 1;
+    transform: rotate(20deg);
+    top: 30px;
+    left: 60px;
+}
+.primary_half_card {
+    background: linear-gradient(90deg, #fd9271, #F9516D 100%);
+    box-shadow:  15px 15px 31px #ae3a3a, -15px -15px 31px #f05050;
+}
+.secondary_half_card {
+
+    background: linear-gradient(90deg, #3BC2F3, #1E72E4 100%);
+    box-shadow:  10px 10px 21px #ae3a3a, -10px -10px 21px #f05050;
+}
+.tertiary_half_card {
+    background: linear-gradient(90deg, #59C1AF, #1287BF 100%);
+    box-shadow:  5px 5px 11px #ae3a3a, -5px -5px 11px #f05050;
+}
+.coin_image {
+    height: 100px;
+    position: relative;
+    width: 100px;
+    border-radius: 50%;
+    background: #cf4545;
+    margin: 0px auto -50px auto;
+    box-shadow:  15px 15px 31px #ae3a3a, -15px -15px 31px #f05050;
+}
+.half_cards {
+    padding: 3px;
+    border-radius: 35px;
+}
+.inner_half_cards {
+    height: 100%;
+    border-radius: 33px;
+    background: #cf4545;
+}
+.card_info {
+    text-align: center;
+    color: #e6eef8;
+    padding: 4em 10px 10px 10px;
+}
+.card_info_header {
+    margin: 0.1em 0px;
+    line-height: 1.5em;
+}
+.card_info_Body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card_info_content {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 12px;
+}
+.card_info_content h3{
+    padding: 10px 0px;
+}
+.credit_paragraph {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    font-size: 20px;
+    color: #e6eef8;
+    line-height: 1.3em;
+    padding: 0px 1em;
+    margin: auto;
+    text-align: center;
+}
+.credit_paragraph h2 {
+    font-size: 3em;
+    line-height: 1.2em;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+/* Main credit and paragraph */
+.card_description {
+    grid-template-rows: 3/4;
+    margin: 3em 0px;
+}
+.example_credit_cards {
+    max-width: 300px;
+    margin: auto;
+}
+.cards_border_main {
+    background: linear-gradient(90deg, #fd9271, #F9516D 100%);
+    box-shadow:  10px 10px 21px #ae3a3a, -10px -10px 21px #f05050;
+}
+.cards_border_second {
+    background: linear-gradient(90deg, #3BC2F3, #1E72E4 100%);
+    box-shadow:  10px 10px 21px #ae3a3a, -10px -10px 21px #f05050;
+}
+.cards_border_third {
+    background: linear-gradient(90deg, #59C1AF, #1287BF 100%);
+    box-shadow:  10px 10px 21px #ae3a3a, -10px -10px 21px #f05050;
+}
+.booster_paragraph h3 {
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    padding-top: 0.7em;
+}
+.booster_paragraph {
+    color: #e6eef8;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+/* Credit */   
+/* Mission Statement */
+.mission_statement_slide {
+    background: #22232D;
+    padding: 5em;
+}
+.mission_statement_paragraph h4 {
+    font-size: 20px;
+    padding-bottom: 1em;
+}
+.mission_statement_paragraph {
+    color: #8E9BB4;
+    font-size: 25px;
+    line-height: 1.3em;
+    max-width: 600px;
+    margin: 1em auto;
+}
+.red_text {
+    color: #cf4545;
+    font-size: 40px;
+}
+/* Mission Statement */
+
+/* Comments */
+.comments_slide {
+    background: #cf4545;
+    padding: 1em;
+    color: #e6eef8;
+}
+.comment_paragraph {
+    margin: 5em auto 3em auto;
+    max-width: 700px;
+    text-align: center;
+}
+.comment_paragraph h2 {
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+.comment_paragraph h5{
+    font-size: 20px;
+}
+.comment_wrapper {
+    gap: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* display: grid;
+    justify-content: center;
+    grid-template-columns: 500px 500px 500px;
+    grid-template-rows: 130px 130px 130px 130px; */
+}
+
+/* Commenter */
+.comment {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 1em;
+    border-radius: 20px;
+    border: #cf4545 2px solid;
+    background: #cf4545;
+    box-shadow:  4px 4px 10px #ae3a3a, -4px -4px 10px #f05050, 
+    inset 2px 2px 8px #ae3a3a, inset -2px -2px 8px #f05050;
+}
+.comment_profile {
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    margin: 0px 20px 0px 0px;
+    border-radius: 50px;
+    border: #cf4545 3px solid;
+    box-shadow:  4px 4px 6px #ae3a3a,  -4px -4px 6px #f05050;
+}
+.comment_profile img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.comment_text p {
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+/* Animation */
+.comment_one {
+    animation: comment_animation 6s ease infinite;
+}
+.comment_two {
+    animation: comment_animation 10s ease infinite;
+}
+.comment_three {
+    animation: comment_animation 4s ease infinite;
+}
+.comment_four {
+    animation: comment_animation 15s ease infinite;
+}
+.comment_five {
+    animation: comment_animation 6s ease infinite;
+}
+.comment_six {
+    animation: comment_animation 8s ease infinite;
+}
+.comment_seven {
+    animation: comment_animation 12s ease infinite;
+}
+.comment_eight {
+    animation: comment_animation 3s ease infinite;
+}
+@keyframes comment_animation{
+    0% {
+        transform: translateY(0);
+        box-shadow:  4px 4px 10px #ae3a3a, -4px -4px 10px #f05050, 
+        inset 2px 2px 8px #ae3a3a, inset -2px -2px 8px #f05050;
+    }
+    50% {
+        transform: translateY(8%);
+        box-shadow:  1px 1px 5px #ae3a3a, -1px -1px 5px #f05050, 
+        inset 1px 1px 4px #ae3a3a, inset -1px -1px 4px #f05050;
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow:  4px 4px 10px #ae3a3a, -4px -4px 10px #f05050, 
+        inset 2px 2px 8px #ae3a3a, inset -2px -2px 8px #f05050;
+    }
+}
+/* Commenter */
+
+/* Ending Slide */
+.ending_slide {
+    padding: 3em 1em;
+    text-align: center;
+}
+.ending_header h4 {
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+}
+.button_container {
+    margin: 1em auto;
+    max-width: 600px;
+}
+.button_red {
+    box-shadow:  8px 8px 15px #ae3a3a, -8px -8px 15px #f05050;
+    border: #cf4545 2px solid;
+    color: #e6eef8;
+}
+.button_red:hover {
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+    box-shadow:  4px 4px 10px #ae3a3a, -4px -4px 10px #f05050, 
+    inset 2px 2px 8px #ae3a3a, inset -2px -2px 8px #f05050;
+}
+/* Ending Slide */
+
+.footer_nav {
+    display: flex;
+    color: #8E9BB4;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+    background: #e6eef8;
+}
+.footer_row_one {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer_row_two {
+    border-top: #8E9BB4 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.footer_list {
+    padding: 1em;
+    margin: 2em;
+    min-width: 150px;
+}
+.footer_list h4 {
+    padding-bottom: 1.5em;
+}
+.ul_list li, a {
+    text-decoration: none;
+    list-style: none;
+    color: #8E9BB4;
+    padding-bottom: 10px;
+}
+.ul_list li, a:hover {
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+    color: #ae3a3a;
+}
+.social_icons {
+    display: flex;
+}
+.social_icon {
+    width: 50px;
+}
+.social-btn {
+    box-shadow: 4px 4px 10px #bccae4, -4px -4px 10px #ffffff;
+    border: #e6eef8 2px solid;
+    color: #8E9BB4;
+    padding: 15px;
+    margin: 1em;
+    border-radius: 20px;
+}
+.social-btn:hover {
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+    box-shadow:  4px 4px 10px #bccae4, -4px -4px 10px #ffffff, 
+    inset 2px 2px 8px #bccae4, inset -2px -2px 8px #ffffff;
+}
+.copyright {
+    padding-left: 20px;
+}
+/* Media Query */
+@media only screen and (min-width: 737px) {
+    .paragraph_main {
+        text-align: center;
+    }
+    .nav_item button {
+        padding: 10px 30px;
+    }
+    .nextstep_paragraph h2 {
+        font-size: 90px;
+    } 
+    .networking_slide {
+        padding: 4em;
+    }
+    .parallax_wrapper {
+        grid-template-columns: 10% auto 10%;
+        grid-template-rows: 100px auto 300px;
+    }
+    .doc_icons {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        margin-left: 60%;
+    }
+    .red_icon_one {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    .handShake_icon {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        margin-left: 80%;
+    }
+    .red_chat_icon {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    /* Roles */
+    .students, .business {
+        text-align: left;
+        padding: 6em 3em;
+    }
+    .roles_flex {
+        flex-direction: row;
+    }
+    .job_type {
+        max-width: 300px;
+    }
+    .mobile_hidden {
+        display: block;
+    }
+    .offer_title_animation h2 {
+        font-size: 45px;
+    }
+    /* Roles */
+
+    .secondary_credit_card {
+        right: 40px;
+    }
+    .tertiary_credit_card {
+        right: 70px;
+    }
+    .credit_slide {
+        grid-template-columns: 50% 50%;
+        grid-template-rows:  420px auto;
+    }
+    .credit_card_container {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .credit_paragraph {
+        grid-column: 2/-1;
+        grid-row: 1/2;
+        text-align: left;
+    }
+    .three_cards {
+        grid-column: 1/-1;
+        grid-row: 2/-1;
+    }
+
+    .card_description {
+        display: flex;
+        max-width: 800px;
+        margin: 3em auto;
+    }
+    .booster_paragraph h3 {
+        text-align: left;
+        padding-top: 0px;
+    }
+    .booster_paragraph {
+        padding: 0px 2em;
+        text-align: left;
+    }
+
+    .mission_statement_paragraph {
+        font-size: 35px;
+    }
+
+    .comment_paragraph h2 {
+        font-size: 45px;
+    }
+    .comment {
+        width: fit-content;
+    }
+    .footer_row_one {
+        flex-direction: row;
+    }
+
+}
+@media only screen and (min-width: 1068px) {
+    .networking_slide {
+        flex-direction: row;
+    }
+    .networking_paragraph {
+        margin-bottom: 0;
+        margin-right: 3em;
+
+        margin: 0px 3em 0px auto;
+        text-align: left;
+    }
+    .networking_paragraph h2 {
+        text-align: left;
+    }
+    .networking_image_wrapper {
+        width: 500px;
+    }
+
+
+    .credit_card_container {
+        height: 400px;
+        width: 500px;
+    }
+    .primary_credit_card {
+        left: 0%;
+        bottom: 0%;
+        transform: translate(0, 0) rotate(-30deg);
+    }
+    .secondary_credit_card {
+        z-index: 2;
+        right: 0px;
+        margin: auto;
+        transform: translate(-50%,0) rotate(0deg);
+    }
+    .tertiary_credit_card {
+        right: 0px;
+        left: 40%;
+        top: 20%;
+        bottom: 0%;
+        transform: translate(0, 0) rotate(30deg);
+    }
+
+    .three_cards {
+        display: flex;
+        margin: 5em 0px 3em 0px;
+    }
+    .card_description {
+        display: flex;
+        flex-direction: column;
+    }
+    .booster_paragraph h3 {
+        text-align: center;
+        padding: 1em 0px 0px 0px;
+    }
+    .booster_paragraph {
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 2008px) {
+    .nextstep_paragraph {
+        max-width: 1000px;
+    }
+    .offers {
+        max-width: 1000px;
+    }
+    .networking_paragraph {
+        max-width: 1000px;
+    }
+    .credit_paragraph {
+        max-width: 1000px;
+    }
+    .mission_statement_paragraph {
+        font-size: 50px;
+        max-width: 900px;
+    }
+    .mission_statement_paragraph h4 {
+        font-size: 20px;
+    }
+    .comment_paragraph {
+        max-width: 1000px;
+    }
+    .paragraph {
+        line-height: 1.6em;
+        padding-top: 1.5em;
+        font-size: 25px;
+    }
+    .booster_paragraph h3 {
+        font-size: 30px;
+    }
+    .booster_paragraph p{
+        font-size: 25px;
+    }
+    .comment_wrapper {
+        max-width: 1700px;
+        margin: auto;
+    } 
+    .job_types_wrapper {
+        max-width: 1600px;
+        margin: auto;
+    }
+}
+/* Media Query */
+.modal_background {
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    position: fixed;
+    background: #22232d88;
+    display: none;
+    cursor: pointer;
+}
+.modal {
+    background: #e6eef8;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    margin: 1em;
+    color: #8E9BB4;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.student_opt, .business_opt {
+    height: 100px;
+    width: 120px;
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    border: #e6eef8 2px solid;
+    box-shadow:  7px 7px 14px #BCCAE4, -7px -7px 14px #ffffff;
+}
+.student_opt:hover, .business_opt:hover {
+    cursor: pointer;
+    transition: 300ms;
+    border: #e6eef8 2px solid;
+    box-shadow:  4px 4px 10px #BCCAE4, -4px -4px 10px #ffffff, 
+    inset 2px 2px 8px #BCCAE4, inset -2px -2px 8px #ffffff;
+}
+.icon-opt {
+    font-size: 50px;
+    padding: 5px;
+}
+.floating_icons {
+    color: #cf4545;
+    position: relative;
+    width: 100%;
+    background: #ae3a3a;
+}
+.float_icon_one, .float_icon_three  {
+    font-size: 30px;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    animation: floating_icon 5s ease-in-out infinite;
+}
+.float_icon_two, .float_icon_four {
+    font-size: 25px;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    animation: floating_icon 6s ease-in-out infinite;
+}
+.link-opt {
+    color: #8E9BB4;
+    padding: 0px;
+}
+@keyframes floating_icon {
+    0% {
+        transform: translateY(0) rotate(-20deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(-20deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-20deg);
+    }
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Images</title>
+    <link rel="stylesheet" href="all.min copy 2.css">
+    <link rel="stylesheet" href="imageGallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mainWrapper">
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}">Mujaahid</h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="image_wrapper">
+            <div class="image_container">
+                <div class="image_preview_container">
+                    <!-- <img class="image-preview" src="https://cdna.artstation.com/p/assets/images/images/008/130/934/4k/eugene-korolev-kosa.jpg?1510680458" alt=""> -->
+
+                    <!-- <img class="image-preview" src="https://cdna.artstation.com/p/assets/images/images/019/205/220/4k/eugene-korolev-dbc-10-otbor.jpg?1562501839" alt=""> -->
+
+                    <!-- <img class="image-preview" src="https://cdnb.artstation.com/p/assets/images/images/007/568/191/large/eugene-korolev-zwcph5w-up8.jpg?1507035898" alt=""> -->
+
+                    <img class="image-preview" src="https://cdnb.artstation.com/p/assets/images/images/013/598/789/4k/eugene-korolev-01-postal.jpg?1540334523" alt="">
+
+                    <!-- <img class="image-preview" src="https://cdnb.artstation.com/p/assets/images/images/025/986/673/4k/eugene-korolev-day-7-ikki.jpg?1587543871" alt=""> -->
+                </div>
+                <div class="imageGallery_list">
+                    <div class="imageGallery_list_preview">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/008/130/911/4k/eugene-korolev-petals3.jpg?1510680410" alt="">
+                    </div>
+                    <div class="imageGallery_list_preview">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/008/130/934/4k/eugene-korolev-kosa.jpg?1510680458" alt="">
+                    </div>
+                    <div class="imageGallery_list_preview">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/013/598/789/4k/eugene-korolev-01-postal.jpg?1540334523" alt="">
+                    </div>
+                    <div class="imageGallery_list_preview occupied">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/019/205/220/4k/eugene-korolev-dbc-10-otbor.jpg?1562501839" alt="">
+                    </div>
+                    <div class="imageGallery_list_preview">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/007/568/191/large/eugene-korolev-zwcph5w-up8.jpg?1507035898" alt="">
+                    </div>
+                    <div class="imageGallery_list_preview">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/025/986/673/4k/eugene-korolev-day-7-ikki.jpg?1587543871" alt="">
+                    </div>
+                    <div class="imageGallery_list_preview">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/019/759/188/4k/eugene-korolev-db10-d13.jpg?1564908447" alt="">
+                    </div>
+                </div>
+                <div class="main-video-title">
+                    <h3>The Beauty of Razorback</h3>
+                </div>
+                <div class="main-video-views">
+                    <p>Views: 31,425</p>
+                    <p>Jan 16, 2022 </p>
+                </div>
+                <div class="main-video-footer">
+                    <div class="main-video-profile">
+                        <div class="video-profile">
+                            <img src="https://yt3.ggpht.com/ytc/AKedOLSkLXgltX9qgmwaLmiQZT62HVawKpv2xXkSKyAeHw=s176-c-k-c0x00ffffff-no-rj" alt="">
+                        </div>
+                        <div class="h5">The Beauty Of</div>
+                    </div>
+                    <div class="video-footer">
+                        <div class="main-video-icon">
+                            <i class="far thumbs fa-thumbs-up"></i>
+                            <p>314</p>
+                        </div>
+                        <div class="main-video-icon">
+                            <i class="far thumbs fa-thumbs-down"></i>
+                            <p>21</p>
+                        </div>
+                        <div class="main-video-icon">
+                            <i class="far fa-comments"></i>
+                            <p>144</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image_attribute">
+
+                    <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="comment-wrapper">
+                <div class="commentMain">
+                    <div class="comment-body">
+                        <div class="commentHeader">
+                            <h4>Comments</h4>
+                            <p>144</p>
+                        </div>
+                        <div class="comment">
+                            <div class="comment_profile">
+                                <img src="https://cdnb.artstation.com/p/users/avatars/000/241/581/medium/f0286bf39e2864ac9f1bd98bd7fdf3aa.jpg?1607256759" alt="">
+                            </div>
+                            <div class="comment-flex">
+                                <div class="comment_body">
+                                    <h5>Thomas Möhring</h5>
+                                    <p>Clearly watching something cool. Great painting!</p>
+                                </div>
+                                <div class="comment_footer">
+                                    <div class="comment-footer-flex">
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-up"></i>
+                                            <p>314</p>
+                                        </div>
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-down"></i>
+                                            <p>21</p>
+                                        </div>
+                                    </div>
+                                    <div class="comment-footer-flex">
+                                        <p class="reply">reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment_profile">
+                                <img src="https://cdna.artstation.com/p/users/avatars/000/016/314/medium/ee6f24896f8f91cd94a7ec470b0553cd.jpg?1652969647" alt="">
+                            </div>
+                            <div class="comment-flex">
+                                <div class="comment_body">
+                                    <h5>Thomas Möhring</h5>
+                                    <p>Russell Mulcahy was amazing</p>
+                                </div>
+                                <div class="comment_footer">
+                                    <div class="comment-footer-flex">
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-up"></i>
+                                            <p>314</p>
+                                        </div>
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-down"></i>
+                                            <p>21</p>
+                                        </div>
+                                    </div>
+                                    <div class="comment-footer-flex">
+                                        <p class="reply">reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment_profile">
+                                <img src="https://cdna.artstation.com/p/users/avatars/000/156/444/medium/b47ac5c21ea4d8c40f446d10c85031d8.jpg?1453989779" alt="">
+                            </div>
+                            <div class="comment-flex">
+                                <div class="comment_body">
+                                    <h5>Thomas Möhring</h5>
+                                    <p>He was one of the guys behind HIGHLANDER</p>
+                                </div>
+                                <div class="comment_footer">
+                                    <div class="comment-footer-flex">
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-up"></i>
+                                            <p>314</p>
+                                        </div>
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-down"></i>
+                                            <p>21</p>
+                                        </div>
+                                    </div>
+                                    <div class="comment-footer-flex">
+                                        <p class="reply">reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment_profile">
+                                <img src="https://cdnb.artstation.com/p/users/avatars/000/447/561/medium/124e77d7d0765cda7bb0ea37c5a236a5.jpg?1534713446" alt="">
+                            </div>
+                            <div class="comment-flex">
+                                <div class="comment_body">
+                                    <h5>Thomas Möhring</h5>
+                                    <p>Vraiment une dinguerie, c'est si beau</p>
+                                </div>
+                                <div class="comment_footer">
+                                    <div class="comment-footer-flex">
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-up"></i>
+                                            <p>314</p>
+                                        </div>
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-down"></i>
+                                            <p>21</p>
+                                        </div>
+                                    </div>
+                                    <div class="comment-footer-flex">
+                                        <p class="reply">reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment_profile">
+                                <img src="https://cdna.artstation.com/p/users/avatars/000/089/966/medium/46064a75213f0346968eb2abf40f49da.jpg?1437331698" alt="">
+                            </div>
+                            <div class="comment-flex">
+                                <div class="comment_body">
+                                    <h5>Thomas Möhring</h5>
+                                    <p>magine coming to the cinema expecting a cheap B-movie about giant killer-wildboar, and somehow you got exactly that and a beautiful, majestic, and sometimes trippy images of the Australian wilderness</p>
+                                </div>
+                                <div class="comment_footer">
+                                    <div class="comment-footer-flex">
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-up"></i>
+                                            <p>314</p>
+                                        </div>
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-down"></i>
+                                            <p>21</p>
+                                        </div>
+                                    </div>
+                                    <div class="comment-footer-flex">
+                                        <p class="reply">reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment_profile">
+                                <img src="https://cdnb.artstation.com/p/users/avatars/000/511/155/medium/181446cdf1da2bd197b9e5e43bc2da7d.jpg?1570523548" alt="">
+                            </div>
+                            <div class="comment-flex">
+                                <div class="comment_body">
+                                    <h5>Thomas Möhring</h5>
+                                    <p>Clearly watching something cool. Great painting!</p>
+                                </div>
+                                <div class="comment_footer">
+                                    <div class="comment-footer-flex">
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-up"></i>
+                                            <p>314</p>
+                                        </div>
+                                        <div class="comment-footer-item">
+                                            <i class="far thumbs fa-thumbs-down"></i>
+                                            <p>21</p>
+                                        </div>
+                                    </div>
+                                    <div class="comment-footer-flex">
+                                        <p class="reply">reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-hid-comment">
+                    <div class="showComments showhideComment"><i class="far fa-comments"></i></div>
+                    <div class="hideComments showhideComment"><i class="fas fa-comment-slash"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="related_content_wrapper">
+            <div class="related-content-header">
+                <h3>Related Content</h3>
+            </div>
+            <div class="related_content_body">
+                <div class="image_items">
+                    <div class="image_thumbnail">
+                        <div class="overlay_title">
+                            <h2>IKI IKI</h2>
+                            <p>Faustine Dumontier</p>
+                        </div>
+                        <a class="ImageItemLink" href="https://www.youtube.com/">
+                            <div class="overlay_thumbnail">
+                            </div>
+                           <img src="https://cdna.artstation.com/p/assets/images/images/046/996/904/large/faustine-dumontier-close-up-1.jpg?1646498498" alt="">
+                        </a>                                 
+                    </div>
+                    <div class="image_attribute">
+                            <h3>Da 5 Bloods</h3>
+                            <div class="flex_image_attribute">
+                                <p>32k views</p>
+                                <p>1 week ago</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="image_items">
+                    <div class="image_thumbnail">
+                        <div class="overlay_title">
+                            <h2>101</h2>
+                            <p>Yizheng Ke</p>
+                        </div>
+                        <a class="ImageItemLink" href="https://www.youtube.com/">
+                            <div class="overlay_thumbnail">
+                            </div>
+                           <img src="https://cdna.artstation.com/p/assets/images/images/049/646/918/large/yizheng-ke-2021-10-1x.jpg?1652970655" alt="">
+                        </a>                                 
+                    </div>
+                    <div class="image_attribute">
+                            <h3>Yizheng Ke</h3>
+                            <div class="flex_image_attribute">
+                                <p>32k views</p>
+                                <p>1 week ago</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="image_items">
+                    <div class="image_thumbnail">
+                        <div class="overlay_title">
+                            <h2>A Deadly Predator</h2>
+                            <p>Hugo Fredoueil</p>
+                        </div>
+                        <a class="ImageItemLink" href="https://www.youtube.com/">
+                            <div class="overlay_thumbnail">
+                            </div>
+                           <img src="https://cdna.artstation.com/p/assets/images/images/031/996/796/4k/hugo-fredoueil-adeadlypredator-done-001.jpg?1605183240" alt="">
+                        </a>                                 
+                    </div>
+                    <div class="image_attribute">
+                            <h3>A Deadly Predator</h3>
+                            <div class="flex_image_attribute">
+                                <p>32k views</p>
+                                <p>1 week ago</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="image_items">
+                    <div class="image_thumbnail">
+                        <div class="overlay_title">
+                            <h2>The Devil's Toy</h2>
+                            <p>Matvey Dolgopolov</p>
+                        </div>
+                        <a class="ImageItemLink" href="https://www.youtube.com/">
+                            <div class="overlay_thumbnail">
+                            </div>
+                           <img src="https://cdnb.artstation.com/p/assets/images/images/049/738/289/large/matvey-dolgopolov-devil.jpg?1653217865" alt="">
+                        </a>                                 
+                    </div>
+                    <div class="image_attribute">
+                            <h3>Da 5 Bloods</h3>
+                            <div class="flex_image_attribute">
+                                <p>32k views</p>
+                                <p>1 week ago</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="image_items">
+                    <div class="image_thumbnail">
+                        <div class="overlay_title">
+                            <h2>IKI IKI</h2>
+                            <p>Faustine Dumontier</p>
+                        </div>
+                        <a class="ImageItemLink" href="https://www.youtube.com/">
+                            <div class="overlay_thumbnail">
+                            </div>
+                           <img src="https://cdna.artstation.com/p/assets/images/images/046/996/904/large/faustine-dumontier-close-up-1.jpg?1646498498" alt="">
+                        </a>                                 
+                    </div>
+                    <div class="image_attribute">
+                            <h3>Da 5 Bloods</h3>
+                            <div class="flex_image_attribute">
+                                <p>32k views</p>
+                                <p>1 week ago</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="image_items">
+                    <div class="image_thumbnail">
+                        <div class="overlay_title">
+                            <h2>IKI IKI</h2>
+                            <p>Faustine Dumontier</p>
+                        </div>
+                        <a class="ImageItemLink" href="https://www.youtube.com/">
+                            <div class="overlay_thumbnail">
+                            </div>
+                           <img src="https://cdna.artstation.com/p/assets/images/images/046/996/904/large/faustine-dumontier-close-up-1.jpg?1646498498" alt="">
+                        </a>                                 
+                    </div>
+                    <div class="image_attribute">
+                            <h3>Da 5 Bloods</h3>
+                            <div class="flex_image_attribute">
+                                <p>32k views</p>
+                                <p>1 week ago</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="imageGallery.js"></script>
+    <script src="all.min copy 2.js"></script>
+</body>
+</html> 

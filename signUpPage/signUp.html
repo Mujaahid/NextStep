@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="signUp.css">
+    <script src="https:kit.fontawesome.com/fd07ffd6f7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="jopXpModalWrapper">
+        <div class="jobXpModal-item">
+            <div class="jobExModal-header">
+                <h3>Add Job Experience</h3>
+            </div>
+            <div class="companyNameWrapper inputWrapper">
+                <p class="outerPlaceholder">Company Name</p>
+                <input type="text" id="companyName" class="inputFields modalInputFields" placeholder="Company Name">
+                <div style="display: none;" class="errorCompanyNameMessage errorMessage">
+                    <p></p>
+                </div>
+            </div>
+            <div class="jobTitleWrapper inputWrapper">
+                <p class="outerPlaceholder">Job Title</p>
+                <input type="text" class="inputFields modalInputFields" id="jobTitle" placeholder="Job Position">
+                <div style="display: none;" class="errorJobTitleMessage errorMessage">
+                    <p></p>
+                </div>
+            </div>
+            <div class="jobDescriptionWrapper inputWrapper">
+                <p class="outerPlaceholder">Job Email</p>
+                <input type="text" class="inputFields modalInputFields" id="JobEmail" placeholder="Job Email " required>
+                <div style="display: none;" class="errorCompanyEmailMessage errorMessage">
+                    <p></p>
+                </div>
+            </div>
+            <div class="flexWrapper inputWrapper">
+                <div class="startDateWrapper">
+                    <p class="outerPlaceholder">Start Date</p>
+                    <div class="startDateFields">
+                        <input type="number" class="inputFields modalInputFields" id="startDate" placeholder="2000">
+                    </div>
+                    <div style="display: none;" class="errorStartDateMessage errorMessage">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="endDateWrapper">
+                    <p class="outerPlaceholder">End Date</p>
+                    <div class="endDateFields">
+                        <input type="number" class="inputFields modalInputFields" id="endDate" placeholder="2023">
+                    </div>
+                    <div style="display: none;" class="errorEndDateMessage errorMessage">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="jobXpModal-footer">
+                <span class="jobXpModal-cancel">Cancel</span>
+                <span class="jobXpModal-save">Save</span>
+            </div>
+        </div>
+    </div>
+    <div class="editJobXpWrapper">
+    </div>
+    <div class="TOS-modalWrapper">
+        <div class="TOS-modal">
+            <div class="TOS-header">
+                <h3>Terms of Service</h3>
+                <p>Last Modified 2023 Jun 7</p>
+            </div>
+            <div class="TOS-body">
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Eligibility</h3>
+                    <p class="TOS-itemBody">Clearly define the eligibility criteria for using the services, such as age requirements or enrollment in a college or university.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Service Description</h3>
+                    <p class="TOS-itemBody">Explain the services offered by the company, including the nature of the platform, resources, or opportunities provided to users.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">User Responsibilities</h3>
+                    <p class="TOS-itemBody">Outline the responsibilities and obligations of users, including the accurate representation of personal information, compliance with applicable laws, and adherence to the company's guidelines and policies.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Account Creation and Security</h3>
+                    <p class="TOS-itemBody">Specify the process for creating an account, the protection of account credentials, and the prohibition of sharing accounts or accessing others' accounts.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Privacy and Data Protection</h3>
+                    <p class="TOS-itemBody">Describe the company's practices regarding the collection, use, storage, and protection of user data, including any third-party involvement and the use of cookies or tracking technologies.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Intellectual Property</h3>
+                    <p class="TOS-itemBody">Clarify ownership rights and restrictions related to the content, materials, or intellectual property shared or accessed through the platform, and address issues of copyright infringement.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Prohibited Activities</h3>
+                    <p class="TOS-itemBody">Enumerate activities that are strictly prohibited, such as spamming, hacking, unauthorized access, or any illegal or malicious actions that could harm the platform or other users.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">User Content</h3>
+                    <p class="TOS-itemBody">Specify the rights and responsibilities concerning user-generated content, including granting the company a license to use and moderate the content, and provisions for handling intellectual property disputes.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Termination of Service</h3>
+                    <p class="TOS-itemBody">Outline the conditions under which the company can terminate or suspend a user's account or access to the services, including violations of the terms of service or applicable laws.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Dispute Resolution</h3>
+                    <p class="TOS-itemBody">Define the methods for resolving disputes, including any mandatory arbitration or alternative dispute resolution mechanisms, and specify the governing law and jurisdiction for legal proceedings.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Limitations of Liability</h3>
+                    <p class="TOS-itemBody">Disclaim liability for any damages, losses, or disruptions arising from the use of the services, except where prohibited by law.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Modifications to the Terms</h3>
+                    <p class="TOS-itemBody">Reserve the right to modify or update the terms of service, and explain how users will be notified of such changes.</p>
+                </div>
+                <div class="TOS-item">
+                    <h3 class="TOS-itemHeader">Communication and Support</h3>
+                    <p class="TOS-itemBody">Provide contact information for users to seek assistance, ask questions, or report issues related to the services.</p>
+                </div>
+            </div>
+            <div class="TOS-footer">
+                <span class="TOSModal-cancel">Decline</span>
+                <button class="TOSModal-save">I Accept</button>
+            </div>
+        </div>
+    </div>
+<!-- Modals -->
+    <div class="mainWrapper">
+        <div class="leftSide">
+            <div class="onboardingWrapper">
+                <div class="stepWrapper">
+                    <div class="step">
+                        <div class="stepCircle firstStep">
+                            <h4>1</h4>
+                        </div>
+                        <div class="stepLine firstLine"></div>
+                    </div>
+                    <div class="stepTitle stepTitleOne">
+                        <p class="stepNumber">Step 1.</p>
+                        <p>Create Account.</p>
+                    </div>
+                </div>
+                <div class="stepWrapper">
+                    <div class="step">
+                        <div class="stepCircle secondStep">
+                            <h4>2</h4>
+                        </div>
+                        <div class="stepLine secondLine"></div>
+                    </div>
+                    <div class="stepTitle">
+                        <p class="stepNumber">Step 2.</p>
+                        <p>Education.</p>
+                    </div>
+                </div>
+                <div class="stepWrapper">
+                    <div class="step">
+                        <div class="stepCircle thirdStep">
+                            <h4>3</h4>
+                        </div>
+                        <div class="stepLine thirdLine"></div>
+                    </div>
+                    <div class="stepTitle">
+                        <p class="stepNumber">Step 3.</p>
+                        <p>Work Experience.</p>
+                    </div>
+                </div>
+                <div class="stepWrapper">
+                    <div class="step">
+                        <div class="stepCircle fourthStep">
+                            <h4>4</h4>
+                        </div>
+                    </div>
+                    <div class="stepTitle">
+                        <p class="stepNumber">Step 4.</p>
+                        <p>Profile Set Up.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightSide">
+            <form id="formId" action="">
+                <div id="personalSlide" class="registrationSlide">
+                    <div class="slideHeader">
+                        <h3>Create Account.</h3>
+                        <p>1/4</p>
+                    </div>
+                    <div class="slideBody">
+                        <div class="nameWrapper inputWrapper">
+                            <p class="outerPlaceholder"><span class="mandatory">*</span> Full Name</p>
+                            <input type="text" id="fullname" class="inputFields personalSlideInput" placeholder="Full Name" required>
+                            <div style="display: none;" class="errorFullnameMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="userNameWrapper inputWrapper">
+                            <p class="outerPlaceholder"><span class="mandatory">*</span> Username</p>
+                            <input type="text" id="username" class="inputFields personalSlideInput" placeholder="Username">
+                            <div style="display: none;" class="errorUsernameMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="emailWrapper inputWrapper">
+                            <p class="outerPlaceholder"><span class="mandatory">*</span> Email</p>
+                            <input type="text" class="inputFields personalSlideInput" id="email" placeholder="Email" required>
+                            <div style="display: none;" class="errorEmailMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="flexWrapper inputWrapper">
+                            <div class="passwordWrapper">
+                                <p class="outerPlaceholder"><span class="mandatory">*</span> Password</p>
+                                <div class="passwordFields passwordInputField">
+                                    <input type="password" id="password" placeholder="Password" >
+                                    <div class="togglePassword">
+                                        <i class="fas seePassword fa-eye"></i>
+                                        <i style="display: none;" class="fas hidePassword fa-eye-slash"></i>
+                                    </div>
+                                </div>
+                                <div style="display: none;" class="errorPasswordMessage errorMessage">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="confirmPasswordWrapper">
+                                <p class="outerPlaceholder"><span class="mandatory">*</span> Confirm Password</p>
+                                <div class="passwordFields personalSlideInput confirmPasswordField">
+                                    <input type="password" id="confirmPassword" placeholder="Confirm Password" >
+                                    <div class="toggleConfirmPassword">
+                                        <i class="fas seeConfirmPassword fa-eye"></i>
+                                        <i style="display: none;" class="fas hideConfirmPassword fa-eye-slash"></i>
+                                    </div>
+                                </div>
+                                <div style="display: none;" class="errorConfirmPasswordMessage errorMessage">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slideFooter">
+                        <!-- <span class="arrowNext"><i class="fas fa-arrow-left"></i></span> -->
+                        <span class="arrowNext firstNextButton"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div id="educationSlide" class="registrationSlide">
+                    <div class="slideHeader">
+                        <h3>Education.</h3>
+                        <p>2/4</p>
+                    </div>
+                    <div class="slideBody">
+                        <div class="schoolNameWrapper inputWrapper">
+                            <p class="outerPlaceholder"><span class="mandatory">*</span> School Name</p>
+                            <div class="schoolWrapper educationFields inputFields">
+                                <input autocomplete="off" type="text" id="schoolName" placeholder="School Name" required>
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="dropDown-schoolName">
+                            </div>
+                            <div style="display: none;" class="errorSchoolnameMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="schoolStatus">
+                            <div class="schoolStatus-item">
+                                <p class="outerPlaceholder">Currently In School.</p>
+                                <label class="checkbox-btn">
+                                    <input id="currentlySchool" type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                            </div>
+                            <div class="schoolStatus-item">
+                                <p class="outerPlaceholder">Completed School.</p>
+                                <label class="checkbox-btn">
+                                    <input id="completedSchool" type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="currentlyInSchool-wrapper">
+                            <div class="expectedYearWrapper inputWrapper">
+                                <p class="outerPlaceholder">Graduation Year</p>
+                                <input type="text" class="inputFields" id="expectedYearField" placeholder="00/11">
+                                <div style="display: none;" class="errorYearDateMessage errorMessage">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="completedSchool-wrapper">
+                            <div class="flexWrapper">
+                                <div class="DegreeWrapper inputWrapper">
+                                    <p class="outerPlaceholder">Degree</p>
+                                    <div class="degreeInputField inputFields">
+                                        <input autocomplete="off" type="text" data-field="degree" id="degree" placeholder="Enter Your Degree">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="dropDown-degree">
+                                        <p class="degree-items">High School Diploma</p>
+                                        <p class="degree-items">Associate Degree</p>
+                                        <p class="degree-items">Bachelor's Degree</p>
+                                        <p class="degree-items">Master's Degree</p>
+                                        <p class="degree-items">Doctoral Degree</p>
+                                    </div>
+                                    <div style="display: none;" class="errorgraduationDateMessage errorMessage">
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="graduatedDate inputWrapper">
+                                    <p class="outerPlaceholder">Date Of Graduation</p>
+                                    <input type="text" class="inputFields" data-field="dateOfGraduation" id="graduation" placeholder="00/11">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="majorWrapper inputWrapper">
+                            <p class="outerPlaceholder"><span class="mandatory">*</span> Major</p>
+                            <input type="text" class="majorInputField educationFields inputFields" id="major" placeholder="Field of Study" required>
+                            <div style="display: none;" class="errorMajorMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="relevantCourseworkWrapper inputWrapper">
+                            <p class="outerPlaceholder">Relevant Coursework</p>
+                            <input type="text" class="inputFields" id="relevantCoursework" placeholder="Relevant Coursework" required>
+                            <div style="display: none;" class="errorRelevantCourseworkMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slideFooter">
+                        <span class="arrowBack educationSlideBack"><i class="fas fa-arrow-left"></i></span>
+                        <span class="arrowNext secondNextButton"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div id="experienceSlide" class="registrationSlide">
+                    <div class="slideHeader">
+                        <h3>Work Experience.</h3>
+                        <p>3/4</p>
+                    </div>
+                    <div class="slideBody">
+                        <div class="flexWrapper">
+                            <div class="careerFieldWrapper inputWrapper">
+                                <p class="outerPlaceholder"><span class="mandatory">*</span> Career Field.</p>
+                                <div class="careerFieldInputField workFields inputFields">
+                                    <input type="text" data-field="careerField" id="careerField" placeholder="Select Career Field" readonly required>
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="dropDown-careerField">
+                                    <p class="careerField-items">Administration and Management</p>
+                                    <p class="careerField-items">Arts, Design, and Entertainment</p>
+                                    <p class="careerField-items">Business and Finance</p>
+                                    <p class="careerField-items">Construction and Architecture</p>
+                                    <p class="careerField-items">culinary Arts</p>
+                                    <p class="careerField-items">Customer Service and Support</p>
+                                    <p class="careerField-items">Education and Training</p>
+                                    <p class="careerField-items">Engineering and Technology</p>
+                                    <p class="careerField-items">Healthcare and Medical</p>
+                                    <p class="careerField-items">Hospitality and Tourism</p>
+                                    <p class="careerField-items">Human Resources</p>
+                                    <p class="careerField-items">Information Technology and Computer Science</p>
+                                    <p class="careerField-items">Legal and Law Enforcement</p>
+                                    <p class="careerField-items">Marketing, Advertising, and Public Relations</p>
+                                    <p class="careerField-items">Media and Communication</p>
+                                    <p class="careerField-items">Non-profit and Community Service</p>
+                                    <p class="careerField-items">Research and Development</p>
+                                    <p class="careerField-items">Sales and Retail</p>
+                                    <p class="careerField-items">Science and Research</p>
+                                    <p class="careerField-items">Social Services and Counseling</p>
+                                    <p class="careerField-items">Sports and Fitness</p>
+                                    <p class="careerField-items">Transportation and Logistics</p>
+                                    <p class="careerField-items">Writing and Content Creation</p>
+                                </div>
+                            </div>
+                            <div class="jobNameWrapper inputWrapper">
+                                <p class="outerPlaceholder"><span class="mandatory">*</span> Occupation</p>
+                                <div class="inputFields workFields jobNameField">
+                                    <input autocomplete="off" type="text" id="jobName" placeholder="Select Job Title?" required>
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="dropDown-jobName">
+                                </div>
+                                <div style="display: none;" class="errorMessage">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skillWrapper inputWrapper">
+                            <div class="skillPlaceholder">
+                                <p class="outerPlaceholder">Add Skills</p>
+                                <p class="chipsLeft"></p>
+                            </div>
+                            <div class="skillWrapperInput">
+                                <input autocomplete="off" type="text" id="skill" class="inputFields" placeholder="Teamwork, Communication, ">
+                                <div id="skillContainer" class="skillChips-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jobXpWrapper inputWrapper">
+                            <div class="addJobXpWrapper">
+                                <div class="addJobXp">
+                                    <i class="fas plusIcon fa-plus"></i>
+                                </div>
+                                <p>Add Experience</p>
+                            </div>
+                            <div class="jobXpItem-container">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slideFooter">
+                        <span class="arrowBack experienceSlideBack"><i class="fas fa-arrow-left"></i></span>
+                        <span class="arrowNext thirdNextButton"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div id="profileSlide" class="registrationSlide">
+                    <div class="slideHeader">
+                        <h3>Set Up Profile.</h3>
+                        <p>4/4</p>
+                    </div>
+                    <div class="slideBody">
+                        <div class="avatarBody">
+                            <div class="uploadOuter">
+                                <span class="dragBox">
+                                    <input type="file" id="uploadUserProfile"  />
+                                </span>
+                                <div id="preview">
+                                    <img class="profilePreview newProfile" src="" alt="">
+                                </div>
+                                <label for="uploadUserProfile" class="btn-primary">Click To Upload</label>
+                            </div>
+                        </div>
+                        <div class="descriptionWrapper inputWrapper">
+                            <p class="outerPlaceholder">Description</p>
+                            <textarea class="inputFields descriptionInput" placeholder="Describe yourself." id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div> 
+                    <div class="slideFooter">
+                        <span class="arrowBack profileSlideBack"><i class="fas fa-arrow-left"></i></span>
+                        <div class="submitBtnWrapper">
+                            <span class="submitBtn">Submit</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https:code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="signUp.js"></script>
+</body>
+</html>

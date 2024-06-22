@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">  
+        <link rel="stylesheet" href="/all.min copy.css">
+        <link rel="stylesheet" href="/animation.css">
+        <link rel="stylesheet" href="/userProfile.css">
+
+        <script defer src="/userProfile.js"></script>
+        <script defer src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="swup" class="transition-up navbar">
+                <div class="logo">Next Step</div>
+
+                <div class="search active">
+                    <i class="fas fa-search"></i>
+                    <input type="search" class="input" placeholder="Search Here ... ">
+                  </div>
+
+                <div class="navicon">
+                    <i class="fas fa-bell naviconMargin"></i>
+                    <button id="modalBtn" class="naviconMargin"><i class="fas fa-cog"></i></button>
+                </div>
+            </div>
+
+            <div id="swup" class="transition-left  sideMenu">
+
+                <div class="menuList">
+                    <div class="sideList">
+                        <div class="sidelistContent">
+                            <a href="/userProfile.html"></a>
+                            <div class="menuIcon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <p>Home</p>
+                            </a> 
+                        
+                        </div>
+                    </div>
+                    <div class="sideList">
+                        <div class="sidelistContent">
+                            <a href="#"></a>
+                            <div class="menuIcon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <p>Notification</p>
+                            </a> 
+                        
+                        </div>
+                    </div>
+                    <div class="sideList">
+                        <div class="sidelistContent">
+                            <a href="#"></a>
+                            <div class="menuIcon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <p>Settings</p>
+                            </a> 
+                        
+                        </div>
+                    </div>
+                    <div class="sideList">
+                        <div class="sidelistContent">
+                            <a href="#"></a>
+                            <div class="menuIcon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <p>Contact</p>
+                            </a> 
+                        
+                        </div>
+                    </div>
+                    <div class="sideList">
+                        <div class="sidelistContent">
+                            <a href="#"></a>
+                            <div class="menuIcon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <p>About</p>
+                            </a> 
+                        
+                        </div>
+                    </div>
+                    <div class="sideList">
+                        <div class="sidelistContent">
+                            <a href="#"></a>
+                            <div class="menuIcon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <p>Logout</p>
+                            </a> 
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sideMenuCredit">
+                    &#169; 2021 Next Step
+                </div>
+            </div>
+ 
+            <div id="simpleModal" class="settingsWrapper">
+                <div class="settingsModal">
+                    <div class="settingsHeader">
+                        <h3>Settings</h3>
+                        <button class="closeBtn"><i class="fas fa-times closeBtn"></i></button>
+                    </div>
+                    <div class="settingsList">
+                        <div class="listIcon">
+                            <p>Account</p>
+                        </div>
+                        <div class="menuAccount">
+                            <div class="accountheader">
+                                <h3>Display</h3><i class="fas fa-arrow-left"></i></div>
+                        </div>
+                        <div class="listIcon">
+                            <p>Profile</p>
+                        </div>
+                        <div class="listIcon">
+                            <p>Password</p>
+                        </div>
+                        <div class="listIcon">
+                            <p>Email</p>
+                        </div>
+                        <div class="listIcon">
+                            <p>User Name</p>
+                        </div>
+                        <div class="listIcon">
+                            <p>Social</p>
+                        </div>
+                        <div class="listIcon">
+                            <p>Blocking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="creditModalWrapper">
+                <div class="creditModal">
+                    <div class="creditModalHeader">
+                        <h3>Credit</h3>
+                        <div class="userCredit">
+                            <p>Your Credit</p>
+                            <h3>31,039c</h3>
+                        </div>
+                    </div>
+                    <div class="credit creditBox">
+                        <div class="creditFlexHeader"><h3>Credit</h3> <h4>305.00$</h4></div>
+                        <p>Bosster One</p>
+                        <div class="barWrapper">
+                            <div class="outterBar">
+                                <div style="width: 90%;" class="innerBar"></div>
+                            </div>
+                            <div class="boosterIcon"></div>
+                        </div>
+                 
+                        <div class="barWrapper">
+                            <div class="outterBar">
+                                <div style="width: 50%;" class="innerBar"></div>
+                            </div>
+                            <div class="boosterIcon"></div>
+                        </div>
+                        <p>Bosster One</p>
+                        <div class="barWrapper">
+                            <div class="outterBar">
+                                <div style="width: 20%;" class="innerBar"></div>
+                            </div>
+                            <div class="boosterIcon"></div>
+                        </div>
+                    </div>
+                    <div class="purpose creditBox">
+                        <h3>Purpose</h3>
+                        <div class="purposeParagraph">
+                            <h5>What is Credit</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus ea velit nemo? Itaque, vel quo. Maiores, minima quisquam! Doloribus?</p>
+                        </div>
+                        <div class="purposeParagraph">
+                            <h5>How to get Credit</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus ea velit nemo? Itaque, vel quo. Maiores, minima quisquam! Doloribus?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="swup" class="transition-right dashboard">
+                <div class="dashboardHeader">
+                    <h3>Dashboard</h3>
+                </div>
+                <div class="dashboardGrid">
+                    <div class="portfolio">
+
+                            <h3>portfolio</h3>
+                            <p>and other stuff</p>
+                    </div>
+                    <a href="">             
+                    <div class="gridProfile">
+                        <a href="#">
+                        <div class="profileWrapper">
+                                <div class="profile">
+                                    <img class="profileImage" src="/images/profilePic.png" alt="">
+                                </div>
+                            
+                                <div class="profileHeader">
+                                    <h3>Signal Man</h3>
+                                    <p>Ajman, UAE</p>
+                                </div>
+
+                                <div class="follow">
+                                    <div class="followers">
+                                        <h2>401</h2>
+                                        <p>Followers</p>
+                                    </div>
+                                    <div class="following">
+                                        <h2>101</h2>
+                                        <p>Following</p>
+                                    </div>
+                                </div>
+
+                                <div class="userInfo">
+                    
+                                
+                                    <div class="userDescription">
+                                        <p>My name is Abdullah, I'm a backend web developer studying in college and while I've accomplished my amazing feats, I haven't and could not make two women from a bakery smile. Otherwise I guess I'm pretty cool.</p>
+                                    </div>
+                                </div>
+
+                                <div class="userSocial">
+                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-facebook-f"></i>
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="chat">
+                            <h3>Friends</h3>
+                            <div class="comment">
+                                <div class="chatprofile">
+                                    <!-- <div class="proImg oneimg"></div> -->
+                                    <img class="proImg oneimg" src="/images/userProfileImageOne.jpg" alt="friend-profile-avatar">
+                                </div>
+                                <div class="commentText">
+                                    <h5>M.J.</h5>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="chatprofile">
+                                    <img class="proImg twoimg" src="/images/userProfileImageTwo.jpg">
+                                </div>
+                                <div class="commentText">
+                                    <h5>Frank Herbert</h5>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="chatprofile">
+                                    <img class="proImg threeimg" src="/images/userProfileImageThree.webp" alt="friend-profile-avatar">
+                                </div>
+                                <div class="commentText">
+                                    <h5>ECMA Script</h5>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="chatprofile">
+                                    <img class="proImg fourimg" src="/images/userProfileImageFour.jpg" alt="friend-profile-avatar">
+                                </div>
+                                <div class="commentText">
+                                    <h5>E.C.</h5>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="chatprofile">
+                                    <img class="proImg fiveimg" src="/images/userProfileImageFive.jpg" alt="friend-profile-avatar">
+                                </div>
+                                <div class="commentText">
+                                    <h5>Da man</h5>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="credit">
+                            <div class="creditFlexHeader"><h3>Credit</h3> <h4>305.00$</h4></div>
+                            <div class="barWrapper">
+                                <div class="barContainer">
+                                    <p>Booster One</p>
+                                    <div class="outterBar">
+                                        <div style="width: 80%;" class="innerBar"></div>
+                                    </div>
+                                </div>
+                                <div class="boosterIcon"></div>
+                            </div>
+                            <div class="barWrapper">
+                                <div class="barContainer">
+                                    <p>Booster Two</p>
+                                    <div class="outterBar">
+                                        <div style="width: 60%;" class="innerBar"></div>
+                                    </div>
+                                </div>
+                                <div class="boosterIcon"></div>
+                            </div>
+                            <div class="barWrapper">
+                                <div class="barContainer">
+                                    <p>Booster Three</p>
+                                    <div class="outterBar">
+                                        <div style="width: 40%;" class="innerBar"></div>
+                                    </div>
+                                </div>
+                                <div class="boosterIcon"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/all.min copy.js"></script>
+    </body>
+</html>

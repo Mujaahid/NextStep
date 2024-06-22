@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- <link rel="stylesheet" th:href="@{/assets/css/portfolio/personal/videoPreview.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/portfolio/personal/portfolio.css}">
+    <link rel="stylesheet" th:href="@{/assets/fontawesome/all.min.css}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="./portfolio.css">
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+    <style>
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .emptyGallery {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="image_gallery_create_wrapper">
+        <div class="image_gallery_create">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Create Image Gallery</p>
+                        <h3>Create Gallery</h3>
+                    </div>
+                    <div class="xBtn cancelImageGallery">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadGaller_wrapper uploadWrapper">
+                        <input type='file' id="readImageGalleryUrl">
+                        <label for="readImageGalleryUrl">Click To Upload</label>
+                    </div>
+                    <div class="uploadGallery_slide">
+                        <div class="uploadGallery">
+                            <div class="uploadGallery_preview">
+                                <img class="uploadGallery_image_preview" accept="image/png, image/jpeg" id="uploadedImageGallery" src="" alt="">
+                            </div>
+                            <div class="uploadGallery_body">
+                                <div class="uploadGallery_input">
+                                    <input class="titleInput inputModal" placeholder="Title of Project" type="text">
+                                </div>
+                                <div class="uploadGallery_input">
+                                    <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn cancelImageGallery">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="video_gallery_create_wrapper">
+        <div class="video_gallery_create">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Create Video Playlist</p>
+                        <h3>Create Video Playlist</h3>
+                    </div>
+                    <div class="xBtn cancelVideoGallery">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadVideo_wrapper uploadWrapper">
+                        <input type="file" id="read-VideoGallery-Url">
+                        <label for="read-VideoGallery-Url">Click To Upload</label>
+                    </div>
+                    <div class="uploadGallery_slide">
+                        <div class="uploadPlaylist">
+                            <div class="uploadPlaylist_preview">
+                                <video id="upload-videoGallery" src="" controls></video>
+                            </div>
+                            <div class="uploadGallery_body">
+                                <div class="uploadGallery_input">
+                                    <input class="titleInput inputModal" placeholder="Title of Project" type="text">
+                                </div>
+                                <div class="uploadGallery_input">
+                                    <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uploadPlaylist">
+                            <div class="uploadPlaylist_preview">
+                                <img class="uploadPlaylist_video_preview" src="../images/thumbnails/thumbnailThree.webp" alt="">
+                            </div>
+                            <div class="uploadGallery_body">
+                                <div class="uploadGallery_input">
+                                    <input class="titleInput inputModal" placeholder="Title of Project" type="text">
+                                </div>
+                                <div class="uploadGallery_input">
+                                    <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn cancelVideoGallery">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="resume_gallery_create_wrapper">
+        <div class="resume_gallery_create">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Create File Folder</p>
+                        <h3>Create File Folder</h3>
+                    </div>
+                    <div class="xBtn cancelResumeGallery">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadFile_wrapper uploadWrapper">
+                        <input type="file" id="read-ResumeGallery-Url">
+                        <label for="read-ResumeGallery-Url">Click To Upload</label>
+                    </div>
+                    <div class="uploadGallery_slide">
+                        <div class="uploadFolder">
+                            <div class="uploadFolder_preview">
+                                <img class="uploadFolder_resume_preview" id="upload-resumeoGallery" src="" alt="">
+                            </div>
+                            <div class="uploadGallery_body">
+                                <div class="uploadGallery_input">
+                                    <input class="titleInput inputModal" placeholder="Title of Project" type="text">
+                                </div>
+                                <div class="uploadGallery_input">
+                                    <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn cancelResumeGallery">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Gallery Modals -->
+
+    <div class="image_deleteGallery_wrapper">
+        <div class="image_deleteGallery">
+            <div class="imageGallery_preview previewModal">
+                <div class="inner_imageGallery_preview">
+                    <div class="imageGallery_preview_one">
+                        <img src="../images/fileImages/fileImage15.jpg" alt="">
+                    </div>
+                    <div class="imageGalleryflex">
+                        <div class="imageGallery_preview_two">
+                            <img src="../images/fileImages/fileImage11.jpg" alt="">
+                        </div>
+                        <div class="imageGallery_preview_three">
+                            <img src="../images/fileImages/fileImage12.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteGallery_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video_deleteGallery_wrapper">
+        <div class="video_deleteGallery">
+            <div class="videoGallery_preview">
+                <div class="videoPlaylist_preview_one videoPlaylist_preview_item">
+                    <img src="../images/fileImages/fileImage15.jpg" alt="">
+                </div>
+                <div class="videoPlaylist_preview_two videoPlaylist_preview_item">
+                    <img src="../images/fileImages/fileImage11.jpg" alt="">
+                </div>
+                <div class="videoPlaylist_preview_three videoPlaylist_preview_item">
+                    <img src="../images/fileImages/fileImage12.jpg" alt="">
+                </div>
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeletePlaylist_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resume_deleteGallery_wrapper">
+        <div class="resume_deleteGallery">
+            <div class="resumeGallery_preview">
+                <div class="resumeFile_preview_one resumeFile_preview_item">
+                    <img src="../images/fileImages/fileImageFour.jpg" alt="">
+                </div>
+                <div class="resumeFile_preview_two resumeFile_preview_item">
+                    <img src="../images/fileImages/fileImageFive.jpeg" alt="">
+                </div>
+                <div class="resumeFile_preview_three resumeFile_preview_item">
+                    <img src="../images/fileImages/fileImageSix.jpeg" alt="">
+                </div>
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteFile_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Gallery Modals -->
+
+    <!-- <div class="image_editGallery_wrapper">
+        <div class="image_editGallery">
+            <form action="">
+                <div class="imageGallery_preview previewModal">
+                    <div class="inner_imageGallery_preview">
+                        <div class="imageGallery_preview_one">
+                            <img src="../images/fileImages/fileImage15.jpg" alt="">
+                        </div>
+                        <div class="imageGalleryflex">
+                            <div class="imageGallery_preview_two">
+                                <img src="../images/fileImages/fileImage11.jpg" alt="">
+                            </div>
+                            <div class="imageGallery_preview_three">
+                                <img src="../images/fileImages/fileImage12.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal editTextarea inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn cancelEditGallery_btn">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="video_editGallery_wrapper">
+        <div class="video_editGallery">
+            <form action="">
+                <div class="videoGallery_preview">
+                    <div class="videoPlaylist_preview_one videoPlaylist_preview_item">
+                        <img src="../images/fileImages/fileImage15.jpg" alt="">
+                    </div>
+                    <div class="videoPlaylist_preview_two videoPlaylist_preview_item">
+                        <img src="../images/fileImages/fileImage11.jpg" alt="">
+                    </div>
+                    <div class="videoPlaylist_preview_three videoPlaylist_preview_item">
+                        <img src="../images/fileImages/fileImage12.jpg" alt="">
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal editTextarea inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn cancelEdit_video_Gallery_btn">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="resume_editGallery_wrapper">
+        <div class="resume_editGallery">
+            <form action="">
+                <div class="resumeGallery_preview">
+                    <div class="resumeFile_preview_one resumeFile_preview_item">
+                        <img src="../images/fileImages/fileImageFour.jpg" alt="">
+                    </div>
+                    <div class="resumeFile_preview_two resumeFile_preview_item">
+                        <img src="../images/fileImages/fileImageFive.jpeg" alt="">
+                    </div>
+                    <div class="resumeFile_preview_three resumeFile_preview_item">
+                        <img src="../images/fileImages/fileImageSix.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal editTextarea inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn cancelEdit_file_Gallery_btn">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> -->
+    <!-- Edit Gallery Modals -->
+
+    <div class="image_upload_modal_wrapper">
+        <div class="image_upload_modal">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Upload An Image</p>
+                        <h3>Upload Single Image</h3>
+                    </div>
+                    <div class="xBtn close_singleImageUpload">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadGaller_wrapper uploadWrapper">
+                        <input type="file" id="readSingleImageUrl">
+                        <img id="uploadSingleImage" src="#" alt="">
+                    </div>
+                    <div class="singleImage-btn">
+                        <label for="readSingleImageUrl">Click To Upload</label>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn close_singleImageUpload">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="video_upload_modal_wrapper">
+        <div class="video_upload_modal">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Upload A Video</p>
+                        <h3>Upload Single Video</h3>
+                    </div>
+                    <div class="xBtn close_singleVideoUpload">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadVideo_wrapper uploadWrapper">
+                        <input type="file" accept="video/mp4,video/x-m4v,video/*" id="readSingleVideoUrl">
+
+                        <video id="uploadSingleVideo" controls src=""></video>
+                    </div>
+                    <div class="singleVideo-btn">
+                        <label for="readSingleVideoUrl">Click To Upload</label>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn close_singleVideoUpload">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="file_upload_modal_wrapper">
+        <div class="file_upload_modal">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Upload A File</p>
+                        <h3>Upload Single File</h3>
+                    </div>
+                    <div class="xBtn close_singleFileUpload">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadFile_wrapper uploadWrapper">
+                        <input type="file" id="readSingleResumeUrl">
+                        <img id="uploadSingleResume" src="#" alt="">
+                    </div>
+                    <div class="singleResume-btn">
+                        <label for="readSingleResumeUrl">Click To Upload</label>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn close_singleFileUpload">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Single Upload Modal -->
+
+    <div class="image_delete_wrapper">
+        <div class="image_delete">
+            <div class="image_delete_preview singlePreview">
+                <img src="../images/fileImages/fileImage13.jpg" alt="">
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteImage_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video_delete_wrapper">
+        <div class="video_delete">
+            <div class="video_delete_preview singlePreview">
+                <img src="../images/thumbnails/thumbnailTen.webp" alt="">
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteVideo_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resume_delete_wrapper">
+        <div class="resume_delete">
+            <div class="resume_delete_preview singlePreview">
+                <img src="../images/fileImages/fileImageEight.webp" alt="">
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteResume_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Single delete -->
+
+    <div class="image_edit_wrapper">
+        <div class="image_edit">
+            <div class="image_delete_preview singlePreview">
+                <img src="../images/fileImages/fileImage13.jpg" alt="">
+            </div>
+            <div class="modal_body">
+                <div class="inputBlock">
+                    <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                </div>
+                <div class="inputBlock">
+                    <textarea class="TextareaModal editTextarea inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelEditImage_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video_edit_wrapper">
+        <div class="video_edit">
+            <div class="video_delete_preview singlePreview">
+                <img src="../images/thumbnails/thumbnailTen.webp" alt="">
+            </div>
+            <div class="modal_body">
+                <div class="inputBlock">
+                    <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                </div>
+                <div class="inputBlock">
+                    <textarea class="TextareaModal editTextarea inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelEditVideo_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="resume_edit_wrapper">
+        <div class="resume_edit">
+            <div class="resume_delete_preview singlePreview">
+                <img src="../images/fileImages/fileImageEight.webp" alt="">
+            </div>
+            <div class="modal_body">
+                <div class="inputBlock">
+                    <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                </div>
+                <div class="inputBlock">
+                    <textarea class="TextareaModal editTextarea inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelEditResume_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Single -->
+    <!-- ^^ Modals ^^ -->
+
+    <div class="nav">
+        <div class="logoWrapper phoneSize">
+            <div class="logo">Next Step</div>
+        </div>
+
+        <button id="dark">
+            <i class="fas fa-sun"></i>
+            <i class="moon far fa-moon"></i>
+        </button>
+
+        <div class="search active">
+            <i class="fas fa-search"></i>
+            <input type="search" class="input" placeholder="Search Here ...">
+        </div>
+
+        <div class="navicon phoneSize">
+            <button id="notificationOpenBtn" class="naviconMargin changeColor"><i class="fas fa-bell"></i></button>
+
+            <div class="miniProfile">
+                <a class="changeColor" th:href="@{|/users/profile/update/${userId}|}">
+                <h5>Signal Man</h5>
+                <div class="miniProfileImage changeBorderColor">
+                    <img th:src="@{|${profileImg}|}" alt="videosprofile picture">
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="userBio">
+        <div class="userProfile">
+            <img th:src="@{|${profileImg}|}" src="https://yt3.ggpht.com/ytc/AKedOLSkLXgltX9qgmwaLmiQZT62HVawKpv2xXkSKyAeHw=s176-c-k-c0x00ffffff-no-rj" alt="">
+        </div>
+        <h3 th:text="${username}">The Beauty Of</h3>
+        <p th:text="${career}">cinematographer</p>
+    </div>
+    <div class="mainGallery">
+        <div class="main_gallery_header">
+            <span id="photosBtn" class="switch_gallery_btn">Images</span>
+            <span id="videosBtn" class="switch_gallery_btn">Videos</span>
+            <span id="resumeBtn" class="switch_gallery_btn">Resume</span>
+        </div>
+
+        <div class="main_image_gallery_wrapper">
+            <div class="imageWrapper">
+                <span class="createGalleryItems ImageGallery_btn">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <div th:each="g : ${galleries}" class="galleryItem">
+                    <a href="./imageGallery/imageGallery.html">
+                        <div class="gallery_item_images">
+                            <div class="gallery_image">
+                                <div class="gallery_image_icon gii">
+                                    <i class="far fa-folder-open"></i>
+                                </div>
+                                <div class="gallery_image_preview">
+                                    <div class="image_preview_main ImagePreview">
+                                        <img src="https://cdna.artstation.com/p/assets/images/images/019/205/220/4k/eugene-korolev-dbc-10-otbor.jpg?1562501839" alt="">
+                                    </div>
+                                    <div class="image_preview_sigma ImagePreview">
+                                        <img src="https://cdna.artstation.com/p/assets/images/images/008/130/934/4k/eugene-korolev-kosa.jpg?1510680458" alt="">
+                                    </div>
+                                    <div class="image_preview_beta ImagePreview">
+                                        <img src="https://cdnb.artstation.com/p/assets/images/images/008/130/911/4k/eugene-korolev-petals3.jpg?1510680410" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery_item_title">
+                            <h3 th:text="${g.galleryName}">Hello there</h3>
+
+                            <p>Images: <span th:text="${g.getGallerySize(request, g.galleryID, FAOService)}"></span></p>
+                        </div>
+                    </a>
+                    <div class="gallery_item_footer">
+                        <div class="footerLeft">
+                            <div class="gallery_item_icons editImageGallery_btn">
+                                <i class="far fa-edit"></i>
+                            </div>
+                            <div class="gallery_item_icons">
+                                <i class="fas fa-thumbs-up galleryIcon"></i>
+                                <p>32,052</p>
+                            </div>
+                            <div class="gallery_item_icons">
+                                <i class="fas fa-thumbs-down galleryIcon"></i>
+                                <p>52</p>
+                            </div>
+                        </div>
+                        <div class="footerRight deleteImageGallery_btn">
+                            <i class="fas fa-trash-alt trashIcon"></i>
+                        </div>
+                    </div>
+                </div> 
+                <div th:each="g : ${galleries}" class="galleryItem">
+                    <a href="./imageGallery/imageGallery.html">
+                        <div class="gallery_item_images">
+                            <div class="gallery_image">
+                                <div class="gallery_image_icon gii">
+                                    <i class="far fa-folder-open"></i>
+                                </div>
+                                <div th:if="${galleryImg.generateRandomImageURL(request, g.galleryID, FAOService) != 'empty'}" class="gallery_image_preview">
+                                        <div class="image_preview_main ImagePreview">
+                                            <img th:src="${galleryImg.generateRandomImageURL(request, g.galleryID, FAOService)}" alt="">
+                                        </div>
+                                        <div class="image_preview_sigma ImagePreview">
+                                            <img th:src="${galleryImg.generateRandomImageURL(request, g.galleryID, FAOService)}" alt="">
+                                        </div>
+                                        <div class="image_preview_beta ImagePreview">
+                                            <img th:src="${galleryImg.generateRandomImageURL(request, g.galleryID, FAOService)}" alt="">
+                                        </div>
+                                    </div>
+                                <div th:unless="${galleryImg.generateRandomImageURL(request, g.galleryID, FAOService) != 'empty'}" style="display: flex; justify-content: center;" class="gallery_image_preview">
+                                    <p class="emptyGallery">No Images :(</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery_item_title">
+                            <h3 th:text="${g.galleryName}">Hello there</h3>
+    
+                            <p>Images: <span th:text="${g.getGallerySize(request, g.galleryID, FAOService)}"></span></p>
+                        </div>
+                    </a>
+                        <div class="gallery_item_footer">
+                            <div class="footerLeft">
+                                <div class="gallery_item_icons open_edit_image_collection">
+                                    <i class="far fa-edit"></i>
+                                </div>
+                                <div class="gallery_item_icons">
+                                    <i class="fas fa-thumbs-up galleryIcon"></i>
+                                    <p>32,052</p>
+                                </div>
+                                <div class="gallery_item_icons">
+                                    <i class="fas fa-thumbs-down galleryIcon"></i>
+                                    <p>52</p>
+                                </div>
+                            </div>
+                            <div class="footerRight open_image_collection_delete">
+                                <i class="fas fa-trash-alt trashIcon"></i>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="image_gallery_wrapper">
+                <div class="galleryBodyHeading">
+                        <div class="flexOptOne">
+                            <span><i class="fas fa-edit headingIcons"></i></span>
+                        </div>
+                        <div class="flexOptTwo">
+                            <h3>Name Of Gallery</h3>
+                            <p>Images</p>
+                        </div>
+                        <div class="flexOptThree">
+                            <span class="uploadBtn singleUploadImage_btn"><p>Upload</p></span>
+                        </div>
+                </div>
+                <div class="image_gallery">
+                        <!-- <div th:each="image : ${images}" class="image_items">
+                            <div class="image_thumbnail">
+                                <a th:href="@{|/users/images/image=${image.ImageId}|}">
+                                    <img th:src="@{|${image.filePath}|}" alt="@{|${image.imageDesc}|}">
+                                </a>
+                            </div>
+                            <div class="image_attribute">
+                                <h3 th:text="${image.imageName}"></h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p th:text="${image.uploadDateStr}"></p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    <div class="image_items">
+                        <div class="image_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteImage_btn"></i>
+                            </div>
+                            <a class="ImageItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                               <img src="../images/fileImages/fileImage12.jpg" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_video_gallery_wrapper">
+            <div class="video_playlist_wrapper">
+                <span class="createVideoGalleryItems VideoGallery_btn">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <div class="playlist_item">
+                    <a href="./videoGallery/videoGallery.html">
+                        <div class="playlist_preview">
+                            <div class="previewItems previewOne">
+                                <img src="../../images/thumbnails/thumbnailOne.webp" alt="">
+                            </div>
+                            <div class="previewItems previewTwo">
+                                <img src="../../images/thumbnails/thumbnailThree.webp" alt="">
+                            </div>
+                            <div class="previewItems previewThree">
+                                <img src="../../images/thumbnails/thumbnailSeven.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="gallery_item_title">
+                            <h3 th:text="${g.galleryName}">Hello there I'm testing a longer title</h3>
+
+                            <p>Videos: <span th:text="${g.getGallerySize(request, g.galleryID, FAOService)}"></span></p>
+                        </div>
+                    </a>
+                    <div class="gallery_item_footer">
+                        <div class="footerLeft">
+                            <a href="./videoGallery/videoGallery.html">
+                                <div class="gallery_item_icons editVideoGallery_btn">
+                                    <i class="far fa-edit"></i>
+                                </div>
+                            </a>
+                                <div class="gallery_item_icons">
+                                    <i class="fas fa-thumbs-up galleryIcon"></i>
+                                    <p>32,052</p>
+                                </div>
+                                <div class="gallery_item_icons">
+                                    <i class="fas fa-thumbs-down galleryIcon"></i>
+                                    <p>52</p>
+                                </div>
+                        </div>
+                        <div class="footerRight deleteVideoGallery_btn">
+                            <i class="fas fa-trash-alt trashIcon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="video_gallery_Wrapper">
+                <div class="galleryBodyHeading">
+                    <div class="flexOptOne">
+                        <span><i class="fas fa-edit headingIcons"></i></span>
+                    </div>
+                    <div class="flexOptTwo">
+                        <h3>Name Of Gallery</h3>
+                        <p>Videos</p>
+                    </div>
+                    <div class="flexOptThree">
+                        <span class="uploadBtn singleUploadVideo_btn"><p>Upload</p></span>
+                    </div>
+                </div>
+                <div class="video_gallery">
+                    <!-- <div class="video_items" th:each="video : ${videos}">
+                        <i class="fas fa-trash-alt footerRight open_video_collection_delete trashIcon"></i>
+                        <a class="videoLink" th:href="@{|/users/videos/video=${video.videoID}|}">
+                            <div class="video_thumbnail">
+                                    <video th:src="@{|${video.videoUrl}|}"></video>
+                                <div class="timeLine">
+                                    <p>3:90</p>
+                                </div>
+                            </div>
+                            <div class="video_attribute">
+                                <h3 th:text="${video.videoName}"></h3>
+                                <div class="flex_video_attribute">
+                                    <p>32k views</p>
+                                    <p th:text="${video.uploadDateStr}"></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+
+                    <div class="video_items">
+                        <div class="video_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteVideo_btn"></i>
+                            </div>
+                            <div class="vid_timer">
+                                <p>3:23</p>
+                            </div>
+                            <a class="VideoItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                               <img src="../images/thumbnails/thumbnailThree.webp" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_Resume_gallery_wrapper">
+            <div class="folder_playlist_wrapper">
+                <span class="createResumeGalleryItems ResumeGallery_btn">
+                    <i class="fas fa-plus"></i>
+                </span>
+                <div class="folder_item">
+                    <a href="">
+                        <div class="folder_preview">
+                            <div class="folderPreviewItems folderPreviewOne">
+                                <img src="../images/fileImages/fileImageEight.webp" alt="">
+                            </div>
+                            <div class="folderPreviewItems folderPreviewTwo">
+                                <img src="../images/fileImages/fileImage14.jpg" alt="">
+                            </div>
+                            <div class="folderPreviewItems folderPreviewThree">
+                                <img src="../images/fileImages/fileImageNine.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="gallery_item_title">
+                            <h3 th:text="${g.galleryName}">Hello there</h3>
+
+                            <p>Images: <span th:text="${g.getGallerySize(request, g.galleryID, FAOService)}"></span></p>
+                        </div>
+                    </a>
+                    <div class="gallery_item_footer">
+                        <div class="footerLeft">
+                            <div class="gallery_item_icons editFileGallery_btn">
+                                    <i class="far fa-edit"></i>
+                            </div>
+                            <div class="gallery_item_icons">
+                                <i class="fas fa-thumbs-up "></i>
+                                <p>32,052</p>
+                            </div>
+                            <div class="gallery_item_icons">
+                                <i class="fas fa-thumbs-down galleryIcon"></i>
+                                <p>52</p>
+                            </div>
+                        </div>
+                        <div class="footerRight deleteResumeGallery_btn">
+                                <i class="fas fa-trash-alt trashIcon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="resume_galley_wrapper">
+                <div class="galleryBodyHeading">
+                    <div class="flexOptOne">
+                        <span><i class="fas fa-edit headingIcons"></i></span>
+                    </div>
+                    <div class="flexOptTwo">
+                        <h3>Name Of Gallery</h3>
+                        <p>Videos</p>
+                    </div>
+                    <div class="flexOptThree">
+                        <span class="uploadBtn singleUploadFile_btn"><p>Upload</p></span>
+                    </div>
+                </div>
+                <div class="resume_gallery">
+                    <!-- <div th:each="docs : ${docs}" class="resume_item">
+                        <a href="#">
+                            <div class="resume_preview">
+                                <div class="open_video_delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </div>
+                                <img th:src="@{${docs.thumbnailURL}}" alt="">
+                            </div>
+                            <div class="resume_attribute">
+                                <h3 th:text="${docs.docName}"></h3>
+                                <div class="flex_resume_attribute">
+                                    <p>32k views</p>
+                                    <p th:text="${docs.uploadDateStr}"></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+
+                    <div class="resume_item">
+                        <div class="resume_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteResume_btn"></i>
+                            </div>
+                            <a class="ResumeItemLink" href="#">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="../images/fileImages/fileImageFive.jpeg" alt="">
+                            </a>
+                        </div>
+                        <div class="resume_attribute">
+                            <h3>Saint Maud</h3>
+                            <div class="flex_image_attribute">
+                                <p>32k views</p>
+                                <p>1 week ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./portfolio.js"></script>
+    <!-- <script th:src="@{/assets/js/profile_page/portfolio.js}"></script> -->
+</body>
+</html>

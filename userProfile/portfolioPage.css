@@ -1,0 +1,107 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: #e6eef8;
+}
+.mainWrapper {
+    color: #8F9BB4;
+}
+.mainNav {
+    background: #e6eef8;
+    box-shadow:  2px 2px 10px #BCCAE4, -5px -5px 16px #ffffff;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    background: #e6eef8;
+    color: #8F9BB4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profileWrapper {
+    margin-bottom: 2em;
+}
+.profile {
+    margin: 1em auto;
+    height: 100px;
+    width: 100px;
+    border: #e6eef8 solid 7px;
+    border-radius: 50px;
+    background: #e6eef8;
+    box-shadow:  4px 4px 10px #BCCAE4,  4px 4px 10px #ffffff;
+}
+.profileImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    background-color: #cccccc;
+}
+.profileHeader {
+    text-align: center;
+    padding-top: 10px;
+    color: #8F9BB4;
+}
+.profileHeader p{
+    padding-top: 5px;
+}
+.follow {
+    color: #8F9BB4;
+    padding-top: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+.userSocial {
+    margin: 1em 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.portfolioNav {
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    background: #e6eef8;
+    box-shadow:  inset 4px 4px 10px #d5dff0,  4px 4px 10px #ecf2f7;
+}
+.portfolioNavIcon {
+    text-align: center;
+    padding: 1em 0px;
+}
+.portfolioNavIcon p{
+    padding-top: 0.5em;
+}
+
+.portfolioGrid {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.resume {
+    border-radius: 10px;
+    margin: 2em auto;
+    width: 290px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e6eef8;
+    box-shadow:  2px 2px 10px #BCCAE4, -5px -5px 16px #ffffff;
+}
+.resume p{
+    padding: 1em;
+}
+.resume:hover {
+    color: #cf4545;
+    cursor: pointer;
+    transition: 200ms;
+    box-shadow:  1px 1px 5px #BCCAE4, -1px -1px 8px #ffffff;
+}

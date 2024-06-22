@@ -1,0 +1,221 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: var(--primary-color);
+    color: #8E9BB4;
+}
+:root {
+    --primary-color: #e6eef8;
+    --secondary-color: #cf4545;
+    --light-neu-color: #ffffff;
+    --dark-neu-color: #BCCAE4;
+}
+
+
+
+.video_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10em auto;
+    width: 640px;
+}
+.video_player {
+    margin: 1em;
+    width: 640px;
+    height: 360px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 3px solid var(--primary-color);
+    box-shadow:  5px 5px 10px var(--dark-neu-color), -5px -5px 10px var(--light-neu-color);
+}
+
+.outer_bar {
+    background: var(--dark-neu-color);
+    box-shadow:  5px 5px 14px var(--dark-neu-color),  -5px -5px 14px var(--light-neu-color);
+    height: 7px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.inner_bar {
+    height: 100%;
+    border-radius: 50px;
+}
+.progress_bar_one {
+    transition: 300ms;
+    background: linear-gradient(90deg, #fd9271, #F9516D 100%);
+}
+
+
+.progressAreaTime {
+    position: absolute;
+    left: var(--x);
+    transform: translateX(-50%);
+    bottom: 60px;
+    width: 60px;
+    text-align: center;
+    padding: 5px 10px;
+    color: #8F9BB4;
+    font-size: 14px;
+    background: var(--primary-color);
+    border-radius: 20px;
+    z-index: 1;
+    display: none;
+    cursor: pointer;
+}
+.progressAreaTime::before {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    z-index: -1;
+}
+
+
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    transition: 300ms;
+    transform: translateY(60px);
+    background: var(--primary-color);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.control-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls-left, .controls-right {
+    display: flex;
+    align-items: center;
+}
+/* .video_player:hover .controls {
+    transition: 300ms;
+    opacity: 1;
+    transform: translateY(0px);
+    opacity: 1;
+} */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play_pause {
+    width: 20px;
+    margin: auto;
+    text-align: center;
+}
+.icon {
+    font-size: 18px;
+    margin: 10px 10px 0px 10px;
+}
+.icon:hover {
+    color: #cf4545;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.playBtn {
+    display: block;
+}
+.pauseBtn {
+    display: none;
+}
+
+.volume {
+    width: 30px;
+    display: block;
+}
+.volumeNone {
+    width: 30px;
+    display: none;
+}
+.volume_wrapper {
+    display: flex;
+    align-items: center;
+}
+.volume_range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0px;
+    height: 3px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #cf4545;
+    background: #8F9BB4;
+    transition: 300ms;
+}
+.volume_range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    background: #8F9BB4;
+    width: 12px;
+    height: 12px;
+    border: none;
+    outline: none;
+}
+.volume_wrapper:hover .volume_range {
+    display: inline-block;
+    pointer-events: auto;
+}
+.volume_wrapper:hover .volume_range{
+    opacity: 1;
+    width: 60px;
+    transition: 300ms;
+}
+
+.timer {
+    padding: 10px 5px 0px 5px;
+}
+.timer span {
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+}
+
+.settings {
+    background: var(--primary-color);
+    border-radius: 20px;
+    position: absolute;
+    right: 25px;
+    bottom: 62px;
+    width: 200px;
+    height: 250px;
+    overflow-y: scroll;
+    padding: 10px;
+    display: none;
+}
+.playback span {
+    font-size: 12px;
+}
+.playback ul li{
+    margin-top: 1em;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 33px;
+    display: block;
+    border-radius: 15px;
+}
+.playback ul li:hover {
+    background: var(--dark-neu-color);
+    transition: 300ms;
+    color: #cf4545;
+}
+

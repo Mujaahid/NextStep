@@ -1,0 +1,31 @@
+body {
+
+}
+.transition-left {
+    transform: translateX(0);
+    transition: 500ms;
+}
+html.is-animating .transition-left {
+    transform: translateX(-100%);
+}
+
+.transition-right {
+    transform: translateX(0);
+    transition: 500ms;
+}
+html.is-animating .transition-right {
+    transform: translateX(100%);
+}
+
+
+.transition-up {
+    transform: translateY(0);
+    transition: 500ms;
+}
+html.is-animating .transition-up {
+    transform: translateY(-100%);
+}
+
+
+
+

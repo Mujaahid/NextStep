@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/profile.css">
+    <link rel="stylesheet" href="/all.min copy.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body>
+    <div id="swup"  class="mainWrapper">
+        <!-- <div class="nav">
+            <div class="logoWrapper phoneSize">
+                <div class="logo" th:style="|color: ${student.profileTheme}|">Next Step</div>
+            </div>
+    
+            <div class="search active">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here ...">
+            </div>
+    
+            <div class="navicon phoneSize" th:style="|color: ${student.profileTheme}|">
+                <button id="notificationOpenBtn" class="naviconMargin"><i class="fas fa-bell"></i></button>
+    
+                <div class="miniProfile">
+                    <a href="">
+                    <h5 th:text="${student.username}" th:style="|color: ${student.profileTheme}|"></h5>
+                    <div class="miniProfileImage">
+                        <img th:src="@{|/users/${student.studentId}.jpg|}" alt="">
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div> -->
+        <div class="">
+        <form class="profileWrapper" action="POST">
+            <div class="transition-left mainProfileModal">
+                <div class="modalAttribute">
+                    <a href="/dashboard.html">
+                    <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h3>Edit Profile</h3>
+                </div>
+                <div class="uploadImg">
+                    <div class="uploadIcon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <div class="drop-zone">
+                        <span class="drop-zone__prompt"><i class="fas fa-plus"></i></span>
+                        <input type="file" name="file" class="drop-zone__input">
+                    </div>
+                    <div class="avatarText">
+                        <span class="drop-zone-under-prompt">Change Avatar</span>
+                    </div>
+                </div>
+                <div class="profileTitle">
+                    <h3>Signal Man</h3>
+                    <p>Programmer</p>
+                </div>
+                <div class="profileBio">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo distinctio ipsam doloremque laborum sequi rerum esse corrupti iusto animi? Temporibus.</p>
+                </div>
+                <div class="btwWrapper">
+                    <button type="submit" class="exitBtn">Change</button>
+                    <span class="exitBtn">Cancel</span>
+                </div>
+            </div>
+            <div  class="transition-right editInputWrapper">
+            
+                <div class="personalInput inputWrapper">
+                    <h3>Personal</h3>
+                    <div class="inputFlex">
+                        <div class="studentName flexcontainer data-error">
+                            <input placeholder="Name:" pattern=".{3,}" type="text"/>
+                        </div>
+                        <div class="studentUserName flexcontainer data-error">
+                            <input  placeholder="User Name:" type="text" minlength="2" maxlength="20"/>
+                        </div>
+                    </div>
+                    <div class="studentOccupation container data-error">
+                        <input  placeholder="Occupation:" type="text" minlength="2" maxlength="20"/>
+                    </div>
+                    <div class="email container data-error">
+                        <input placeholder="Email: " type="email" class="autoFillInput" id="email" required/>
+                    </div>
+                </div>
+                <div class="aboutInput inputWrapper">
+                    <h3>About Me</h3>
+                    <div class="city ">
+                        <textarea placeholder="About You: " type="text" minlength="20"></textarea>
+                    </div>
+                </div>
+                <div class="passwordInput inputWrapper">
+                    <h3>Password</h3>
+                    <div class="password">
+                        <div class="pwordOne container data-error">
+                            <input placeholder="Password: " type="password" th:field="*{password}" id="password" minlength="10" required/>
+                        </div>
+                        <div class="pwordTwo container data-error">
+                            <input placeholder="Confirm Password: " type="password" name="confirmPassword" id="confirmPassword" minlength="10" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <script>
+        const swup = new Swup();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 10, 
+          duration: 1000
+      });
+    </script>
+    <script src="/profile.js"></script>
+    <script src="/all.min copy.js"></script>
+</body>
+</html>

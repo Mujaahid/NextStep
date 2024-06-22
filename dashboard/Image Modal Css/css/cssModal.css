@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+    outline: none;
+}
+body {
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+
+/* lines */
+
+/* .wrapper {
+    border: 2px solid red;
+} */
+
+ /* .modalContainer {
+    border: 2px solid green;
+}
+
+ .imageContainer,
+.commentsContainer {
+    border: 2px solid blue;
+} 
+
+.noCommentsDiv,
+.innerCommentContainer {
+    border: 2px solid red;
+}
+
+header {
+    border: 2px solid green;
+}
+
+.imageContainer .icons {
+    border: 2px solid salmon;
+}
+
+.imageContainer .header {
+    border: 2px solid salmon;
+} 
+.container {
+    border: 2px solid blue;
+}
+.commentBody,
+.avatarContainer {
+    border: 2px solid green;
+}
+
+.thumbsDown,
+.thumbsUp {
+    border: 2px solid salmon;
+}
+
+
+
+
+.commentBody footer {
+    border: 2px solid red;
+}
+
+.rightSide,
+.leftSide {
+    border: 2px solid blue;
+} */
+/* Styles */
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #e6eef8;
+}
+.modalContainer {
+    position: relative;
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    box-shadow: 5px 5px 16px #bccae4,
+    -5px -5px 16px #ffffff;
+    display: flex;
+    border-radius: 10px;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 50%;
+    align-items: center;
+    overflow: hidden;
+    
+}
+
+
+.imageOverlay {
+    border-radius: inherit;
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(circle, transparent 40%, rgb(0, 0, 0));
+}
+.imageContainer,
+.commentsContainer {
+    border-radius: inherit;
+    height: 100%;
+    width: 50%;
+}
+
+
+.imageContainer a {
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.imageContainer a:hover {
+    color: #cf2f2f;
+}
+
+.imageContainer .header,
+.imageContainer .icons {
+    z-index: 12;
+    color: white;
+    padding: 15px 0;
+
+}
+
+.imageContainer .header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    top: 10px;
+    
+}
+.imageContainer .header .icon {
+    margin-left: 15px;
+    font-size: 22px;
+}
+.imageContainer .header h2 {
+    margin: auto;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+    /* font-style: italic; */
+    font-size: 24px;
+}
+.imageContainer .icons {
+    position: absolute;
+    bottom: 10px;
+    width: 50%;
+    text-align: center;
+    
+    
+}
+
+.imageContainer .icons .icon {
+    margin: 0 20px;
+    font-size: 24px;
+}
+.imageContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    transition: 0.5s ease;
+}
+
+
+
+
+
+/* COMMENT SECTION */
+
+.commentsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    position: relative;
+    background-image: linear-gradient(310deg, #dae5ff63 20%, #f0f3fa);
+}
+
+
+.noCommentsDiv {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+
+}
+
+.noCommentsDiv header {
+    height: 10%;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+.noCommentsDiv p {
+    color: #8F9BB4;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.noCommentsDiv .icon {
+    color: #8F9BB4;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.noCommentsDiv button,
+.container button {
+    margin: 10px auto 0 auto;
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    color: #8F9BB4;
+    font-weight: bold;
+    background: #ebf3fd;
+    box-shadow: 5px 2px 10px #c1d0ec,
+                -5px -5px 10px #F7FBFF;
+    border: none;
+    display: block;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.noCommentsDiv button:hover,
+.container a:hover,
+.container button:hover  {
+    color: #cf4545;
+    box-shadow: 1px 1px 5px #c1d0ec,
+    -1px -1px 5px #F7FBFF;
+}
+
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 20px auto 0 auto;
+
+    justify-content: space-between;
+}
+
+.innerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form img {
+    display: none;
+}
+
+.innerContainer a {
+    background-color: #ebf3fd;
+    margin: 0 15px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 5px 2px 10px #c1d0ec,
+    -5px -5px 10px #F7FBFF;
+    color: #8F9BB4;
+    transition: all 0.5s ease;
+}
+
+.textareaContainer {
+    height: 20%;
+    margin: 0 auto;
+    width: 95%;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+.textareaContainer a {
+    margin-left: auto;
+
+}
+
+
+
+.textareaContainer a .icon {
+
+    width: 30px;
+    color: #d88181;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    opacity: 0;
+
+}
+
+.textareaContainer a .icon:hover {
+    color: #cf4545;
+}
+textarea {
+    height: 0;
+    opacity: 0;
+    width: 100%;
+    resize: none;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 1.2em;
+    background-color: #e6eef8;
+    box-shadow: inset 5px 5px 9px #bccae4,
+                inset -5px -5px 9px #fdffff;
+    transition: all 0.2s ease;
+
+    bottom: 0;
+
+    
+}
+
+::placeholder {
+    color: #8F9BB4;
+    font-weight: bold;
+}
+
+
+/* Comment Section */
+
+.innerCommentContainer {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+
+}
+
+.commentTrack {
+    margin: 15px 0;
+    height: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.comment {
+
+    display: flex;
+    height: auto;
+    width: 90%;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: linear-gradient(310deg, #dae5ff42 20%, #f0f3fa);
+    box-shadow: 4px 4px 10px #bccae4, 4px 4px 10px #ffffff;
+    padding: 10px 15px;
+    font-family: 'Josefin Sans', sans-serif;
+
+
+}
+.commentBody {
+    width: 80%;
+    margin-left: auto;
+}
+
+.comment .avatarContainer {
+    width: 70px;
+    height: 70px;
+    border: 7px solid #f0f3fa;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 4px 4px 10px #bccae4, 4px 4px 10px #ffffff;
+}
+
+.avatarContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.commentBody h5 {
+    color: #6f7277;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.commentBody p {
+    color: #858ea1;
+    margin-left: 10px;
+}
+
+.commentBody footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+.rightSide,
+.leftSide {
+    width: 50%;
+    display: flex;
+}
+
+.rightSide .icon,
+.leftSide .icon {
+
+    margin-left: 5px;
+    color: #dd6969;
+    transition: all 0.5s ease;
+}
+.rightSide .icon:hover,
+.leftSide .icon:hover {
+    color: #aa0202;
+}
+
+
+.rightSide a {
+    margin-left: auto;
+    text-decoration: none;
+
+    color: #dd6969;
+    transition: all 0.5s ease;
+}
+
+.rightSide a:hover {
+    color: #aa0202;
+}
+
+.leftSide p {
+    color: #8F9BB4;
+    
+    
+}
+
+
+.thumbsUp,
+.thumbsDown {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 5px;
+}
+
+/* Scroll Bar */
+
+
+
+.commentTrack::-webkit-scrollbar,
+.modalContainer::-webkit-scrollbar
+.textArea::-webkit-scrollbar {
+    width: 3px;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track,
+.commentTrack::-webkit-scrollbar-track,
+.modalContainer::-webkit-scrollbar-track,
+.textArea::-webkit-scrollbar-track {
+    background: transparent;
+    position: relative;
+    right: 10px;
+}
+body::-webkit-scrollbar-thumb,
+.commentTrack::-webkit-scrollbar-thumb,
+.modalContainer::-webkit-scrollbar-thumb,
+.textArea::-webkit-scrollbar-thumb {
+    background: #909DB5;
+    border-radius: 4px;
+}
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover,
+.commentTrack::-webkit-scrollbar-thumb:hover,
+.modalContainer::-webkit-scrollbar-thumb:hover,
+.textArea::-webkit-scrollbar-thumb:hover {
+    background: #748096;
+}
+
+/* Media Queries */
+
+
+@media screen and (min-width: 1010px) {
+    .imageOverlay:hover + img{
+        transform: rotateZ(4deg) scale(1.1);
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .commentBody {
+        margin-left: 10px;
+    }
+
+    .leftSide,
+    .rightSide {
+        font-size: 12px;
+    }
+    .rightSide .icon,
+    .leftSide .icon {
+        margin-right: 0px;
+        color: #dd6969;
+    }
+    
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .modalContainer {
+        height: 95vh;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .modalContainer:hover,
+    .modalContainer:focus,
+    .modalContainer:active {
+        overflow-y: auto;
+    }
+    .imageContainer {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        position: absolute;
+    }
+    .commentsContainer {
+        position: absolute;
+        top: 100%;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .modalContainer {
+        width: 90%;
+    }
+    .imageContainer .icons {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .modalContainer {
+        width: 100%;
+    }
+}
+
+/*
+Your work is honestly so great and inspiring. I really really have enjoyed looking at this piece. I haven't met artists this skilled before. Thank you for blessing the world with your design and continuing to make the world a better place. It really really is a blessing.
+*/

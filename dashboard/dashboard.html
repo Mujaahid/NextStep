@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="/all.min copy.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    
+</head>
+<body>
+    <div data-aos="fade-down" class="slideNotification">
+        <div class="notificationProfile">
+            <img src="/images/userProfileImageFive.jpg" alt="">
+        </div>
+        <div class="notificationMessage">
+            <p>Name: has followed you.</p>
+        </div>
+    </div>
+    <div id="notificationWrapper" class="notificationWrapper">
+        <div class="notificationModal">
+            <div class="notificationHeader">
+                <h3>Notification</h3>
+                <span class="closeNotificationBtn"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="notification">
+                <div class="notificationProfile">
+                    <img src="/images/userProfileImageFive.jpg" alt="">
+                </div>
+                <div class="notificationMessage">
+                    <p>Name: has followed you.</p>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notificationProfile">
+                    <img src="/images/userProfileImageFive.jpg" alt="">
+                </div>
+                <div class="notificationMessage">
+                    <p>Name: has followed you.</p>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notificationProfile">
+                    <img src="/images/userProfileImageFive.jpg" alt="">
+                </div>
+                <div class="notificationMessage">
+                    <p>Name: has followed you.</p>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="notificationProfile">
+                    <img src="/images/userProfileImageFive.jpg" alt="">
+                </div>
+                <div class="notificationMessage">
+                    <p>Name: has followed you.</p>
+                </div>
+            </div>
+            <p class="notificationPara">There are no notifications</p>
+        </div>
+    </div>
+    <div id="swup" class="mainWrapper">
+        <div class="nav">
+            <div class="logoWrapper phoneSize">
+                <div class="logo">Next Step</div>
+            </div>
+
+            <div class="search active">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here ...">
+            </div>
+
+            <div class="navicon phoneSize">
+                <button id="notificationOpenBtn" class="naviconMargin changeColor"><i class="fas fa-bell"></i></button>
+
+                <div class="miniProfile">
+                    <a class="changeColor" href="">
+                    <h5>Signal Man</h5>
+                    <div class="miniProfileImage changeBorderColor">
+                        <img src="/images/profilePic.png" alt="">
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="transition-left sideNav">
+            <div class="menu">
+                <div class="menuList">
+                    <a class="changeColor" href="#">
+                        <i class="fas fa-home menuListIcon"></i>
+                        <p>Home</p>
+                    </a>
+                </div>
+                <div class="menuList">
+                    <a class="changeColor" href="/portfolio.html">
+                    <i class="fas fa-headset menuListIcon"></i>
+                    
+                    <p>Contact</p>
+                    </a>
+                </div>
+                <div class="menuList">
+                    <a class="changeColor" href="#">
+                        <i class="fas fa-user-friends menuListIcon"></i>
+                    <p>About</p>
+                    </a>
+                </div>
+                <div class="menuList">
+                    <a class="changeColor" href="#">
+                        <i class="fas fa-file-signature menuListIcon"></i>
+                    <p>Terms</p>
+                    </a>
+                </div>
+                <div class="menuList">
+                    <a class="changeColor" href="#">
+                        <i class="fas fa-sign-out-alt menuListIcon"></i>
+                    <p>Logout</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="transition-right dashboard">
+            <h3 class="title changeColor">Dashboard</h3>
+            <div class="dashboardGrid">
+                <a href="/profile.html" class="profile changeColor changeBoxshadowColor">
+                <div>
+                    <h3 class="h3title changeColor">Profile</h3>
+                    <div data-aos="slide-up" class="profileContent">
+                        <div class="profileHeader">
+                            <div class="avatar changeBorderColor">
+                                <img class="profileImage" src="/images/profilePic.png" alt="">
+                            </div>
+                            <div class="profileTitle">
+                                <h3>Signal Man</h3>
+                                <p>Programmer</p>
+                            </div>
+                            <div class="follow">
+                                <div class="following">
+                                    <h3>42</h3>
+                                    <p>Following</p>
+                                </div>
+                                <div class="followers">
+                                    <h3>420</h3>
+                                    <p>Followers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profileBody">
+                            <div class="profileDescription">
+                                <p>My name is Abdullah, I'm a backend web developer studying in college and while I've accomplished my amazing feats, I haven't and could not make two women from a bakery smile. Otherwise I guess I'm pretty cool.</p>
+                            </div>
+                            <div class="profileSocial">
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <a href="#" class="chat changeColor">
+                    <div class="changeColor changeColor" id="chat">
+                        <h3>Chat</h3>
+                        <div class="chatContent">
+                            <div data-aos="fade-up" data-aos-delay="100" class="friendWrapper">
+                                <div class="friendAvatar changeBorderColor">
+                                    <img class="avatarImg" src="/images/userProfileImageOne.jpg" alt="">
+                                </div>
+                                <div class="friendName">M.J.</div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="200" class="friendWrapper">
+                                <div class="friendAvatar changeBorderColor">
+                                    <img class="avatarImg" src="/images/userProfileImageTwo.jpg" alt="">
+                                </div>
+                                <div class="friendName">Da Man</div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="300" class="friendWrapper">
+                                <div class="friendAvatar changeBorderColor">
+                                    <img class="avatarImg" src="/images/userProfileImageThree.webp" alt="">
+                                </div>
+                                <div class="friendName">ECMA Script</div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" class="friendWrapper">
+                                <div class="friendAvatar changeBorderColor">
+                                    <img class="avatarImg" src="/images/userProfileImageFour.jpg" alt="">
+                                </div>
+                                <div class="friendName">E.C.</div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="500" class="friendWrapper">
+                                <div class="friendAvatar changeBorderColor">
+                                    <img class="avatarImg" src="/images/userProfileImageFive.jpg" alt="">
+                                </div>
+                                <div class="friendName">ECMA Script</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="portfolio changeColor">
+                    <div id="portfolio">
+                        <h3 >Portfolio</h3>
+                        <div class="portfolioPreview">
+                            <div class="previewWrapper">
+                                <div class="nothingPosted">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <p>Post Your Content</p>
+                                </div>
+                                <div class="previewGallery">
+                                    <div data-aos="zoom-in" class="main previewImg">
+                                        <div class="previewRate">
+                                            <p>1,000 <i class="fas fa-thumbs-up"></i></p>
+                                        </div>
+                                        <img src="/images/userProfileImageThree.webp" alt="">
+                                    </div>
+                                    <div data-aos="zoom-in" class="top previewImg">
+                                        <div class="previewRate">
+                                            <p>900 <i class="fas fa-thumbs-up"></i></p>
+                                        </div>
+                                            <img src="/images/userProfileImageTwo.jpg" alt="">
+                                    </div>
+                                    <div data-aos="zoom-in" class="buttom previewImg">
+                                        <div class="previewRate">
+                                            <p>300 <i class="fas fa-thumbs-up"></i></p>
+                                        </div>
+                                        <img src="/images/userProfileImageOne.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="credit changeColor">
+                <div>
+                    <div class="creditHeader">
+                        <h3 class="changeColor">Credit</h3>
+                        <p class="creditAmount changeColor">6,000 crd</p>
+                    </div>
+                    <div class="creditWrapper">
+                        <div class="barContainer">
+                            <div class="barWrapper">
+                                <div class="amount">
+                                    <p>Booster One</p>
+                                    <p>250</p>
+                                </div>
+                            <div class="outterBar">
+                                <div data-aos="slide-right" style="width: 80%;" class="innerBar changeBarColor"></div>
+                            </div>
+                            </div>
+                            <div class="booster"></div>
+                        </div>
+                        <div class="barContainer">
+                            <div class="barWrapper">
+                                <div class="amount">
+                                    <p>Booster One</p>
+                                    <p>500</p>
+                                </div>
+                            <div class="outterBar">
+                                <div data-aos="slide-right" style="width: 60%;" class="innerBar changeBarColor"></div>
+                            </div>
+                            </div>
+                            <div class="booster"></div>
+                        </div>           
+                        <div class="barContainer">
+                            <div class="barWrapper">
+                                <div class="amount">
+                                    <p>Booster One</p>
+                                    <p>800</p>
+                                </div>
+                            <div class="outterBar">
+                                <div data-aos="slide-right" style="width: 40%;" class="innerBar changeBarColor"></div>
+                            </div>
+                            </div>
+                            <div class="booster"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+                <div class="tagged changeColor">
+                    <h3>Tagged</h3>
+                    <div data-aos="slide-up" class="commentContainer">
+                        <div class="TaggedcommentWrapper">
+                            <div class="taggedProfileImage">
+                                <img class="taggedBorder changeBorderColor" src="/images/userProfileImageFour.jpg" alt="">
+                            </div>
+                            <div class="taggedCommentText">
+                                <div class="commenter">
+                                    <h5>E.C.</h5>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet <span class="taggedName">Signal Man</span> sit amet adipisicing elit. Eligendi quam facilis vero iusto quae reiciendis placeat. Neque delectus eaque quidem!</p>
+                                <div class="tagCommentAttribute">
+                                    <div class="timeSent">
+                                        <i class="fas timeSentIcon fa-clock"></i>
+                                        <p>1 day ago</p>
+                                    </div>
+                                    <div class="ratings">
+                                        <i class="fas rate fa-star"></i><i class="fas rate fa-star"></i><i class="fas rate fa-star"></i><i class="fas rate fa-star-half-alt"></i><i class="far rate fa-star"></i>
+                                        <p>Reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="TaggedcommentWrapper commentTwo">
+                            <div class="taggedProfileImage">
+                                <img class="taggedBorder changeBorderColor" src="/images/userProfileImageOne.jpg" alt="">
+                            </div>
+                            <div class="taggedCommentText">
+                                <div class="commenter">
+                                    <h5>Mujaahid</h5>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet sit amet adipisicing elit. Eligendi quam facilis <span class="taggedName">Signal Man</span> vero iusto quae reiciendis placeat. Neque delectus eaque quidem!</p>
+                                <div class="tagCommentAttribute">
+                                    <div class="timeSent">
+                                        <i class="fas timeSentIcon fa-clock"></i>
+                                        <p>4 day ago</p>
+                                    </div>
+                                    <div class="ratings">
+                                        <i class="fas rate fa-star"></i><i class="fas rate fa-star"></i><i class="fas rate fa-star-half-alt"></i><i class="far rate fa-star"></i><i class="far rate fa-star"></i>
+                                        <p>Reply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skillTags changeColor">
+                    <h3 class="changeColor">Skills</h3>
+                    <div data-aos="zoom-in" class="container">
+                        <div class="tag-container">
+                            <div class="skillInput">
+                                <input type="text" placeholder="Add Skills ...">
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <script>
+        const swup = new Swup();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 10, 
+          duration: 1000
+      });
+    </script>
+    <script src="/dashboard.js"></script>
+    <script src="/all.min copy.js"></script>
+</body>
+</html>

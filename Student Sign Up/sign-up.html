@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Next Step</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+        <script defer th:src="@{/assets/js/signUpEmployee.js}"></script>
+            <!--        other page links        -->
+            <!-- <link rel="stylesheet" th:href="@{/assets/css/all.min.css}">
+            <link rel="stylesheet" th:href="@{/assets/css/signUpEmployee.css}">
+            <link rel="stylesheet" th:href="@{/assets/css/SignUpEmployeeBtn.css}">
+            <link rel="stylesheet" th:href="@{/assets/css/signUpEmployeeAnimation.css}">
+            <link rel="stylesheet" th:href="@{/assets/css/SignUpEmployeeMediaQuery.css}"> -->
+
+            <link rel="stylesheet" href="/static/assets/fontawesome/all.min.css">
+            <link rel="stylesheet" href="/static/assets/css/signUpStudents.css">
+
+            <!-- <link rel="stylesheet" href="/static/assets/css/signUpEmployee.css">
+            <link rel="stylesheet" href="/static/assets/css/signUpEmployeeAnimation.css">
+            <link rel="stylesheet" href="/static/assets/css/SignUpEmployeeBtn.css">
+            <link rel="stylesheet" href="/static/assets/css/SignUpEmployeeMediaQuery.css">
+            <link rel="stylesheet" href="/static/assets/fontawesome/all.min.css"> -->
+        <!--        other page links        -->
+        <!--        font links        -->
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;800&display=swap" rel="stylesheet">
+        <!--       number font      -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--    full sign up page wrapper   -->
+        <div class="signUpWrapper">
+            <!--    left side page  -->
+            <div class="tips">
+                <div class="tipsContainer">
+                    <div class="headerImage">
+                        <img class="coins" th:src="@{/svgs/stackOfCoins.svg}"/>
+                    </div>
+                    <div class="tip-para">
+                            <h1 class="tipHeader">Credit Tips</h1>
+                            <p class="tipBody">Lorem ipsum, dolor sit amet <span class="tipSpan" >Lorem ipsum, </span> consectetur adipisicing elit. Pariatur, iste?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formWrapper">
+                <form th:action="@{/sign-up}" method="POST" class="signUp-form rightSidePage" th:object="${student}" enctype="multipart/form-data">
+                    <div class="formInnerWrapper">
+                        <!--    foundation  -->
+                        <div id="one" class="formContainer one" >
+                            <div class="signUp-header">
+                                <div class="signUp-page-header">
+                                    <h1>Foundation</h1>
+                                    <p>Tell us the basics.</p>
+                                </div>
+                                <div class="page-number">
+                                    <p>01</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="names">
+                            <div class="userRealName container data-error" >
+                                <input placeholder="*Full Name:" pattern=".{3,}" autocomplete="off" type="text" th:field="*{fullName}" id="fullname" required/>
+                                <div th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></div>
+                            </div>
+                            <div class="userName container data-error">
+                                    <input placeholder="*User Name:" type="text" th:field="*{username}" id="userName" required minlength="2" maxlength="15"/>
+                            </div>
+                            </div>
+                            <div class="email container data-error">
+                                <input placeholder="*Email: " type="email" th:field="*{email}" id="email" required/>
+                            </div>
+                            <div class="passwords">
+                                <div class="pwordOne container data-error">
+                                    <input placeholder="*Password: " type="password" th:field="*{password}" id="password" minlength="10" required/>
+                                </div>
+                                <div class="pwordTwo container data-error">
+                                    <input placeholder="*Confirm Password: " type="password" name="confirmPassword" id="confirmPassword" minlength="10" required/>
+                                </div>
+                            </div>
+                            <div class="pageBtn">
+                                <div class="btn-icon">
+                                    <button type="button" id="pageFirstBtn" class=" btn">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--    foundation  -->
+
+                        <!--    Structure    -->
+                        <div id="two" class="formContainer two">
+                                <div class="signUp-header">
+                                    <div class="signUp-page-header">
+                                        <h1>Structure</h1>
+                                        <p>What else?</p>
+                                    </div>
+                                    <div class="page-number">
+                                        <p>02</p>
+                                    </div>
+                                </div>
+                                <hr>  
+                                <div class="bday">
+                                <div class="birthday">
+                                    <select class="container month" id="containerMonth" th:field="*{age.month}">
+                                        <option value="" id="monthOption" class="edLevel-header" disabled selected>Month</option>
+                                        <option th:each="month : ${months}" th:value="${month.month}" th:text="${month.month}"></option>
+                                    </select>
+                                    <input class="container day" placeholder="Day: " type="text" th:field="*{age.day}" id="day" required/>
+                                    <input class="container year" placeholder="Year:" type="text" th:field="*{age.year}" id="year" required/>
+                                </div>
+                                </div>
+                                <div class="location">
+                                        <div class="country">
+                                            <input placeholder="Country: America" type="text" th:field="*{currentCountry}" id="country" required/>
+                                        </div>
+                                        <div class="city">
+                                            <input placeholder="City: New York" type="text" th:field="*{currentCity}" id="city" required/>
+                                        </div>
+                                </div>
+                                <div class="pageBtn">
+                                        <div class="btn-icon">
+                                            <button type="button" id="prevBtnTwo" class="prev btn">
+                                                <i class="fas fa-arrow-left"></i>
+                                            </button>
+                                            <button type="button" id="pageTwoBtn" class="next btn">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                </div>
+                        </div>
+                        <!--    Structure    -->
+
+                        <!--    The Roof    -->
+                        <div id="three" class="formContainer three">
+                                <div class="signUp-header">
+                                    <div class="signUp-page-header">
+                                        <h1>The Walls</h1>
+                                        <p>Your Next Step</p>
+                                    </div>
+                                    <div class="page-number">
+                                        <p>03</p>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                
+                                <div class="gender container ">
+                                    <select class="genderSelect selectContainer" id="genderSelect" th:field="*{gender}">
+                                            <option value="" id="genderOption" class="edLevel-header" disabled selected>Select Your Gender</option>
+                                            <option style="color: black; font-size: 14px;" th:each="currentGender : ${gender}" th:value="${currentGender.gender}" th:text="${currentGender.gender}">Male</option>
+                                    </select>
+                                </div>
+                                <div class="education">
+                                        <div class="college container">
+                                            <input placeholder="College: " type="text" th:field="*{college}" id="college" minlength="2" maxlength="35" />
+                                        </div>
+                                        <div class="study container">
+                                            <input placeholder="Your Major:" type="text" th:field="*{major}" id="userMajor" minlength="2" maxlength="15" />
+                                        </div>
+                                </div>
+                                <div class="edLevel container">
+                                        <select aria-placeholder="edLevel" class="edLevel" id="edLevel" th:field="*{educationLevel}">
+                                            <option value="" class="edLevel-header" disabled selected>Select Your Education Level</option>
+                                            <option th:each="educationLevel : ${education}" th:text="${educationLevel.edLevel}" th:value="${educationLevel.edLevel}"></option>
+                                        </select>
+                                </div>
+                                <div class="degree container">
+                                        <input placeholder="What Degree Are You Pursuing:   " type="text" th:field="*{currentlyPursuing}" id="degree"/>
+                                </div>
+                                <div class="pageBtn">
+                                        <div class="btn-icon">
+                                            <button type="button" id="prevBtnThree" class="prev btn">
+                                                <i class="fas fa-arrow-left"></i>
+                                            </button>
+                                            <button type="button" id="pageThreeBtn" class="next btn">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                </div>
+                        </div>
+                        <!--    The Roof    -->
+
+                        <!--    work type    -->
+                        <div id="four" class="formContainer four">
+                            <div class="signUp-header">
+                                    <div class="signUp-page-header">
+                                        <h1>The Roof</h1>
+                                        <p>Your Next Step</p>
+                                    </div>
+                                    <div class="page-number">
+                                        <p>04</p>
+                                    </div>
+                            </div>
+                            <hr>
+                            <div class="discribe container">
+                                    <textarea id="describeSelf" th:field="*{bio}"  maxlength="50" placeholder="Describe yourself here..."></textarea>
+                            </div>
+                            <div class="jobXp">
+                                <textarea id="listJobExperience" th:field="*{prevExperience}" placeholder="List Your Job Experiences:"></textarea>
+                            </div>
+                            <div class="jobType container">
+                                        <select id="jobType" th:field="*{field}">
+                                            <option value="" class="jobType-header" disabled selected>Select Your Job Field</option>
+                                            <option th:each="career : ${careers}" th:text="${career.career}" th:value="${career.career}"></option>
+                                        </select>
+                            </div> 
+                            <div class="idJobType">
+                                        <input id="idJobType" th:field="*{careerSpecialty}" rows="4" cols="20" placeholder="Specify Your Job Title"/>
+                            </div>
+                            <div class="color container">
+                                        <select class="selectColor" id="selectColor" th:field="*{profileTheme}">
+                                            <option value="" id="selectColorOptions" class="colorSelect" disabled selected>Select Your Color Scheme</option>
+                                            <option th:each="color : ${colors}" th:text="|${color.headerName} and ${color.bodyName}|" th:style="|color: ${color.headerColorCode}|" th:value="${color.headerName}"></option>
+                                        </select>
+                            </div>
+                            <div class="pageBtn">
+                                        <div class="btn-icon">
+                                            <button type="button" id="prevBtnFour" class="prev btn">
+                                                <i class="fas fa-arrow-left"></i>
+                                            </button>
+                                            <button type="button" id="pageFourBtn" class="next btn">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                            </div>
+                        </div>
+                        <!--    Finished    -->
+
+                        <!--    Finished    -->
+                        <div id="five" class="formContainer five">
+                                <div class="signUp-header">
+                                    <div class="signUp-page-header">
+                                        <h1>Last Step</h1>
+                                        <p>Done</p>
+                                    </div>
+                                    <div class="page-number">
+                                        <p>05</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="uploadImg">
+                                        <div class="drop-zone">
+                                            <span class="drop-zone__prompt"><i class="fas fa-plus"></i></span>
+                                            <input type="file" name="file" class="drop-zone__input">
+                                        </div>
+                                        <div class="avatarText">
+                                            <span class="drop-zone-under-prompt">Add your Profile</span>
+                                        </div>
+                                </div>
+                                <div class="fullModal">
+                                    <tag id="modalBtn" class="termsCheck">Submit</tag>
+                                <div class="modal" id="simpleModal">
+                                    <div class="modal-content">
+                                        <span class="closeBtn">&times;</span>
+                                        <h1>Terms and Conditions</h1>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias, et quis quae dolor sapiente at odit aliquid eveniet officia, voluptatem libero debitis veniam doloribus? Libero, ipsum sequi illo amet quis repudiandae ducimus sapiente mollitia error provident, repellat facilis eveniet nostrum similique et? Veritatis, aliquam labore cumque nesciunt explicabo odio.</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias, et quis quae dolor sapiente at odit aliquid eveniet officia, voluptatem libero debitis veniam doloribus? Libero, ipsum sequi illo amet quis repudiandae ducimus sapiente mollitia error provident, repellat facilis eveniet nostrum similique et? Veritatis, aliquam labore cumque nesciunt explicabo odio.</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias, et quis quae dolor sapiente at odit aliquid eveniet officia, voluptatem libero debitis veniam doloribus? Libero, ipsum sequi illo amet quis repudiandae ducimus sapiente mollitia error provident, repellat facilis eveniet nostrum similique et? Veritatis, aliquam labore cumque nesciunt explicabo odio.</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias, et quis quae dolor sapiente at odit aliquid eveniet officia, voluptatem libero debitis veniam doloribus? Libero, ipsum sequi illo amet quis repudiandae ducimus sapiente mollitia error provident, repellat facilis eveniet nostrum similique et? Veritatis, aliquam labore cumque nesciunt explicabo odio.</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias, et quis quae dolor sapiente at odit aliquid eveniet officia, voluptatem libero debitis veniam doloribus? Libero, ipsum sequi illo amet quis repudiandae ducimus sapiente mollitia error provident, repellat facilis eveniet nostrum similique et? Veritatis, aliquam labore cumque nesciunt explicabo odio.</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias, et quis quae dolor sapiente at odit aliquid eveniet officia, voluptatem libero debitis veniam doloribus? Libero, ipsum sequi illo amet quis repudiandae ducimus sapiente mollitia error provident, repellat facilis eveniet nostrum similique et? Veritatis, aliquam labore cumque nesciunt explicabo odio.</p>
+                                        <div class="subBtnContainer">
+                                            <button type="submit" class="submit">Agree & Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            
+                                <div class="lastPageBtn">
+                                    <div class="pageBtn pageBtnFour">
+                                        <div class="btn-icon">
+                                            <button type="button" id="prevBtnFive" class="prev btn">
+                                                <i class="fas fa-arrow-left"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+                        <!--    Finished    -->
+                    </div>
+                </form>
+                        <!--    btn wrapper    -->
+                        <div class="social-media">
+                                <button type="button" class="facebook icon">
+                                    <i class="fab fa-facebook-f fa-1x"></i>
+                                </button>
+                                <button type="button" class="insta icon">
+                                    <i class="fab fa-instagram fa-1x"></i>
+                                    
+                                </button>
+                                <button type="button" class="twitter icon">
+                                    <i class="fab fa-twitter fa-1x"></i>
+                                </button>
+                        </div>
+                        <!--    btn wrapper    -->
+            </div>
+        </div>
+        <!--    full sign up page wrapper   -->
+        <script th:src="@{/assets/js/all.min.js}"></script>
+
+        <script src="/static/assets/js/all.min.js"></script>
+        <script src="/static/assets/js/signUpEmployee.js"></script>
+    </body>
+</html>

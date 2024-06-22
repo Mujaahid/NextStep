@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="editProfile.css"> -->
+    <script src="https:kit.fontawesome.com/fd07ffd6f7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="accountModal-background">
+        <div class="deleteAccountWrapper">
+            <div class="account-profile">
+                <img class="newProfile" src="https://i.pinimg.com/originals/9c/62/dd/9c62dd185a366d19f98a457226ea1496.gif" alt="">
+            </div>
+            <div class="account-body">
+                <div class="account-name">
+                    <h3 class="userRealName">Name of the guy</h3>
+                    <p class="Occupation">Occupation</p>
+                    <p class="warning">Are you sure you want to delete your account? This action cannot be undone!</p>
+                </div>
+            </div>
+            <div class="deleteAccount-footer">
+                <span class="cancelDeleteAccount">Cancel</span>
+                <span>Delete Account</span>
+            </div>
+        </div>
+    </div>
+    <div class="mainWrapper">
+        <div th:fragment="navbar" class="navbar" style="position: relative; z-index: 10;">
+
+            <div class="logo">
+                <p>NextStep.</p>
+            </div>
+        
+            <div class="search-wrapper">
+                <div class="main-searchbar-wrapper searchbar-wrapper">
+                    <div class="main-searchbar searchbar">
+                        <i class="fas Search-icon fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="main-nav-drop nav-drop">
+                        <ul>
+                            <li class="open-nav-job"><a href="#">Search for Jobs...</a></li>
+                            <li class="open-nav-channel"><a href="#">Search for channels...</a></li>
+                            <li class="open-nav-similar"><a href="#">Search for similar Content...</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jobs-searchbar-wrapper searchbar-wrapper">
+                    <div class="job-searchbar searchbar">
+                        <i class="fas Search-icon fa-search"></i>
+                        <input class="inner-search-placeholder" type="text" placeholder="Search For Jobs...">
+                    </div>
+                    <div class="job-nav-drop nav-drop">
+                        <div class="nav-options">
+                            <p class="open-jobs" >Jobs</p>
+                            <p class="open-channels">Channels</p>
+                            <p class="open-content">Content</p>
+                        </div>
+                        <div class="nav-job-app">
+                            <div class="nav-job-header">
+                                <div class="nav-job-profile">
+                                    <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5dfa6eaa39bf1.png" alt="">
+                                </div>
+                                <div class="nav-job-title">
+                                    <h5>(Senior) Frontend Engineer at sustainable start-up (m/f/x) - Munich or Remote</h5>
+                                </div>
+                            </div>
+                            <div class="nav-job-body">
+                                <div class="nav-job-location_name">
+                                    <p>Los Altos, California</p>
+                                    <p>Apple</p>
+                                </div>
+                                <p class="job-nav-price">$5,000 - 6,200</p>
+                            </div>
+                        </div>
+                        <div class="nav-job-app">
+                            <div class="nav-job-header">
+                                <div class="nav-job-profile">
+                                    <img src="https://dynamicassets.azureedge.net/uploads/store/logo/5dfa6eaa39bf1.png" alt="">
+                                </div>
+                                <div class="nav-job-title">
+                                    <h5>(Senior) Frontend Engineer at sustainable start-up (m/f/x) - Munich or Remote</h5>
+                                </div>
+                            </div>
+                            <div class="nav-job-body">
+                                <div class="nav-job-location_name">
+                                    <p>Los Altos, California</p>
+                                    <p>Apple</p>
+                                </div>
+                                <p class="job-nav-price">$5,000 - 6,200</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="channels-search-wrapper searchbar-wrapper">
+                    <div class="channels-searchbar searchbar">
+                        <i class="fas Search-icon fa-search"></i>
+                        <input class="inner-search-placeholder" type="text" placeholder="Search For Channels...">
+                    </div>
+                    <div class="channels-nav-drop nav-drop">
+                        <div class="nav-options">
+                            <p class="open-jobs" >Jobs</p>
+                            <p class="open-channels">Channels</p>
+                            <p class="open-content">Content</p>
+                        </div>
+                        <div class="nav-channel-app">
+                            <div class="nav-channel-profile">
+                                <img src="https://cdnb.artstation.com/p/users/avatars/002/116/707/large/fc8b8538417f415749b4c5606da3f0ab.jpg?1594443091" alt="">
+                            </div>
+                            <div class="channel-name">
+                                <h5>Someone</h5>
+                                <p>Cinematographer</p>
+                            </div>
+                        </div>
+                        <div class="nav-channel-app">
+                            <div class="nav-channel-profile">
+                                <img src="https://cdnb.artstation.com/p/users/avatars/002/116/707/large/fc8b8538417f415749b4c5606da3f0ab.jpg?1594443091" alt="">
+                            </div>
+                            <div class="channel-name">
+                                <h5>Mujaahid</h5>
+                                <p>Cinematographer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="similar-searchbar-wrapper searchbar-wrapper">
+                    <div class="similar-nav-searchbar searchbar">
+                        <i class="fas Search-icon fa-search"></i>
+                        <input class="inner-search-placeholder" type="text" placeholder="Search For Similar Content...">
+                    </div>
+                    <div class="similar-nav-drop nav-drop">
+                        <div class="nav-options">
+                            <p class="open-jobs" >Jobs</p>
+                            <p class="open-channels">Channels</p>
+                            <p class="open-content">Content</p>
+                        </div>
+                        <div class="similar-video-nav-wrapper">
+                            <p>Videos</p>
+                            <div class="similar-video-nav-list">
+                                <div class="nav-video-item">
+                                    <a href="">
+                                        <div class="nav-video-item-preview nav-list-item-preview">
+                                            <img src="https://i.ytimg.com/vi/_gVmeOhiunU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBS0BuScKo8G6OafScumsd4xly8vQ" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Narcos</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-video-item">
+                                    <a href="">
+                                        <div class="nav-video-item-preview nav-list-item-preview">
+                                            <img src="https://i.ytimg.com/vi/M8075TIFvQs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARmITtwhkem30uXq69KusevKJBxg" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Paul Thimas Anderson</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-video-item">
+                                    <a href="">
+                                        <div class="nav-video-item-preview nav-list-item-preview">
+                                            <img src="https://i.ytimg.com/vi/bHzmODHTURM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3k5KMe-ZziRCoBdFftOHpIY4DNA" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Stanley Kubrick</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-video-item">
+                                    <a href="">
+                                        <div class="nav-video-item-preview nav-list-item-preview">
+                                            <img src="https://i.ytimg.com/vi/RV7zUfeSTtE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDu_xU3RU9tpKiTQFbAwGSnFu7ptg" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Babel</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-video-item">
+                                    <a href="">
+                                        <div class="nav-video-item-preview nav-list-item-preview">
+                                            <img src="https://i.ytimg.com/vi/_gVmeOhiunU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBS0BuScKo8G6OafScumsd4xly8vQ" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Narcos</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="similar-images-nav-wrapper">
+                            <p>Images</p>
+                            <div class="similar-images-nav-list">
+                                <div class="nav-images-item">
+                                    <a href="">
+                                        <div class="nav-images-item-preview nav-list-item-preview">
+                                            <img src="https://cdna.artstation.com/p/assets/images/images/032/782/896/large/chun-lo-spider-man-miles-morales-album-cover-final.jpg?1607454798" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Narcos</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-images-item">
+                                    <a href="">
+                                        <div class="nav-images-item-preview nav-list-item-preview">
+                                            <img src="https://cdna.artstation.com/p/assets/images/images/004/435/642/large/alex-garner-squadron-supreme-11-large.jpg?1483733185" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Paul Thimas Anderson</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-images-item">
+                                    <a href="">
+                                        <div class="nav-images-item-preview nav-list-item-preview">
+                                            <img src="https://cdnb.artstation.com/p/assets/images/images/048/715/117/large/alex-garner-batman-125-as.jpg?1650740763" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Stanley Kubrick</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-images-item">
+                                    <a href="">
+                                        <div class="nav-images-item-preview nav-list-item-preview">
+                                            <img src="https://cdnb.artstation.com/p/assets/images/images/039/607/357/large/alex-garner-moon-knight-garner-variant.jpg?1626381466" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Babel</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-images-item">
+                                    <a href="">
+                                        <div class="nav-images-item-preview nav-list-item-preview">
+                                            <img src="https://cdna.artstation.com/p/assets/images/images/004/424/358/large/alex-garner-squadron-supreme-7-large.jpg?1483645757" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Narcos</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="similar-Doc-nav-wrapper">
+                            <p>Documents</p>
+                            <div class="similar-doc-nav-list">
+                                <div class="nav-doc-item">
+                                    <a href="">
+                                        <div class="nav-doc-item-preview nav-list-item-preview">
+                                            <img src="https://s26162.pcdn.co/wp-content/uploads/2019/11/9780525534761.jpg" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Narcos</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-doc-item">
+                                    <a href="">
+                                        <div class="nav-doc-item-preview nav-list-item-preview">
+                                            <img src="https://s26162.pcdn.co/wp-content/uploads/2019/10/A1sLoZpVaoL-768x1154.jpg" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Paul Thimas Anderson</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-doc-item">
+                                    <a href="">
+                                        <div class="nav-doc-item-preview nav-list-item-preview">
+                                            <img src="https://i.pinimg.com/564x/38/70/4b/38704be5f976f4693965a1b0ad97c816.jpg" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Stanley Kubrick</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-doc-item">
+                                    <a href="">
+                                        <div class="nav-doc-item-preview nav-list-item-preview">
+                                            <img src="https://s26162.pcdn.co/wp-content/uploads/2019/04/NORTON_0404_Never-A-Lovely-So-Real_-Design-Jonathan-Bush_AD-Steve-Attardo.jpg" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Babel</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nav-doc-item">
+                                    <a href="">
+                                        <div class="nav-doc-item-preview nav-list-item-preview">
+                                            <img src="https://cdna.artstation.com/p/assets/images/images/004/424/358/large/alex-garner-squadron-supreme-7-large.jpg?1483645757" alt="">
+                                        </div>
+                                        <div class="nav-video-title">
+                                            <p>The Beauty Of Narcos</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="left-nav-items">
+                <div class="navbar_notification">
+                    <i class="far notificationBtn fa-bell alert_icon"></i>
+                </div>
+        
+                <div class="nav-profile-dropdown-wrapper">
+                    <div class="nav-profile-wrapper">
+                        <h5 th:text="${username}" class="nav-name">
+                            Abdullah
+                        </h5>
+                        <div class="nav-profile">
+                            <img class="newProfile" src="https://i.pinimg.com/originals/9c/62/dd/9c62dd185a366d19f98a457226ea1496.gif" alt="">
+                        </div>
+                        <i class="fas dropdown-icon fa-angle-down"></i>
+                    </div>
+                    <div class="nav-dropdown nav-drop">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a th:href="@{/home}">Home</a></li>
+                            <li><a th:href="@{|/users/profile/update/${userId}|}">Dashboard</a></li>
+                            <li><a th:href="@{/users/profile/portfolio}"href="#">Portfolio</a></li>
+                            <li><a th:href="@{/users/profile/friends}">Friends</a></li>
+                            <li><a th:href="@{/perform-logout}">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="settingsWrapper">
+            <div class="settingOpt-wrapper">
+                <div class="settingOpt profileBtn">
+                    <p>Profile</p>
+                </div>
+                <div class="settingOpt educationBtn">
+                    <p>Education</p>
+                </div>
+                <div class="settingOpt resumeBtn">
+                    <p>Resume</p>
+                </div>
+                <div class="settingOpt socialBtn">
+                    <p>Social</p>
+                </div>
+                <div class="settingOpt walletBtn">
+                    <p>Wallet</p>
+                </div>
+                <div class="settingOpt notificationBtn">
+                    <p>Notifications</p>
+                </div>
+                <div class="settingOpt messageBtn">
+                    <p>Message</p>
+                </div>
+                <div class="settingOpt passwordBtn">
+                    <p>Password</p>
+                </div>
+                <div class="settingOpt accountBtn">
+                    <p>Account</p>
+                </div>
+            </div>
+            <!-- ^^^  Modal Button  ^^^ -->
+
+            <div class="settingsModal profileModal">
+                <div class="modal-header">
+                    <h5>Profile.</h5>
+                </div>
+                <div class="avatar-slide">
+                    <p>Avatar Preview.</p>
+                    <div class="avatarBody">
+                        <div class="uploadOuter">
+                            <span class="dragBox">
+                                <input type="file" id="uploadUserProfile"  />
+                            </span>
+                            <div id="preview">
+                                <img class="profilePreview newProfile" src="" alt="">
+                            </div>
+                            <label for="uploadUserProfile" class="btn-primary">Upload Or Drag and Drop</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-slide">
+                    <p>Banner Preview.</p>
+                    <div class="banner-wrapper">
+                        <span class="dragBoxBanner">
+                            <input type="file" onChange="dragNdropBanner(event)"  ondragover="drag()" ondrop="drop()" id="read-bannerImageUrl"  />
+                        </span>
+                        <div class="banner-preview-wrapper">
+                            <div class="user-info">
+                                <div class="user-slide-porfile">
+                                    <img class="profilePreview newProfile" src="" alt="">
+                                </div>
+                                <div class="user-slide-buttons">
+                                    <div class="user-slide-name-wrapper">
+                                        <div class="user-slide-name">
+                                            <h4 class="userRealName"></h4>
+                                            <p>digital artist</p>
+                                        </div>
+                                    </div>
+                                    <div class="bio-settings-btn">
+                                            <div class="slide-setting-btn">
+                                                <a href="#about">
+                                                    <p>About</p>
+                                                </a>
+                                            </div>
+                                            <div class="slide-setting-btn">
+                                                <a href="#experience">
+                                                    <p>Experience</p>
+                                                </a>
+                                            </div>
+                                            <div class="slide-setting-btn">
+                                                <a href="#education">
+                                                    <p>Education</p>
+                                                </a>
+                                            </div>
+                                            <div class="slide-setting-btn">
+                                                <a href="#volunteering">
+                                                    <p>Volunteering</p>
+                                                </a>
+                                            </div>
+                                            <div class="slide-setting-btn">
+                                                <a href="#skill">
+                                                    <p>Skills</p>
+                                                </a>
+                                            </div>
+                                            <div class="slide-setting-btn">
+                                                <a href="#reviews">
+                                                    <p>Review</p>
+                                                </a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bio-background">
+                                <div id="bottom-fade"></div>
+                                <input type="file" id="read-bannerImageUrl">
+                                <img id="uploadBannerImage" src="" alt="">
+                            </div>
+                            <div id="bannerPreview" class="banner-image">
+
+                            </div>
+                        </div>
+                        <label for="read-bannerImageUrl" class="btn-upload">Click To Upload Banner</label>
+                    </div>
+                </div>
+                <div class="input-body">
+                    <div class="userInput inputWrapper">
+                        <p>Username</p>
+                        <input class="inputDesign" type="text" placeholder="Username">
+                    </div>
+                    <div class="flexInput">
+                        <div class="firstnameInput inputWrapper">
+                            <p>First Name.</p>
+                            <input class="inputDesign" type="text" placeholder="Second Name">
+                        </div>
+                        <div class="lastnameInput inputWrapper">
+                            <p>Last Name.</p>
+                            <input class="inputDesign" type="text" placeholder="Second Name">
+                        </div>
+                    </div>
+                    <div class="emailInput inputWrapper">
+                        <p>Email.</p>
+                        <input class="inputDesign" type="text" placeholder="Email">
+                    </div>
+                    <div class="flexInput">
+                        <div class="cityInput inputWrapper">
+                            <p>City.</p>
+                            <input class="inputDesign" type="text" placeholder="City">
+                        </div>
+                        <div class="firstnameInput inputWrapper">
+                            <p>Country</p>
+                            <input class="inputDesign" type="text" placeholder="Country">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal educationModal">
+                <div class="modal-header">
+                    <h5>Education.</h5>
+                </div>
+                <div class="input-body">
+                    <div class="schoolNameWrapper inputWrapper">
+                        <p class="outerPlaceholder">School Name</p>
+                        <div class="inputCredit">
+                            <img src="SVG/Asset 2.svg" alt="">
+                            <h5 class="inputCredt-p"> + 3 Credits</h5>
+                        </div>
+                        <div class="schoolWrapper inputFields">
+                            <input autocomplete="off" type="text" id="schoolName" placeholder="School Name" required>
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="dropDown-schoolName">
+                        </div>
+                        <div style="display: none;" class="errorSchoolnameMessage errorMessage">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="schoolStatus">
+                        <div class="schoolStatus-item">
+                            <p class="outerPlaceholder">Currently In School.</p>
+                            <label class="checkbox-btn">
+                                <input id="currentlySchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                        <div class="schoolStatus-item">
+                            <p class="outerPlaceholder">Completed School.</p>
+                            <label class="checkbox-btn">
+                                <input id="completedSchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="currentlyInSchool-wrapper">
+                        <div class="expectedYearWrapper inputWrapper">
+                            <p class="outerPlaceholder">Graduation Year</p>
+                            <input type="text" class="inputFields" id="expectedYearField" placeholder="05/23">
+                            <div style="display: none;" class="errorYearDateMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="completedSchool-wrapper">
+                        <div class="DegreeWrapper inputWrapper">
+                            <p class="outerPlaceholder">Degree</p>
+                            <div class="degreeInputField inputFields">
+                                <input type="text" id="degree" placeholder="Enter Your Degree">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="dropDown-degree">
+                                <p class="degree-items">High School Diploma</p>
+                                <p class="degree-items">Associate Degree</p>
+                                <p class="degree-items">Bachelor's Degree</p>
+                                <p class="degree-items">Master's Degree</p>
+                                <p class="degree-items">Doctoral Degree</p>
+                            </div>
+                            <div style="display: none;" class="errorgraduationDateMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userInput inputWrapper">
+                        <p>Major</p>
+                        <input class="inputDesign" type="text" placeholder="Field of Study.">
+                    </div>
+                    <div class="userInput inputWrapper">
+                        <p>Relevant Coursework</p>
+                        <input class="inputDesign" id="coursework" type="text" placeholder="Relevant Coursework">
+                    </div>
+                    <div class="userInput inputWrapper">
+                        <p>Academic Achievements</p>
+                        <input class="inputDesign" type="text" placeholder="Honors, Awards, or Scholarships.">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <!-- Changes were made -->
+            <div class="settingsModal resumeModal">
+                <div class="modal-header">
+                    <h5>Resume.</h5>
+                </div>
+                <div class="hireType-wrapper">
+                    <div class="hireType-fullTime hireType">
+                        <div class="hireType-title">
+                            <div class="checkbox-btn">
+                                <input id="fullTime" type="checkbox">
+                            </div>
+                            <p>Full Time Job.</p>
+                        </div>
+                        <div class="hireType-body">
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Relocate</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Remote</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Hybrid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hireType-freelance hireType">
+                        <div class="hireType-title">
+                            <div class="checkbox-btn">
+                                <input id="freelance" type="checkbox">
+                            </div>
+                            <p>Freelance.</p>
+                        </div>
+                        <div class="freelancehireType-body">
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Relocate</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Remote</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Hybrid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hireType-freelance hireType">
+                        <div class="hireType-title">
+                            <div class="checkbox-btn">
+                                <input id="contract" type="checkbox">
+                            </div>
+                            <p>Contract.</p>
+                        </div>
+                        <div class="contracthireType-body">
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Relocate</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Remote</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <input type="checkbox">
+                                <p>Hybrid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="userSummary-wrapper">
+                    <p class="summaryTitle">Summary</p>
+                    <textarea placeholder="A summary of your professional skills and experience." id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="skills-wrapper">
+                    <div class="skill-container">
+                        <div class="skill-containerHeader">
+                            <p>Skills</p>
+                        </div>
+                        <div class="skill-body">
+                        
+                        </div>
+                    </div>
+                    <div class="skill-input">
+                        <input class="inputDesign skillInput" type="text" placeholder="Add Skills">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal socialModal">
+                <div class="modal-header">
+                    <h5>Social.</h5>
+                </div>
+                <div class="social-input-wrapper">
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fa-solid fa-globe"></i>
+                            <p>Website</p>
+                        </div>
+                        <input id="websiteInput" class="inputDesign" type="text" placeholder="https://www.Website...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fa-brands fa-behance"></i>
+                            <p>Behance</p>
+                        </div>
+                        <input id="behanceInput" class="inputDesign" type="text" placeholder="https://www.Behance...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-pinterest"></i>
+                            <p>Pinterest</p>
+                        </div>
+                        <input id="pinterestInput" class="inputDesign" type="text" placeholder="https://www.Pinterest...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-dribbble"></i>
+                            <p>Dribbble</p>
+                        </div>
+                        <input id="dribbbleInput" class="inputDesign" type="text" placeholder="https://www.Dribbble...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-instagram"></i>
+                            <p>Instagram</p>
+                        </div>
+                        <input id="instagramInput" class="inputDesign" type="text" placeholder="https://www.Instagram...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-facebook"></i>
+                            <p>Facebook</p>
+                        </div>
+                        <input id="facebookInput" class="inputDesign" type="text" placeholder="https://www.Facebook...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-twitter"></i>
+                            <p>Twitter</p>
+                        </div>
+                        <input id="twitterInput" class="inputDesign" type="text" placeholder="https://www.Twitter...">
+                    </div>
+                </div>
+
+                <div class="social-icon-wrapper">
+                
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal walletModal">
+                <div class="modal-header">
+                    <h5>Credit / Wallet.</h5>
+                </div>
+                <div class="credit-wrapper">
+                    <div class="credit-header">
+                        <p>Total Credits</p>
+                        <p>500 crd</p>
+                    </div>
+                    <div class="creditType-wrapper">
+                        <div class="creditType-item">
+                            <div class="creditType-body">
+                                <div class="credit-stats">
+                                    <div class="creditAmount">
+                                        <p>500 / 700</p>
+                                    </div>
+                                    <div class="outerBar">
+                                        <div class="innerBar barAmount-one" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="credit-icon">
+                                    <img src="SVG/Asset 2.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="creditType-footer">
+                                <div class="purchaseBooster firstPurchase">
+                                    <div class="backgroundPurchase">
+                                        <p>Purchase</p>
+                                    </div>
+                                </div>
+                                <p>First Step</p>
+                            </div>
+                        </div>
+                        <div class="creditType-item">
+                            <div class="creditType-body">
+                                <div class="credit-stats">
+                                    <div class="creditAmount">
+                                        <p>500 / 900</p>
+                                    </div>
+                                    <div class="outerBar">
+                                        <div class="innerBar barAmount-two" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="credit-icon">
+                                    <img src="SVG/Credit_two.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="creditType-footer">
+                                <div class="purchaseBooster secondPurchase">
+                                    <div class="backgroundPurchase">
+                                        <p>Purchase</p>
+                                    </div>
+                                </div>
+                                <p>Medium Step</p>
+                            </div>
+                        </div>
+                        <div class="creditType-item">
+                            <div class="creditType-body">
+                                <div class="credit-stats">
+                                    <div class="creditAmount">
+                                        <p>500 / 1,200</p>
+                                    </div>
+                                    <div class="outerBar">
+                                        <div class="innerBar barAmount-three" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                <div class="credit-icon">
+                                    <img src="SVG/Credit_three.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="creditType-footer">
+                                <div class="purchaseBooster thirdPurchase">
+                                    <div class="backgroundPurchase">
+                                        <p>Purchase</p>
+                                    </div>
+                                </div>
+                                <p>Large Step</p>
+                            </div>
+                        </div>
+                        <div class="more">
+                            <p><a href="">More</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="linkCard-wrapper">
+                    <div class="linkCard-header">
+                        <p>Link A Card.</p>
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <div class="linkCard-body">
+                        <div class="userInput inputWrapper">
+                            <p>Debit Or Credit Card.</p>
+                            <input class="inputDesign" inputmode="numeric" pattern="[0-9]*" type="tel" maxlength="19" placeholder="4539 2892 4848 1773" required>
+                        </div>
+                        <div class="userInput inputWrapper">
+                            <select class="inputDesign" name="cards" id="cards" required>
+                                <option selected disabled>Select Card Type.</option>
+                                <option value="PayPal">American Express</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">Mastercard</option>
+                                <option value="americanexpress">American Express</option>
+                                <option value="discover">Discover</option>
+                            </select>
+                        </div>
+                        <div class="flexInput">
+                            <div class="firstnameInput inputWrapper">
+                                <p>Expiration Date.</p>
+                                <input class="inputDesign" type="tel" pattern="[0-9]*" maxlength="5" placeholder="mm/yy" required>
+                            </div>
+                            <div class="lastnameInput inputWrapper">
+                                <p>Security Code.</p>
+                                <input class="inputDesign" type="tel" pattern="[0-9]*" maxlength="4" placeholder="000" required>
+                            </div>
+                        </div>
+                        <div class="userInput inputWrapper">
+                            <p>Billing Address</p>
+                            <input class="inputDesign" type="text" placeholder="Reynolds Alley, Los Angeles, CA, 90014" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal notificationsModal">
+                <div class="modal-header">
+                    <h5>Notifications.</h5>
+                </div>
+                <div class="notify-body">
+                    <div class="notifyWrapper">
+                        <p>NextStep Notifications</p>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When someone likes my work</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When someone comments on my work.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When someone follows me.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When someone likes my comment.</p>
+                        </div>
+                    </div>
+                    <div class="notifyWrapper">
+                        <p>NextStep Users.</p>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When a user I'm following posts new work.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When someone comments on my work.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When someone follows me.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                                <input type="checkbox">
+                            </div>
+                            <p>When someone replies to my comment on a post.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal messagingModal">
+                <div class="modal-header">
+                    <h5>Messaging.</h5>
+                </div>
+                <div class="messaging-body">
+                    <div class="search-users-block">
+                        <div class="userInput inputWrapper">
+                            <p>Search User.</p>
+                            <input class="inputDesign" id="filter" type="text" autocomplete="off" placeholder="Enter user name to block...">
+                            <div id="userSearchDropdown" class="userSearch-dropdown">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blocking-wrapper">
+                        <p class="blockedUser-title">Blocked Users</p>
+
+                        <div class="no-block">
+                            <p>No users have been blocked.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal passwordModal">
+                <div class="modal-header">
+                    <h5>Password.</h5>
+                </div>
+                <div class="emailInput inputWrapper">
+                    <p>Current Password.</p>
+                    <input class="inputDesign" type="password" placeholder="Current Password">
+                </div>
+                <div class="flexInput">
+                    <div class="cityInput inputWrapper">
+                        <p>New Password.</p>
+                        <input class="inputDesign" type="password" placeholder="New Password.">
+                    </div>
+                    <div class="firstnameInput inputWrapper">
+                        <p>Confirm New Password</p>
+                        <input class="inputDesign" type="password" placeholder="Confirm New Password">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal accountModal">
+                <div class="modal-header">
+                    <h5>Account.</h5>
+                </div>
+                <div class="accountWrapper">
+                    <div class="account-profile">
+                        <img class="accountProfile newProfile" src="https://i.pinimg.com/564x/03/44/e7/0344e7ec94af4b31a4d8bd128612e8c7.jpg" alt="">
+                    </div>
+                    <div class="account-body">
+                        <div class="account-name">
+                            <h3 class="userRealName"></h3>
+                            <p>Occupation</p>
+                            <div class="follow-account">
+                                <div class="followers">
+                                    <p>Followers</p>
+                                    <p>13k</p>
+                                </div>
+                                <div class="following">
+                                    <p>Following</p>
+                                    <p>1k</p>
+                                </div>
+                            </div>
+                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci error ea aperiam libero doloribus tenetur quos ullam, ipsam nihil autem?</p>
+                        </div>
+                    </div>
+                    <div class="account-footer">
+                        <span>Cancel Account</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="editProfile.js"></script>
+</body>
+</html>

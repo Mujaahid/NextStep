@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="editResumeGallery.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.1.1-web copy/css/all.css">
+</head>
+<body>
+    <div class="resume_delete_wrapper">
+        <div class="resume_delete">
+            <div class="resume_delete_preview singlePreview">
+                <img src="https://bashooka.com/wp-content/uploads/2013/04/book-covers-bshk-16.jpg" alt="">
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteResume_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Single delete -->
+
+    <div class="resume_deleteGallery_wrapper">
+        <div class="resume_deleteGallery">
+            <div class="resumeGallery_preview">
+                <div class="resumeFile_preview_one resumeFile_preview_item">
+                    <img src="https://i.pinimg.com/564x/24/70/ba/2470ba6e58b9f85379fc4cffaf118b2b.jpg" alt="">
+                </div>
+                <div class="resumeFile_preview_two resumeFile_preview_item">
+                    <img src="https://i.pinimg.com/564x/6e/cb/71/6ecb71e8ef46d2a2dca2dc7720edda0e.jpg" alt="">
+                </div>
+                <div class="resumeFile_preview_three resumeFile_preview_item">
+                    <img src="https://i.pinimg.com/564x/f8/f3/6f/f8f36fe40e273e00a8ace3d880839bb4.jpg" alt="">
+                </div>
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteFile_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Gallery Modals -->
+
+    <div class="file_upload_modal_wrapper">
+        <div class="file_upload_modal">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Upload A File</p>
+                        <h3>Upload Single File</h3>
+                    </div>
+                    <div class="xBtn close_singleFileUpload">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadFile_wrapper uploadWrapper">
+                        <input type="file" id="readSingleResumeUrl">
+                        <img id="uploadSingleResume" src="#" alt="">
+                    </div>
+                    <div class="singleResume-btn">
+                        <label for="readSingleResumeUrl">Click To Upload</label>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn close_singleFileUpload">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Single Upload Modal -->
+    <div class="mainWrapper">
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}"></h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="playlist_container">
+            <div class="playlistInfo">
+                <div class="playlistInfoWrapper">
+                    <div class="playlistInfoHeader">
+                        <span>
+                            <a href="../portfolio.html">
+                                <i class="fas fa-arrow-left arrowBackBtn"></i>
+                            </a>
+                        </span>
+                        <div class="user">
+                            <h5>Abdullah</h5>
+                            <div class="userPreview">
+                                <img src="https://yt3.ggpht.com/ytc/AKedOLSkLXgltX9qgmwaLmiQZT62HVawKpv2xXkSKyAeHw=s176-c-k-c0x00ffffff-no-rj" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="folder_preview">
+                        <div class="folderPreviewItems folderPreviewOne">
+                            <img src="https://i.pinimg.com/564x/24/70/ba/2470ba6e58b9f85379fc4cffaf118b2b.jpg" alt="">
+                        </div>
+                        <div class="folderPreviewItems folderPreviewTwo">
+                            <img src="https://i.pinimg.com/564x/46/6d/16/466d165ade4c1e1d85659b427c2f33b2.jpg" alt="">
+                        </div>
+                        <div class="folderPreviewItems folderPreviewThree">
+                            <img src="https://i.pinimg.com/564x/6e/cb/71/6ecb71e8ef46d2a2dca2dc7720edda0e.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="playlistInfoBody">
+                        <input class="inputModal changeName" type="text" placeholder="Title of the Playlist.">
+                        <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="playlist-wrapper">
+                <div class="playlistInfoFooter">
+                    <div class="footerFlexOne singleUploadFile_btn">
+                        <span>Add To Playlist</span>
+                    </div>
+                    <div class="footerFlexTwo">
+                        <i class="far fa-trash-alt deleteResumeGallery_btn"></i>
+                    </div>
+                </div>
+                <div class="resume-playlist">
+                    <div class="resume_item">
+                        <div class="resume_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteResume_btn"></i>
+                            </div>
+                            <a class="ResumeItemLink" href="#">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.pinimg.com/564x/24/70/ba/2470ba6e58b9f85379fc4cffaf118b2b.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="resume_attribute">
+                            <h3>Sorry For You Loss</h3>
+                        </div>
+                    </div>
+                    <div class="resume_item">
+                        <div class="resume_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteResume_btn"></i>
+                            </div>
+                            <a class="ResumeItemLink" href="#">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://cdna.artstation.com/p/assets/images/images/046/996/904/large/faustine-dumontier-close-up-1.jpg?1646498498" alt="">
+                            </a>
+                        </div>
+                        <div class="resume_attribute">
+                            <h3>I Don't KNow</h3>
+                        </div>
+                    </div>
+                    <div class="resume_item">
+                        <div class="resume_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteResume_btn"></i>
+                            </div>
+                            <a class="ResumeItemLink" href="#">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://bashooka.com/wp-content/uploads/2013/04/book-covers-bshk-16.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="resume_attribute">
+                            <h3>Do Androids Dream Of ELectric Sheep</h3>
+                        </div>
+                    </div>
+                    <div class="resume_item">
+                        <div class="resume_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteResume_btn"></i>
+                            </div>
+                            <a class="ResumeItemLink" href="#">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.pinimg.com/564x/46/6d/16/466d165ade4c1e1d85659b427c2f33b2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="resume_attribute">
+                            <h3>Terrorist</h3>
+                        </div>
+                    </div>
+                    <div class="resume_item">
+                        <div class="resume_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteResume_btn"></i>
+                            </div>
+                            <a class="ResumeItemLink" href="#">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.pinimg.com/564x/6e/cb/71/6ecb71e8ef46d2a2dca2dc7720edda0e.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="resume_attribute">
+                            <h3>Now You Are One Of Us</h3>
+                        </div>
+                    </div>
+                    <div class="resume_item">
+                        <div class="resume_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteResume_btn"></i>
+                            </div>
+                            <a class="ResumeItemLink" href="#">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.pinimg.com/564x/f8/f3/6f/f8f36fe40e273e00a8ace3d880839bb4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="resume_attribute">
+                            <h3>Poetry After 9/11</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="editResumeGallery.js"></script>
+</body>
+</html>

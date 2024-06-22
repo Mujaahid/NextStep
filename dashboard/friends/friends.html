@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <link rel="stylesheet" href="friends.css">
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web copy/css/all.min.css">
+</head> 
+<body>
+    <div class="uploadVideo-chatModal">
+    </div>
+    <!-- Video Modal -->
+
+    <div class="uploadImage-chatModal">
+    </div>
+    <!-- Image Modal -->
+
+
+    <div class="uploadDoc-chatModal">
+    </div>
+    <!-- Doc Modal -->
+
+    <!-- Modals -->
+
+
+    <div class="mainWrapper">
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}"></h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="contact-chats-wrapper">
+            <div class="contacts">
+                <div class="contact-header">
+                    <div class="contact-header-top">
+                        <i class="fas fa-arrow-left"></i>
+                        <h3>Message</h3>
+                        <div class="addContact-btn">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                    </div>
+                    <div class="addContact-wrapper">
+                        <div class="addContact-input">
+                            <input type="text" placeholder="Enter A Username#000000">
+                        </div>
+                    </div>
+                    <div class="contact-header-bottom">
+                        <div class="contact-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="filter" class="filterContacts input" placeholder="Search Here...">
+                        </div>
+                    </div>
+                </div>
+                <div id="contactBody" class="contact-body">
+                    <div class="noContacts">
+                        <p>No Contacts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-wrapper">
+                <div class="startChat-svg">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 839 587.86">
+                        <defs>
+                            <style>.cls-1{fill:var(--primary-color);}.cls-2{fill:var(--dark-neu-color);}</style>
+                        </defs>
+                        <path class="cls-2" d="M435.73,297.72H193.12s-89.87,52.99-89.87,52.99c-8.51,5.01-19.24-1.11-19.24-10.99l-.02-42h-26.94C25.54,297.72,0,272.18,0,240.67V57.04C0,25.54,25.54,0,57.04,0H435.73c31.5,0,57.04,25.54,57.04,57.04V240.67c0,31.5-25.54,57.04-57.04,57.04Z"/>
+                        <path class="cls-2" d="M579.6,452.28l93.61-.36,65.82,38.47c6.23,3.64,14.06-.87,14.03-8.08l-.1-30.69h0c47.7-.18,86.23-39,86.04-86.7l-.12-31.82c-.18-47.7-39-86.23-86.7-86.04l-173.36,.66c-47.7,.18-86.23,39-86.04,86.7l.12,31.82c.18,47.7,39,86.23,86.7,86.04Z"/>
+                        <path class="cls-1" d="M54.17,43.26H435.67c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51H54.17c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z"/>
+                        <path class="cls-1" d="M55.64,97.91H437.13c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51H55.64c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z"/>
+                        <path class="cls-1" d="M55.64,152.56h206.7c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51H55.64c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z"/>
+                        <path class="cls-2" d="M276.32,554.69h-96.93s-54.42,32.09-54.42,32.09c-5.15,3.04-11.65-.67-11.65-6.65v-25.44s-16.33,0-16.33,0c-19.08,0-34.55-15.47-34.55-34.55v-53.21c0-19.08,15.47-34.55,34.55-34.55h179.34c19.08,0,34.55,15.47,34.55,34.55v53.21c0,19.08-15.47,34.55-34.55,34.55Z"/>
+                        <rect class="cls-1" x="547.89" y="295.39" width="235.98" height="21.07" rx="10.53" ry="10.53"/>
+                        <rect class="cls-1" x="547.89" y="337.42" width="235.98" height="21.07" rx="10.53" ry="10.53"/>
+                        <rect class="cls-1" x="611.9" y="379.46" width="171.97" height="21.07" rx="10.53" ry="10.53"/>
+                        <path class="cls-1" d="M137.98,479.1h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z"/>
+                        <path class="cls-1" d="M186.65,479.1h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z"/>
+                        <path class="cls-1" d="M234.95,479.1h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z"/>
+                    </svg>
+
+                    <h1 class="startChat-text">Start Conversation With Your Contacts</h1>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+                    <!-- <div id="contactItems" class="contact-items">
+                        <div class="contact-info">
+                            <div class="contact-profile">
+                                <img class="contactProfile" src="https://mir-s3-cdn-cf.behance.net/user/115/13e5611023931.5eff0d3b4bac9.jpg">
+                            </div>
+                            <div id="contactName" class="contact-name">
+                                <h4 class="contactUserName">Mohamed Samir</h4>
+                                <p>Graphic Design, Branding, Illustration</p>
+                            </div>
+                        </div>
+                        <div id="contactSettings" class="contact-settings">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div id="dropdown" class="contact-dropdown">
+                            <ul class="dropdownUl">
+                                <li id="deleteContact" class="delte-contact">Delete Contact</li>
+                                <li>Mute Notification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="contactItems" class="contact-items">
+                        <div class="contact-info">
+                            <div class="contact-profile">
+                                <img class="contactProfile" src="https://mir-s3-cdn-cf.behance.net/user/115/ab2644103319.5edd7724af834.png">
+                            </div>
+                            <div class="contact-name">
+                                <h4>Christian Antolin</h4>
+                                <p>Art Direction, Motion Graphics, Illustration</p>
+                            </div>
+                        </div>
+                        <div id="contactSettings" class="contact-settings">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div id="dropdown" class="contact-dropdown">
+                            <ul class="dropdownUl">
+                                <li id="deleteContact" class="delte-contact">Delete Contact</li>
+                                <li>Mute Notification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="contactItems" class="contact-items">
+                        <div class="contact-info">
+                            <div class="contact-profile">
+                                <img class="contactProfile" src="https://mir-s3-cdn-cf.behance.net/user/115/38d0441518397.5ea8073bea22e.png">
+                            </div>
+                            <div class="contact-name">
+                                <h4>Daniel Castrillon</h4>
+                                <p>Illustration, Typography, Character Design</p>
+                            </div>
+                        </div>
+                        <div class="contact-settings">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div id="dropdown" class="contact-dropdown">
+                            <ul class="dropdownUl">
+                                <li id="deleteContact" class="delte-contact">Delete Contact</li>
+                                <li>Mute Notification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="contactItems" class="contact-items">
+                        <div class="contact-info">
+                            <div class="contact-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/115/fceda95643605.5664816603972.jpg">
+                            </div>
+                            <div class="contact-name">
+                                <h4>Matthew Woodson</h4>
+                                <p>Illustration, Film</p>
+                            </div>
+                        </div>
+                        <div class="contact-settings">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div id="dropdown" class="contact-dropdown">
+                            <ul class="dropdownUl">
+                                <li id="deleteContact" class="delte-contact">Delete Contact</li>
+                                <li>Mute Notification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="contactItems" class="contact-items">
+                        <div class="contact-info">
+                            <div class="contact-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/115/215057.53ac6f3dacec6.jpg">
+                            </div>
+                            <div class="contact-name">
+                                <h4>Mike</h4>
+                                <p>Illustration, Graphic Design, UI/UX</p>
+                            </div>
+                        </div>
+                        <div class="contact-settings">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div id="dropdown" class="contact-dropdown">
+                            <ul class="dropdownUl">
+                                <li id="deleteContact" class="delte-contact">Delete Contact</li>
+                                <li>Mute Notification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="contactItems" class="contact-items">
+                        <div class="contact-info">
+                            <div class="contact-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/115/8bdd001878879.59811a8f489bb.jpg">
+                            </div>
+                            <div class="contact-name">
+                                <h4>Caramurú Baumgartner</h4>
+                                <p>Illustration, Graphic Design, Art Direction</p>
+                            </div>
+                        </div>
+                        <div class="contact-settings">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div id="dropdown" class="contact-dropdown">
+                            <ul class="dropdownUl">
+                                <li id="deleteContact" class="delte-contact">Delete Contact</li>
+                                <li>Mute Notification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="contactItems" class="contact-items">
+                        <div class="contact-info">
+                            <div class="contact-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/115/9b1ea310067539.5f555f44b67fa.jpg">
+                            </div>
+                            <div class="contact-name">
+                                <h4>Antonella Malachite</h4>
+                                <p>Graphic Design, Illustration, Branding</p>
+                            </div>
+                        </div>
+                        <div class="contact-settings">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div id="dropdown" class="contact-dropdown">
+                            <ul class="dropdownUl">
+                                <li id="deleteContact" class="delte-contact">Delete Contact</li>
+                                <li>Mute Notification</li>
+                            </ul>
+                        </div>
+                    </div> -->
+
+
+
+
+
+
+                    <!-- <div class="chat-box-one">
+                    <div class="chat-box-header">
+                        <div class="contactingUser">
+                            <div class="friend-profile friend-profile-1">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <div class="contactingUser-description">
+                                <h4>Mohamed Samir</h4>
+                                <p>Multidisciplinary Designer</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div id="ChatBox" class="chat-box">
+                        <div class="noChat-box">
+                            <div class="noChat_svg">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 907.36 639.78">
+                                    <defs><style>.cls-1{fill:var(--primary-color);}.cls-2{fill:var(--dark-neu-color);}.cls-3{fill:#e0353e;}</style></defs>
+                                    <path class="cls-2" d="M479.54,291.79l-236.62,53.58-75.95,71.52c-7.19,6.77-19.01,3.16-21.2-6.47l-9.3-40.96-26.28,5.95c-30.73,6.96-61.28-12.31-68.23-43.04L1.42,153.28c-6.96-30.73,12.31-61.28,43.04-68.23L413.79,1.42c30.73-6.96,61.28,12.31,68.23,43.04l40.55,179.09c6.96,30.73-12.31,61.28-43.04,68.23Z"/>
+                                    <path class="cls-2" d="M620.89,435.33l89.63,26.99,51.72,56.01c4.89,5.3,13.7,3.27,15.78-3.63l8.87-29.38h0c45.68,13.76,93.86-12.12,107.61-57.8l9.17-30.46c13.75-45.68-12.12-93.86-57.8-107.61l-166-49.99c-45.68-13.75-93.86,12.12-107.61,57.8l-9.17,30.46c-13.75,45.68,12.12,93.86,57.8,107.61Z"/>
+                                    <path class="cls-1" d="M214.71,179.7h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z" transform="translate(-37.81 52.24) rotate(-12.76)"/>
+                                    <path class="cls-1" d="M262.18,168.95h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z" transform="translate(-34.26 62.45) rotate(-12.76)"/>
+                                    <path class="cls-1" d="M309.29,158.28h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z" transform="translate(-30.74 72.59) rotate(-12.76)"/>
+                                    <rect class="cls-1" x="671.49" y="337.19" width="31.02" height="31.02" rx="15.51" ry="15.51" transform="translate(132.93 -185.23) rotate(16.98)"/>
+                                    <path class="cls-1" d="M733.55,351.4h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z" transform="translate(139.11 -198.2) rotate(16.98)"/>
+                                    <path class="cls-1" d="M779.75,365.51h0c8.56,0,15.51,6.95,15.51,15.51h0c0,8.56-6.95,15.51-15.51,15.51h0c-8.56,0-15.51-6.95-15.51-15.51h0c0-8.56,6.95-15.51,15.51-15.51Z" transform="translate(145.24 -211.08) rotate(16.98)"/>
+                                    <path class="cls-3" d="M434.66,573.37l-68.68,20.97-39.51,43.12c-3.74,4.08-10.5,2.55-12.12-2.74l-6.89-22.52h0c-35,10.69-72.04-9.03-82.72-44.03l-7.13-23.34c-10.69-35,9.03-72.04,44.03-82.72l127.2-38.83c35-10.69,72.04,9.03,82.72,44.03l7.13,23.34c10.69,35-9.03,72.04-44.03,82.72Z"/>
+                                    <rect class="cls-1" x="371.88" y="498.4" width="23.8" height="23.8" rx="11.9" ry="11.9" transform="translate(899.85 886.29) rotate(163.02)"/>
+                                    <rect class="cls-1" x="336.17" y="509.3" width="23.8" height="23.8" rx="11.9" ry="11.9" transform="translate(833.17 918.05) rotate(163.02)"/>
+                                    <rect class="cls-1" x="300.74" y="520.12" width="23.8" height="23.8" rx="11.9" ry="11.9" transform="translate(766.99 949.56) rotate(163.02)"/>
+                                </svg>
+                            </div>
+                            <h4>You Have Not Started A Conversation With <br> <span>Momhamed Samir</span> </h4>
+                        </div>
+                        <div id class="userChat-wrapper">
+                            <p class="userChat-text chat">I'm cocky in prediction, confident in preparation, but always humble in victory or defeat.</p>
+                            <p class="chat-time">9:35 am</p>
+                        </div>
+                        <div class="friendChat-wrapper">
+                            <div class="friend-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <div class="friendChat">
+                                <p class="friendChat-text chat">What?</p>
+                                <p class="chat-time">9:39 am</p>
+                            </div>
+                        </div>
+                        <div class="date-of-chat">
+                            <p class="full-date">2022/9/26</p>
+                        </div>
+                        <div class="userChat-wrapper">
+                            <p class="userChat-text chat">Your wife is in my DMs.</p>
+                            <p class="chat-time">9:42 am</p>
+                        </div>
+                        <div class="friendChat-wrapper">
+                            <div class="friend-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <div class="friendChat">
+                                <p class="friendChat-text chat">I don't know what is going on!!!</p>
+                                <p class="chat-time">9:42 am</p>
+                            </div>
+                        </div>
+                        <div class="friendChat-wrapper">
+                            <div class="friend-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <div class="friendChat">
+                                <div class="friendChat-video">
+                                    <i class="fas videoPlayIcon fa-play"></i>
+                                    <img src="	https://i.ytimg.com/vi/AJgfZsTRqVg/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLDcKbvJqvgLKYyjlOvx1DP9bkSipg" alt="">
+                                </div>
+                                <h4 class="friendVideo-title">The Beauty Of Top Gun</h4>
+                                <p class="chat-time">9:42 am</p>
+                            </div>
+                        </div>
+                        <div class="userChat-wrapper">
+                            <div class="userChat-doc">
+                                <img src="https://claireandjamie.com/files/image-exchange/2017/07/ie_55583.jpeg" alt="">
+                            </div>
+                            <h4 class="userDoc-title">A Court Of Thorns And Roses</h4>
+                            <p class="chat-time">9:51 am</p>
+                        </div>
+                        <div class="userChat-wrapper">
+                            <p class="userChat-text chat">I will invade your favela on horseback</p>
+                            <p class="chat-time">9:51 am</p>
+                        </div>
+                        <div class="date-of-chat">
+                            <p class="yesterday">Yesterday</p>
+                        </div>
+                        <div class="friendChat-wrapper">
+                            <div class="friend-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <div class="friendChat">
+                                <p class="friendChat-text chat">Please stop calling my house, I'll call the cops!!! what else can i say to test out the width of this text bubble</p>
+                                <p class="chat-time">9:42 am</p>
+                            </div>
+                        </div>
+                        <div class="friendChat-wrapper">
+                            <div class="friend-profile">
+                                <img src="https://mir-s3-cdn-cf.behance.net/user/230/13e5611023931.5eff0d3b4bac9.jpg" alt="">
+                            </div>
+                            <div class="friendChat">
+                                <div class="friendChat-image">
+                                    <img src="https://64.media.tumblr.com/a4c4f1afbdbc0df1d9e469110f1b3c6e/tumblr_obf114vNNA1r4rmqvo1_r1_1280.jpg" alt="">
+                                </div>
+                                <p class="chat-time">9:42 am</p>
+                            </div>
+                        </div>
+                        <div class="userChat-wrapper">
+                            <p class="userChat-text chat">Shut your f**kin’ mouth, you’ll do nothing!</p>
+                            <p class="chat-time">9:51 am</p>
+                        </div>
+                        <div class="userChat-wrapper">
+                            <p class="userChat-text chat">Shut your f**kin’ mouth, you’ll do nothing!</p>
+                            <p class="chat-time">9:51 am</p>
+                        </div>
+                        <div class="userChat-wrapper">
+                            <div class="userChat-image">
+                                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/29a5b747866767.588780c10afa9.png" alt="">
+                            </div>
+                            <h4 class="userVideo-title"></h4>
+                            <p class="chat-time">9:51 am</p>
+                        </div>
+                        <div class="userChat-wrapper">
+                            <div class="userChat-video">
+                                <i class="fas videoPlayIcon fa-play"></i>
+                                <video controls src="./9convert.com - The Beauty Of Macbeth.mp4" poster="https://i.ytimg.com/vi/znXxav-DBzI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDkJG9tvjiGOwK7joNQLO4m9ZePCQ"></video>
+                            </div>
+                            <h4 class="userVideo-title">The Beauty Of Martin Scorsese</h4>
+                            <p class="chat-time">9:51 am</p>
+                        </div>
+
+
+                        <div class="userChat-wrapper">
+                            <div class="userDoc-flex">
+                                <div class="userChat-doc">
+                                    <p>Mujaahid Dawud_paper-two.docx</p>
+                                </div>
+                                <div class="downloadDoc">
+                                    <i class="fas downloadIcon fa-download"></i>
+                                </div>
+                            </div>
+                            <p class="chat-time">9:51 am</p>
+                        </div>
+                    </div>
+                    <div class="chat-bar">
+                        <form id="FormTag">
+                            <input type="text" class="chat-bar-input input" placeholder="Type A Message...">
+                            <button id="button"><i class="fas fa-paper-plane"></i></button>
+                            <div class="uploadOpt-btn">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <div class="uploadOpt-wrapper">
+                                <div class="vidUploadBtn">
+                                    <i class="fa-solid videoUploadBtn-icon fa-video"></i>
+                                </div>
+                                <div class="imgUploadBtn">
+                                    <i class="fa-solid fa-image"></i>
+                                </div>
+                                <div class="docUploadBtn">
+                                    <i class="fa-solid fa-file"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="friends.js"></script>
+</body>
+</html>

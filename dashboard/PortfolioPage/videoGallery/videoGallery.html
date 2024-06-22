@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Images</title>
+    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="stylesheet" href="videoGallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="video_deleteGallery_wrapper">
+        <div class="video_deleteGallery">
+            <div class="videoGallery_preview">
+                <div class="videoPlaylist_preview_one videoPlaylist_preview_item">
+                    <img src="https://i.ytimg.com/vi/yBsgIiMK3DI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAP5n7o46OXKc34rHneC0grgbu6OQ" alt="">
+                </div>
+                <div class="videoPlaylist_preview_two videoPlaylist_preview_item">
+                    <img src="../../images/thumbnails/thumbnailOne.webp" alt="">
+                </div>
+                <div class="videoPlaylist_preview_three videoPlaylist_preview_item">
+                    <img src="../../images/thumbnails/thumbnailTwo.webp" alt="">
+                </div>
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeletePlaylist_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video_upload_modal_wrapper">
+        <div class="video_upload_modal">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Upload A Video</p>
+                        <h3>Upload Single Video</h3>
+                    </div>
+                    <div class="xBtn close_singleVideoUpload">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadVideo_wrapper uploadWrapper">
+                        <input type="file" accept="video/mp4,video/x-m4v,video/*" id="readSingleVideoUrl">
+
+                        <video id="uploadSingleVideo" controls src=""></video>
+                    </div>
+                    <div class="singleVideo-btn">
+                        <label for="readSingleVideoUrl">Click To Upload</label>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn close_singleVideoUpload">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="video_delete_wrapper">
+        <div class="video_delete">
+            <div class="video_delete_preview singlePreview">
+                <img src="https://i.ytimg.com/vi/yBsgIiMK3DI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAP5n7o46OXKc34rHneC0grgbu6OQ" alt="">
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteVideo_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainWrapper">
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}"></h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="playlist_container">
+            <div class="playlistInfo">
+                <div class="playlistInfoWrapper">
+                    <div class="playlistInfoHeader">
+                        <span>
+                            <a href="../portfolio.html">
+                                <i class="fas fa-arrow-left arrowBackBtn"></i>
+                            </a>
+                        </span>
+                        <div class="user">
+                            <h5>Abdullah</h5>
+                            <div class="userPreview">
+                                <img src="https://yt3.ggpht.com/ytc/AKedOLSkLXgltX9qgmwaLmiQZT62HVawKpv2xXkSKyAeHw=s176-c-k-c0x00ffffff-no-rj" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_preview">
+                        <div class="previewItems previewOne">
+                            <img src="https://i.ytimg.com/vi/yBsgIiMK3DI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAP5n7o46OXKc34rHneC0grgbu6OQ" alt="">
+                        </div>
+                        <div class="previewItems previewTwo">
+                            <img src="../../images/thumbnails/thumbnailThree.webp" alt="">
+                        </div>
+                        <div class="previewItems previewThree">
+                            <img src="../../images/thumbnails/thumbnailSeven.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="playlistInfoBody">
+                        <input class="inputModal changeName" type="text" placeholder="Title of the Playlist.">
+                        <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="playlist-wrapper">
+                <div class="playlistInfoFooter">
+                    <div class="footerFlexOne singleUploadVideo_btn">
+                        <span>Add To Playlist</span>
+                    </div>
+                    <div class="footerFlexTwo">
+                        <i class="far fa-trash-alt deleteVideoGallery_btn"></i>
+                    </div>
+                </div>
+                <div class="playlist">
+                    <div class="video_items">
+                        <div class="video_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteVideo_btn"></i>
+                            </div>
+                            <div class="vid_timer">
+                                <p>3:23</p>
+                            </div>
+                            <a class="VideoItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                               <img src="https://i.ytimg.com/vi/yBsgIiMK3DI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAP5n7o46OXKc34rHneC0grgbu6OQ" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="video_attribute">
+                            <h3>The Beauty of Macbeth</h3>
+                        </div>
+                    </div>
+                    <div class="video_items">
+                        <div class="video_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteVideo_btn"></i>
+                            </div>
+                            <div class="vid_timer">
+                                <p>3:23</p>
+                            </div>
+                            <a class="VideoItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.ytimg.com/vi/pwOIbRB8tU0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUiW8an4kikzvCUDk8-qy_xGud-A" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="video_attribute">
+                            <h3>The Beauty of Dune</h3>
+                        </div>
+                    </div>
+                    <div class="video_items">
+                        <div class="video_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteVideo_btn"></i>
+                            </div>
+                            <div class="vid_timer">
+                                <p>3:23</p>
+                            </div>
+                            <a class="VideoItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.ytimg.com/vi/M8075TIFvQs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARmITtwhkem30uXq69KusevKJBxg" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="video_attribute">
+                            <h3>The Beauty of Paul Thomas Anderson</h3>
+                        </div>
+                    </div>
+                    <div class="video_items">
+                        <div class="video_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteVideo_btn"></i>
+                            </div>
+                            <div class="vid_timer">
+                                <p>3:23</p>
+                            </div>
+                            <a class="VideoItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                               <img src="https://i.ytimg.com/vi/bHzmODHTURM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3k5KMe-ZziRCoBdFftOHpIY4DNA" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="video_attribute">
+                            <h3>The Beauty of Stanley Kubrick</h3>
+                        </div>
+                    </div>
+                    <div class="video_items">
+                        <div class="video_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteVideo_btn"></i>
+                            </div>
+                            <div class="vid_timer">
+                                <p>3:23</p>
+                            </div>
+                            <a class="VideoItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.ytimg.com/vi/RV7zUfeSTtE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDu_xU3RU9tpKiTQFbAwGSnFu7ptg" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="video_attribute">
+                            <h3>The Beauty of Babel</h3>
+                        </div>
+                    </div>
+                    <div class="video_items">
+                        <div class="video_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteVideo_btn"></i>
+                            </div>
+                            <div class="vid_timer">
+                                <p>3:23</p>
+                            </div>
+                            <a class="VideoItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://i.ytimg.com/vi/MbbUvhmw_Sc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUVNsRuNITbamrTxOJr448y4GjXg" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="video_attribute">
+                            <h3>The Beauty of Goodfellas</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="videoGallery.js"></script>
+</body>
+</html>

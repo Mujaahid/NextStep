@@ -1,0 +1,242 @@
+/*      ^ ipad ^     */
+@media only screen and (min-width: 800px)  {
+    .signUpBusinessWrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: #fce77d;
+    }
+    .businessWrapper {
+        width: 50%;
+    }
+    .innerBusinessForm {
+        margin: auto;
+        padding: 2em;
+    }
+    .autoFillInput {
+        border-radius: 10px;
+        font-size: 11px;
+    }
+    .tips {
+        width: 50%;
+        height: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        background: #cf4540;
+    }
+    .tipsContainer {
+        margin: auto;
+    }
+    .headerImage {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5%;
+        width: 100%;
+    }
+    /* .tip-header {
+        font-family: 'Secular One', sans-serif;
+        text-align: center;
+        font-size: 100px;
+        color: #9E2630;
+    } */
+    .tipHeader {
+        margin-bottom: 10px;
+        color: #9E2630;
+    }
+    .tips {
+        text-align: center;
+        color: #ffffff;
+    }
+    .tip-para {
+        width: 85%;
+        margin: auto;
+    }
+    .tipBody{
+        font-size: 14px;
+        line-height: 2em;
+    }
+    .tipSpan {
+        color:  #fce77d;
+    }
+    .social-media {
+        width: 100%;
+        margin-top: 1%;
+    }
+    #businessOne {
+        display: block;
+        -webkit-animation-name: slideLaptop;
+        -webkit-animation-duration: 1s;
+        /* Standard syntax */
+        animation-name: slideLaptop;
+        animation-duration: 1s;
+    }
+    #businessTwo {
+        display: none;
+        -webkit-animation-name: slideLaptop;
+        -webkit-animation-duration: 1s;
+        /* Standard syntax */
+        animation-name: slideLaptop;
+        animation-duration: 1s;
+    }
+    #businessThree {
+        display: none;
+        -webkit-animation-name: slideLaptop;
+        -webkit-animation-duration: 1s;
+        /* Standard syntax */
+        animation-name: slideLaptop;
+        animation-duration: 1s;
+    }
+    #businessFour {
+        display: none;
+        -webkit-animation-name: slideLaptop;
+        -webkit-animation-duration: 1s;
+        /* Standard syntax */
+        animation-name: slideLaptop;
+        animation-duration: 1s;
+    }
+    .field {
+        border-radius: 10px;
+    }
+    .passwords, .location, .theme-submit{
+        display: flex;
+        justify-content: space-between;
+    }
+    .pwordOne, .pwordTwo, .country, .city {
+        width: 45%;
+    }
+
+    .termsBtnWrapper {
+        width: 45%;
+    }
+    .theme {
+        width: 45%;
+        border: none;
+        height: 50px;
+        outline: none;
+        color: #cfd6df;
+        font-size: 11px;
+        padding: 0px 2em;
+        margin-top: 25px;
+        border-radius: 30px;
+        background: #e6eef8;
+        font-family: 'Spartan', sans-serif;
+    }
+    
+    @keyframes slideLaptop {
+        from {
+          transform: translateX(10%);
+          opacity: 0;
+         
+        }
+        to {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+    }
+    .agreed {
+        width: 30%;
+    }
+
+}
+/*      laptops.         */
+@media only screen and (min-width: 1500px)  {
+    .businessWrapper {
+        width: 50%;
+        display: flex;
+        box-shadow: 0px 0px 22px 5px rgba(84,43,41,0.83);
+        flex-direction: column;
+        justify-content: center;
+    }
+    .innerBusinessForm {
+        margin: auto;
+        padding: 2em;
+    }
+
+}
+
+@media only screen and (max-width: 800px)  {
+    .businessWrapper {
+        width: 100%;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .innerBusinessForm {
+        width: 85%;
+        margin: auto;
+        padding-top: 0px;
+    }
+}
+/*      desktops        */
+@media only screen and (min-height: 700px) {
+ 
+    .businessWrapper {
+        box-shadow: 0px 0px 22px 5px rgba(84,43,41,0.83);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .innerBusinessForm {
+        width: 85%;
+        margin: auto;
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-height: 560px) {
+    body {
+        height: auto;
+    }
+}
+
+
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1.5) { 
+
+    .signUpBusinessWrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #fce77d;
+    }
+    .businessWrapper {
+        height: 80%;
+        width: 100%;
+    }
+    .tips {
+        width: 100%;
+        height: 30%;
+        text-align: center;
+        color: #ffffff;
+    }
+}
+
+@media only screen 
+  and (min-width: 800px) 
+  and (max-height: 1280px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1.5) { 
+    .signUpBusinessWrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #fce77d;
+    }
+    .businessWrapper {
+        height: 80%;
+        width: 100%;
+    }
+    .tips {
+        width: 100%;
+        height: 30%;
+        text-align: center;
+        color: #ffffff;
+    }
+  }

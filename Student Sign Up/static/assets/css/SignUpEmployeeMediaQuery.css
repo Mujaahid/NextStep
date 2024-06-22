@@ -1,0 +1,188 @@
+@media only screen and (min-width: 980px)  {
+
+    body {
+       height: 100vh;
+        background: #CF4545;
+    }
+    .signUpWrapper {
+        display: flex;
+    }
+
+    .formWrapper {
+        width: 50%;
+        height: 100vh;
+
+        background-color: #E6EEF8;
+        box-shadow: 0px 0px 22px 5px rgba(84,43,41,0.83);
+    }
+
+    .tips {
+        width: 50%;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+    .headerImage {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5%;
+        width: 100%;
+    }
+    /* .tip-header {
+        font-family: 'Secular One', sans-serif;
+        text-align: center;
+        font-size: 100px;
+        color: #9E2630;
+    } */
+    .tipHeader {
+        margin-bottom: 10px;
+        color: #9E2630;
+    }
+    .tips {
+        text-align: center;
+        color: #ffffff;
+    }
+    .tip-para {
+        width: 85%;
+        margin: auto;
+    }
+    .tipBody{
+        font-size: 14px;
+        line-height: 2em;
+    }
+    .tipSpan {
+        color:  #fce77d;
+    }
+
+    .coins {
+        width: 20%;
+        z-index: 1;
+    }
+    input, textarea, select{
+        width: 100%;
+        border: none;
+        height: 50px;
+        font-size: 11px;
+
+        margin-top: 25px;
+        border-radius: 10px;
+        background: #e6eef8;
+        font-family: 'Spartan', sans-serif;
+        box-shadow: inset 5px 5px 9px #BCCAE4,    inset -5px -5px 9px #fdffff;
+    }
+
+    textarea {
+        padding-top: 14px;
+    }
+    /* .container, .country, .city, #listJobExperience{
+        height: 44px;
+        padding: 0px 2em;
+        font-size: 11px;
+        margin-top: 25px;
+        font-family: 'Spartan', sans-serif;
+        border-radius: 10px;
+        background: #e6eef8;
+        box-shadow: inset 5px 5px 9px #BCCAE4,    inset -5px -5px 9px #fdffff;
+    } */
+    .passwords, .education, .location{
+        display: flex;
+        justify-content: space-between;
+    }
+    .pwordOne, .pwordTwo, .spwordTwo, .college, .study, .city, .country {
+        width: 45%;
+    }
+    .one{
+        width: 70%;
+        margin: auto;
+        /* display: none; */
+    }
+    .two{
+        display: none;
+        width: 70%;
+        margin: auto;
+    }
+    .three{
+        width: 70%;
+        margin: auto;
+    }
+    .four{
+        display: none;
+        width: 70%;
+        margin: auto;
+    }
+    .five{
+        display: none;
+        width: 70%;
+        margin: auto;
+    }
+    .pageBtn {
+        width: 100%;
+        margin: 10px 0px 10px;
+    }
+    .social-media {
+        width: 100%;
+        /* transition: 1s; */
+    }
+    .drop-zone {
+        width: 160px;
+        height: 160px;
+    }
+
+    .modal {
+        background-color: rgba(0, 0, 0, 0.103);
+        position: absolute;
+        overflow: auto;
+        display: none;
+        height: fit-content;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        left: 0;
+        top: 0;
+    }
+    .modal-content {
+        height: 70%;
+        width: 70%;
+    }
+    .lastPageBtn {
+        display: flex;
+
+    justify-content: space-evenly;
+    }
+    .agreed {
+        width: 10%;
+          
+    }
+}
+/* laptops */
+
+@media only screen and (max-height: 560px) {
+    body {
+        height: auto;
+    }
+    .formWrapper {
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 979px) {
+
+    form {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-height: 650px) and (max-height: 1300px) and (min-width: 350px) and (max-width: 979px) {
+    body {
+        height: 100vh;
+        
+    }
+
+    .formWrapper {
+        height: 100vh;
+
+        
+    }
+}
+

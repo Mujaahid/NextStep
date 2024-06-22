@@ -1,0 +1,193 @@
+/*  social  */
+.social-media {
+    width: 100%;
+    transition: 1s;
+    padding: 1em 0px 1em;
+}
+.social-container {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.icon{
+    width: 45px;
+    height: 45px;
+    border: none;
+    font-size: 18px;
+    color: #8F9BB4;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #f6ffff, #cfd6df);
+    box-shadow:  7px 7px 14px #BCCAE4, -7px -7px 14px #ffffff;   
+}
+.icon:hover {
+    cursor: pointer;
+    color: #CF4545;
+    transition: all 500ms;
+    border: 1px solid cfd6df;
+    background: linear-gradient(145deg, #cfd6df, #f6ffff);
+    box-shadow:  5px 5px 10px #BCCAE4, -5px -5px 10px #ffffff;
+}
+.icon:focus {
+    cursor: pointer;
+    color: #CF4545;
+    transition: all 0.8s;
+    border: 1px solid cfd6df;
+    background: linear-gradient(145deg, #cfd6df, #f6ffff);
+    box-shadow:  5px 5px 10px #BCCAE4, -5px -5px 10px #ffffff;
+}
+/*  social  */
+
+/*  next page button  */
+.pageBtn {
+    width: 100%;
+    margin: 10px 0px 10px;
+}
+.btn-icon {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.btn {
+    width: 85px;
+    height: 45px;
+    border: none;
+    background: none;
+    font-size: 18px;
+    color: #CF4545;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.btn:focus {
+    outline: none;
+}
+/*  next page button  */
+
+
+/*      gender button       */
+.signUp-user-gender {
+    width: 100%;
+    margin: 30px 0 14px;
+}
+.gender-container {
+    width: 100%;
+    display: flex;
+    color: #8F9BB4;
+    justify-content: space-between;
+}
+.gheader {
+    padding-top: 5%;
+    font-size: 12px;
+}
+.GenderBtnContainer {
+    padding-top: 3px;
+}
+.genderBtn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    margin: auto;
+    font-size: 18px;
+    color: #8F9BB4;
+    border-radius: 30%;
+    padding: 13px;
+    text-align: center;
+    background: linear-gradient(145deg, #f6ffff, #cfd6df);
+    box-shadow:  5px 5px 10px #e2e3e4,-5px -5px 10px #f6f6f7;
+}
+.Gtag {
+    padding-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+.genderBtn:hover {
+    cursor: pointer;
+    color: #CF4545;
+    transition: all 0.5s;
+    background: linear-gradient(145deg, #cfd6df, #f6ffff);
+    box-shadow:  5px 5px 10px #cdd4dd, -5px -5px 10px #ffffff;
+}
+/*      gender button       */
+
+
+/*      submit and prev 4 button       */
+.termsCheck {
+    width: 100%;
+    border: none;
+    height: 50px;
+    padding: 15px;
+    font-size: 12px;
+    margin-top: 25px;
+    color: #5e6670;
+    text-align: center;
+    border-radius: 30px;
+    transition: 200ms;
+    background: linear-gradient(145deg, #f6ffff, #cfd6df);
+    box-shadow:  7px 7px 14px #BCCAE4, -7px -7px 14px #ffffff;   
+}
+.termsCheck:hover {
+    box-shadow:  1px 1px 8px #BCCAE4, -1px -1px 8px #ffffff;   
+    cursor: pointer;
+    color: #CF4545;
+}
+.subBtnContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.lastPageBtn {
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+}
+/*      submit and prev 4 button       */
+
+
+.submit {
+    width: 20%;
+    height: 34px;
+    border: none;
+    margin: 1em auto 2em;
+    font-size: 13px;
+    color: #8F9BB4;
+    transition: 200ms;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #f6ffff, #cfd6df);
+    box-shadow:  7px 7px 14px #BCCAE4, -1px -1px 4px #ffffff;   
+}
+.submit:hover {
+    cursor: pointer;
+    box-shadow:  2px 2px 5px #BCCAE4, -1px -1px 4px #ffffff;   
+}
+.agreed {
+    width: 30%;
+    height: 34px;
+    border: none;
+    float: right;
+    font-size: 13px;
+    color: #8F9BB4;
+    border-radius: 10px;
+    transition: 200ms;
+    background: linear-gradient(145deg, #f6ffff, #cfd6df);
+    box-shadow:  7px 7px 14px #BCCAE4, -1px -1px 4px #ffffff;   
+}
+.agreed:hover {
+    cursor: pointer;
+    color: #d3d3d3;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #CF4545, #ec6161);
+    box-shadow:  2px 2px 5px #BCCAE4, -1px -1px 4px #ffffff;   
+}
+
+.closeBtn {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    color: #CF4545;
+    transition: 100ms;
+}
+.closeBtn:hover {
+    color: #e6eef8;
+}

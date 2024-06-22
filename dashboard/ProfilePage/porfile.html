@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+
+
+    <!-- frag link -->
+    <link th:replace="fragments/footerFrag.html :: navCss" rel="stylesheet" href="">
+    <link th:replace="fragments/footerFrag.html :: footCss" rel="stylesheet" href="">
+</head>
+<body>
+    <div class="delete-account-modal-wrapper">
+        <div class="delete-account-modal">
+            <div class="main-account-wrapper">
+                <div class="main-account-top">
+                    <img src="https://cdnb.artstation.com/p/users/avatars/002/116/707/large/fc8b8538417f415749b4c5606da3f0ab.jpg?1594443091" alt="">
+                </div>
+                <div class="main-account-body">
+                    <h4>Mujaahid</h4>
+                    <p>Programmer</p>
+                    <p class="delete-account-warning">Are you sure you want to delete <span class="account-name">Mujaahid</span></p>
+                </div>
+                <div class="main-account-footer">
+                    <span class="cancel-delete">Cancel</span>
+                    <span class="delete-account">Delete Account</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainWrapper">
+        <div th:replace="fragments/footerFrag.html :: navbar"></div>
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}"></h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="input-wrapper">
+            <div class="input-dashboard">
+                <div class="id_header">
+                    <span>
+                        <a href="../dashboard.html">
+                            <i class="fas fa-arrow-left arrowBackBtn"></i>
+                        </a>
+                    </span>
+                    <p>Settings</p>
+                </div>
+                <div class="userProfile">
+                    <div class="userProfileImage">
+                        <img src="https://cdnb.artstation.com/p/users/avatars/002/116/707/large/fc8b8538417f415749b4c5606da3f0ab.jpg?1594443091" alt="">
+                    </div>
+                    <div class="userName">
+                        <h4>Mujaahid</h4>
+                    </div>
+                </div>
+                <div class="id-buttons_container">
+                    <div class="input-dash-btn dash_btn_profile">
+                        <div class="id-btn-icon">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <p>Profile</p>
+                    </div>
+                    <div class="input-dash-btn dash_btn_resume">
+                        <div class="id-btn-icon">
+                            <i class="far fa-file-alt"></i>
+                        </div>
+                        <p>Resume</p>
+                    </div>
+                    <div class="input-dash-btn dash_btn_social">
+                        <div class="id-btn-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <p>Social</p>
+                    </div>
+                    <div class="input-dash-btn dash_btn_notifi">
+                        <div class="id-btn-icon">
+                            <i class="far fa-bell"></i>
+                        </div>
+                        <p>Notifications</p>
+                    </div>
+                    <div class="input-dash-btn dash-btn-message">
+                        <div class="id-btn-icon">
+                            <i class="far fa-comment"></i>
+                        </div>
+                        <p>Messaging</p>
+                    </div>
+                    <div class="input-dash-btn dash-btn-password">
+                        <div class="id-btn-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <p>Password</p>
+                    </div>
+                    <div class="input-dash-btn dash-btn-account">
+                        <div class="id-btn-icon">
+                            <i class="far fa-user-circle"></i>
+                        </div>
+                        <p>Account</p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-slide-container">
+                <!-- profile -->
+                <div class="input-Profile input-container">
+                    <div class="input-header">
+                        <h4>Profile.</h4>
+                        <p>Fill in your hiring information to appear in search results.</p>
+                    </div>
+                    <div class="input-body">
+                        <div class="input-file">
+                            <div class="uploadGaller_wrapper uploadWrapper">
+                                <input type="file" id="readSingleImageUrl">
+                                <img id="uploadSingleImage" src="" alt="">
+                            </div>
+                            <div class="singleImage-btn">
+                                <label for="readSingleImageUrl">Click To Upload</label>
+                            </div>
+                        </div>
+                        <div class="input-file">
+                            <p>Banner Preview</p>
+                            <div class="banner-image">
+                                <div class="user-info">
+                                    <div class="user-slide-porfile">
+                                        <img src="https://cdna.artstation.com/p/users/avatars/000/132/798/medium/0112507244c9e23677e3313c3e3cdc81.jpg?1545252398" alt="">
+                                    </div>
+                                    <div class="user-slide-buttons">
+                                        <div class="user-slide-name-wrapper">
+                                            <div class="user-slide-name">
+                                                <h4>Eugene Korolev</h4>
+                                                <p>digital artist</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="bio-settings-btn">
+                                                <div class="slide-setting-btn">
+                                                    <a href="#about">
+                                                        <p>About</p>
+                                                    </a>
+                                                </div>
+                                                <div class="slide-setting-btn">
+                                                    <a href="#experience">
+                                                        <p>Experience</p>
+                                                    </a>
+                                                </div>
+                                                <div class="slide-setting-btn">
+                                                    <a href="#education">
+                                                        <p>Education</p>
+                                                    </a>
+                                                </div>
+                                                <div class="slide-setting-btn">
+                                                    <a href="#volunteering">
+                                                        <p>Volunteering</p>
+                                                    </a>
+                                                </div>
+                                                <div class="slide-setting-btn">
+                                                    <a href="#skill">
+                                                        <p>Skills</p>
+                                                    </a>
+                                                </div>
+                                                <div class="slide-setting-btn">
+                                                    <a href="#reviews">
+                                                        <p>Review</p>
+                                                    </a>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bio-background">
+                                    <div id="bottom-fade"></div>
+                                    <input type="file" id="read-bannerImageUrl">
+                                    <img id="uploadBannerImage" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="upload-banner">
+                                <label for="read-bannerImageUrl">Click To Upload Banner</label>
+                            </div>
+                        </div>
+                        <div class="input-file">
+                            <p>Username</p>
+                            <div class="new-input input-error">
+                                <input type="text" placeholder="Mujaahid">
+                            </div>
+                        </div>
+                        <div class="input-file-flex">
+                            <div class="input-file">
+                                <p>First Name</p>
+                                <div class="new-input">
+                                    <input type="text" placeholder="Mujaahid">
+                                </div>
+                            </div>
+                            <div class="input-file">
+                                <p>Last Name</p>
+                                <div class="new-input">
+                                    <input type="text" placeholder="Dawud">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-file">
+                            <p>Email</p>
+                            <div class="new-input input-error">
+                                <input type="email" placeholder="Mujaahid@gmail.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-save-btn">
+                        <span class="cancel save-cancel-Btn">Cancel</span>
+                        <span class="save save-cancel-Btn">Save</span>
+                    </div>
+                </div>
+                <!-- profile -->
+                <!-- Resume -->
+                <div class="input-Resume input-container">
+                    <div class="input-header">
+                        <h4>Resume.</h4>
+                        <p>Your Resume and description of yourself.</p>
+                    </div>
+                    <div class="input-body">
+                        <div class="input-file">
+                            <p>Interested in:</p>
+                            <div class="radio-btn">
+                                <label class="container">
+                                    <p>Full Time</p>
+                                    <input type="checkbox" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  <label class="container">
+                                    <p>Contract</p>
+                                    <input type="checkbox" name="radio">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  <label class="container">
+                                    <p>Freelance</p>
+                                    <input type="checkbox" name="radio">
+                                    <span class="checkmark"></span>
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="input-file">
+                            <p>Profession</p>
+                            <div class="new-input">
+                                <input type="text" placeholder="Artist">
+                            </div>
+                        </div>
+                        <div class="input-file">
+                            <p>Professional Summary</p>
+                            <textarea class="newTextarea" placeholder="A summary of your professional skills and experience as..."></textarea>
+                        </div>
+                    </div>
+                    <div class="input-save-btn">
+                        <span class="cancel save-cancel-Btn">Cancel</span>
+                        <span class="save save-cancel-Btn">Save</span>
+                    </div>
+                </div>
+                <!-- Resume -->
+                <!-- Social -->
+                <div class="input-Social input-container">
+                    <div class="input-header">
+                        <h4>Social.</h4>
+                        <p>Increase your exposure by adding your social media links.</p>
+                    </div>
+                    <div class="input-body">
+                        <div class="select-social-wrapper">
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>Website</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.Website...">
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>Twitter</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.Twitter...">
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>Instagram</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.Instagram...">
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>LinkedIn</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.LinkedIn...">
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>Pinterest</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.Pinterest...">
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>Dribble</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.Dribble...">
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>Behance</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.Behance...">
+                                </div>
+                            </div>
+                            <div class="social">
+                                <div class="select-social">
+                                    <p>Youtube</p>
+                                </div>
+                                <div class="new-input">
+                                    <input type="text" placeholder="https://www.Youtube...">
+                                </div>
+                            </div>
+                            <div class="fade"></div>
+                        </div>
+                        <div class="delete-social-wrapper">
+                            <div class="delete-social-header">
+                                <h4>Current Social Media</h4>
+                            </div>
+                            <div class="social-social-body">
+                                <div class="delete-social">
+                                    <div class="delete-icon">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <div class="delete-social-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <div class="delete-social-title">
+                                        <p>Twitter</p>
+                                    </div>
+                                </div>
+                                <div class="delete-social">
+                                    <div class="delete-icon">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <div class="delete-social-icon">
+                                        <i class="fab fa-facebook"></i>
+                                    </div>
+                                    <div class="delete-social-title">
+                                        <p>Facebook</p>
+                                    </div>
+                                </div>
+                                <div class="delete-social">
+                                    <div class="delete-icon">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <div class="delete-social-icon">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div class="delete-social-title">
+                                        <p>Instagram</p>
+                                    </div>
+                                </div>
+                                <div class="delete-social">
+                                    <div class="delete-icon">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <div class="delete-social-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="delete-social-title">
+                                        <p>LinkedIn</p>
+                                    </div>
+                                </div>
+                                <div class="delete-social">
+                                    <div class="delete-icon">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <div class="delete-social-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <div class="delete-social-title">
+                                        <p>Twitter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-save-btn">
+                        <span class="cancel save-cancel-Btn">Cancel</span>
+                        <span class="save save-cancel-Btn">Save</span>
+                    </div>
+                </div>
+                <!-- Social -->
+                <!-- Notification -->
+                <div class="input-Notification input-container">
+                    <div class="input-header">
+                        <h4>Notification.</h4>
+                        <p>Edit your notifications.</p>
+                    </div>
+                    <div class="input-body">
+                        <div class="notifi-wrapper">
+                            <div class="notifi-body">
+                                <div class="notifi">
+                                    <p>When a user I'm following posts</p>
+                                    <label class="container">
+                                        <input type="checkbox" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                                <div class="notifi">
+                                    <p>When someone comments</p>
+                                    <label class="container">
+                                        <input type="checkbox" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                                <div class="notifi">
+                                    <p>When someone replies to my comment</p>
+                                    <label class="container">
+                                        <input type="checkbox" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                                <div class="notifi">
+                                    <p>When someone likes my Comment</p>
+                                    <label class="container">
+                                        <input type="checkbox" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                                <div class="notifi">
+                                    <p>When someone sends a friend request</p>
+                                    <label class="container">
+                                        <input type="checkbox" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                                <div class="notifi">
+                                    <p>When a user I'm following posts</p>
+                                    <label class="container">
+                                        <input type="checkbox" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                      </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-save-btn">
+                        <span class="cancel save-cancel-Btn">Cancel</span>
+                        <span class="save save-cancel-Btn">Save</span>
+                    </div>
+                </div>
+                <!-- Notification -->
+                <!-- Message -->
+                <div class="input-Message input-container">
+                    <div class="input-header">
+                        <h4>Message.</h4>
+                        <p>Find users you wish to block or unblock.</p>
+                    </div>
+                    <div class="input-body">
+                        <div class="blocking-user-wrapper">
+                            <div class="blocking-user-input">
+                                <div class="search-user-block-flex">
+                                    <div class="input-file search-user-wrapper">
+                                        <p>Block Users</p>
+                                        <div class="new-input">
+                                            <input type="search" placeholder="Enter User To Block...">
+                                        </div>
+                                        <div class="user-block-dropdown">
+                                            <div class="search-user">
+                                                <div class="search-user-profile">
+                                                    <img src="https://cdna.artstation.com/p/users/avatars/000/440/868/large/aeb3c8f9e216b9648df0a906c66a010a.jpg?1586523924" alt="">
+                                                </div>
+                                                <div class="search-user-name">
+                                                    <h3>Christian Angelo Castelli</h3>
+                                                    <p>3D Animator at Ubisoft Annecy</p>
+                                                </div>
+                                            </div>
+                                            <div class="search-user">
+                                                <div class="search-user-profile">
+                                                    <img src="https://cdna.artstation.com/p/users/avatars/000/440/868/large/aeb3c8f9e216b9648df0a906c66a010a.jpg?1586523924" alt="">
+                                                </div>
+                                                <div class="search-user-name">
+                                                    <h3>Christian Angelo Castelli</h3>
+                                                    <p>3D Animator at Ubisoft Annecy</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="block-user-btn">Block</span>
+                                </div>
+                            </div>
+                            <div class="blocked-users-list">
+                                <div class="blocked-user">
+                                    <div class="blocked-user-body">
+                                        <div class="blocked-user-profile">
+                                            <img src="https://cdna.artstation.com/p/users/avatars/000/440/868/large/aeb3c8f9e216b9648df0a906c66a010a.jpg?1586523924" alt="">
+                                        </div>
+                                        <div class="blocked-user-name">
+                                            <h3>Christian Angelo Castelli</h3>
+                                            <p>3D Animator at Ubisoft Annecy</p>
+                                        </div>
+                                    </div>
+                                    <div class="unblock-btn">
+                                        <p>Unblock</p>
+                                    </div>
+                                </div>
+                                <div class="blocked-user">
+                                    <div class="blocked-user-body">
+                                        <div class="blocked-user-profile">
+                                            <img src="https://cdna.artstation.com/p/users/avatars/000/440/868/large/aeb3c8f9e216b9648df0a906c66a010a.jpg?1586523924" alt="">
+                                        </div>
+                                        <div class="blocked-user-name">
+                                            <h3>Christian Angelo Castelli</h3>
+                                            <p>3D Animator at Ubisoft Annecy</p>
+                                        </div>
+                                    </div>
+                                    <div class="unblock-btn">
+                                        <p>Unblock</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-save-btn">
+                        <span class="cancel save-cancel-Btn">Cancel</span>
+                        <span class="save save-cancel-Btn">Save</span>
+                    </div>
+                </div>
+                <!-- Message -->
+                <!-- Password -->
+                <div class="input-Password input-container">
+                    <div class="input-header">
+                        <h4>Password.</h4>
+                        <p>Change Password.</p>
+                    </div>
+                    <div class="input-body">
+                        <div class="input-file">
+                            <p>Old Password</p>
+                            <div class="new-input input-error">
+                                <input type="password" placeholder="Tom41313">
+                            </div>
+                        </div>
+                        <div class="input-file-flex">
+                            <div class="input-file">
+                                <p>New Password</p>
+                                <div class="new-input">
+                                    <input type="password" placeholder="R4525nslknFE">
+                                </div>
+                            </div>
+                            <div class="input-file">
+                                <p>Confrim Password</p>
+                                <div class="new-input">
+                                    <input type="password" placeholder="R4525nslknFE">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-save-btn">
+                        <span class="cancel save-cancel-Btn">Cancel</span>
+                        <span class="save save-cancel-Btn">Save</span>
+                    </div>
+                </div>
+                <!-- Password -->
+                <!-- Account -->
+                <div class="input-Account input-container">
+                    <div class="input-header">
+                        <h4>Account.</h4>
+                        <p>Account Settings.</p>
+                    </div>
+                    <div class="input-body">
+                        <div class="main-account-wrapper">
+                            <div class="main-account-top">
+                                <img src="https://cdnb.artstation.com/p/users/avatars/002/116/707/large/fc8b8538417f415749b4c5606da3f0ab.jpg?1594443091" alt="">
+                            </div>
+                            <div class="main-account-body">
+                                <h4>Mujaahid</h4>
+                                <p>Programmer</p>
+                                <div class="account-stats">
+                                    <div class="account-followers">
+                                        <p>Followers</p>
+                                        <p>13k</p>
+                                    </div>
+                                    <div class="account-following">
+                                        <p>Following</p>
+                                        <p>2k</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-account-footer">
+                                <span class="delete-account-btn">Delete Account</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Account -->
+            </div>
+        </div>
+        <!-- <div class="footer">
+            <div class="head-footer">
+                <div class="footer-left">
+                    <h3>NextStep.</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione, veritatis.</p>
+                    <div class="footer-social-wrapper">
+                        <div class="footer-social">
+                            <a class="sociallinks" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="footer-social">
+                            <a class="sociallinks" href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="footer-social">
+                            <a class="sociallinks" href="#">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                        <div class="footer-social">
+                            <a class="sociallinks" href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Media Kit</a></li>
+                            <li><a href="#">Testimonials Kit</a></li>
+                            <li><a href="#">API</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h5>For Employees</h5>
+                        <ul>
+                            <li><a href="#">Go Pro!</a></li>
+                            <li><a href="#">Explore work</a></li>
+                            <li><a href="#">Work Blogs</a></li>
+                            <li><a href="#">Code Of Conduct</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h5>Work Resources</h5>
+                        <ul>
+                            <li><a href="#">Freelancing</a></li>
+                            <li><a href="#">Hiring</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Media Kit</a></li>
+                            <li><a href="#">Trends</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Media Kit</a></li>
+                            <li><a href="#">Testimonials Kit</a></li>
+                            <li><a href="#">API</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <span>&copy 2022 NextStep. All rights reserved.</span>
+            </div>
+        </div> -->
+        <div th:replace="fragments/footerFrag.html :: footer"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="profile.js"></script>
+<!-- 
+    <script th:replace="fragments/footerFrag.html :: navJS"></script>
+    <script th:replace="fragments/footerFrag.html :: changeTheme"></script> -->
+</body>
+</html>

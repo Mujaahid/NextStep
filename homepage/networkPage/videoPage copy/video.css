@@ -1,0 +1,446 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #8F9BB4;
+}
+body {
+    background: var(--primary-color);
+    color: #8E9BB4;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    border: none;
+}
+:root {
+    --primary-color: #e6eef8;
+    --secondary-color: #cf4545;
+    --light-neu-color: #ffffff;
+    --dark-neu-color: #BCCAE4;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    z-index: 2;
+    position: relative;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--dark-neu-color);
+    border-radius: 20px;
+}
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    transition: 300ms;
+    cursor: pointer;
+    background: #cf4545;
+}
+
+
+
+.videoWrapper {  
+    max-height: 460px;
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 4px 4px 8px var(--dark-neu-color), -4px -4px 8px var(--light-neu-color);
+}
+.animatingPlayButton, .animatingPauseButton {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    color: var(--primary-color);
+    pointer-events: none;
+    font-size: 10;
+    font-size: 13px;
+    transition: 500ms;
+    transform: translate(-50%, -50%);
+}
+.animatingPlayButton.animate, .animatingPauseButton.animate, .animatingFoward.animate, .animatingBackward.animate {
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+    font-size: 30px;
+}
+.animatingPlayButton.animate {
+    animation-name: playAnimation;
+}
+.animatingPauseButton.animate {
+    animation-name: pauseAnimation;
+}
+@keyframes playAnimation {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@keyframes pauseAnimation {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.animatingFoward, .animatingBackward {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    right: 10%;
+    color: var(--primary-color);
+    pointer-events: none;
+    font-size: 10;
+    font-size: 13px;
+    transition: 500ms;
+    transform: translate(-50%, -50%);
+}
+.animatingBackward {
+    left: 10%;
+    right: 0%;
+}
+.animatingFoward.animate {
+    animation-name: skipAnimation;
+}
+.animatingBackward.animate {
+    animation-name: backAnimation;
+}
+@keyframes skipAnimation {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@keyframes backAnimation {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+
+
+video {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    max-height: 458px;
+    display: block;
+    object-fit: contain;
+}
+video::-webkit-media-controls {
+    display: none;
+} 
+.videoControls {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 40px;
+    transform: translate(0px, 50px);
+    transition: 300ms;
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999999;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: var(--primary-color);
+}
+.videoControls.videoControlsHover {
+    padding: 10px;
+    height: 50px;
+}
+.bottomControls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.playControls {
+    display: flex;
+    align-items: center;
+}
+.play-pause {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoIcon {
+    margin: 5px;
+    transition: 300ms;
+    font-size: 10px;
+}
+.videoIcon.onExpand {
+    font-size: 18px;
+    margin: 5px 10px;
+}
+.videoIcon:hover {
+    color: #cf4545;
+    cursor: pointer;
+}
+.skipIcon {
+    font-size: 10px;
+}
+/* Video Play Control */
+
+.videoBarWrapper {
+    width: 100%;
+    min-height: 7px;
+    max-height: 7px;
+}
+.videoBar {
+    height: 4px;
+    transition: 140ms;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;border-radius: 5px;
+    background: var(--dark-neu-color);
+}
+.videoBar.videoBarOnExpand {
+    height: 6px;
+}
+.progressBar {
+    height: 100%;
+    transition: 150ms;
+    background: linear-gradient(90deg, #fd9271, #F9516D 100%);
+}
+.videoBar:hover {
+    height: 7px;
+}
+.timeTrackerWrapper {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition: 300ms;
+    /* transform: translate(-50%, -30px); */
+    transform: translateY(-30px);
+}
+.timeTracker {
+    border-radius: 10px;
+    background: var(--primary-color);
+    padding: 10px;
+    font-size: 12px;
+    margin-bottom: -8px;
+}
+.arrowDownTracker {
+    color: var(--primary-color);
+}
+
+.videoBar:hover + .timeTrackerWrapper {
+    transform: translateY(-60px);
+    opacity: 1;
+}
+/* Video Bar */
+
+.volumeSettingWrapper {
+    display: flex;
+}
+.volumeSetting {
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: 300ms;
+    margin-left: 5px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+.volumeTrack {
+    pointer-events: auto;
+    cursor: pointer;
+    width: 0px;
+    overflow: hidden;
+    height: 7px;
+    display: flex;
+    transition: 500ms;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--dark-neu-color);
+}
+.volumeProgress {
+    height: 100%;
+    width: 100%;
+    right: 0px;
+    position: relative;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #3BC2F3, #1E72E4 100%);
+}
+.volumeDot {
+    width: 5px;
+    height: 5px;
+    right: 1px;
+    top: 1px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    background: var(--dark-neu-color);
+    position: absolute;
+}
+.volumeSettingWrapper:hover .volumeTrack {
+    width: 70px;
+}
+.volumeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 300ms;
+    font-size: 10px;
+    height: 15px;
+    width: 15px;
+}
+.volumeIcon.volumeOnExpand {
+    font-size: 15px;
+    height: 20px;
+    width: 20px;
+}
+.volumeIcon:hover {
+    color: #cf4545;
+}
+/* Volume */
+
+
+.videoSettingsWrapper {
+    display: flex;
+    align-items: center;
+}
+.currentTime, .duration {
+    text-align: center;
+    font-size: 10px;
+    height: fit-content;
+    letter-spacing: 1px;
+}
+.dash {
+    font-size: 10px;
+    margin: 0px 3px;
+}
+.settingModal {
+    position: absolute;
+    bottom: 20px;
+    height: fit-content;
+    max-height: 150px;
+    width: 80px;
+    overflow: scroll;
+    display: none;
+    right: 26px;
+    background: var(--primary-color);
+    border-bottom: 1px solid var(--dark-neu-color);
+    border-radius: 10px;
+}
+.settingModalButton {
+    font-size: 13px;
+    margin: 1em 10px;
+}
+::-webkit-scrollbar-corner {background-color: transparent;}
+
+.speedWrapper, .qualityWrapper {
+    width: 100%;
+    display: none;
+}
+.openSpeedWrapperHeading, .closeSpeedWrapperHeading, .openQualityHeader, .closeQualityHeader {
+    display: flex;
+    font-size: 10px;
+    padding: 1em;
+    transition: 300ms;
+    justify-content: space-between;
+}
+.QualityHeader:hover {
+    cursor: pointer;
+    color: #cf4545;
+}
+.speedSettings, .qualitySettings {
+    display: flex;
+    font-size: 11px;
+    flex-direction: column;
+}
+.speedSettings span, .qualitySettings span {
+    border: var(--primary-color) 1px solid;
+    padding: 5px;
+    margin: 0px 1em;
+    text-align: center;
+    transition: 300ms;
+}
+.speedSettings span.active {
+    border: var(--dark-neu-color) 1px solid;
+    border-radius: 20px;
+    color: #cf4545;
+    cursor: pointer;
+}
+.speedSettings span:hover {
+    border: var(--dark-neu-color) 1px solid;
+    border-radius: 20px;
+    color: #cf4545;
+    cursor: pointer;
+}
+
+/* Video Settings */
+
+
+@media only screen and (min-width: 850px) {
+    .videoControls.videoControlsHover {
+        height: 60px;
+    }
+    .bottomControls {
+        font-size: 20px;
+    }
+    .videoIcon {
+        font-size: 14px;
+    }
+    .videoBarWrapper {
+        margin: 2px 0px;
+    }
+    .videoControls {
+        height: 45px;
+        /* transform: translate(0px, 2px); */
+    }
+    .volumeIcon {
+        margin-left: 5px;
+        font-size: 14px;
+    }
+    .volumeSetting {
+        margin-left: 10px;
+    }
+    .volumeTrack {
+        height: 8px;
+    }
+    .volumeDot {
+        width: 6px;
+        height: 6px;
+    }
+    .volumeSettingWrapper:hover .volumeTrack {
+        width: 100px;
+        margin-right: 10px;
+    }
+    .settingModal {
+        width: 120px;
+        max-height: 204px;
+    }
+    .openSpeedWrapperHeading, .closeSpeedWrapperHeading, .openQualityHeader, .closeQualityHeader {
+        font-size: 13px;
+    }
+}

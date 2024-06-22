@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="/profilePage.css">
+    <link rel="stylesheet" href="/all.min copy.css">
+    <title>Profile</title>
+</head>
+<body>
+
+
+
+    <div class="profileWrapper">
+        <div class="nav">
+            <a href="/userProfile.html">
+            <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="logo">Logo</div>
+    
+            <i class="fas fa-bell"></i>
+        </div>
+        <div class="profileContainer">
+            <div class="profileMain">
+                <div class="profile">
+                    <img class="profileImage" src="/images/profilePic.png" alt="">
+                </div>
+            
+                <div class="profileHeader">
+                    <h3>Signal Man</h3>
+                    <p>Ajman, UAE</p>
+                </div>
+        
+                <div class="follow">
+                    <div class="followers">
+                        <h2>401</h2>
+                        <p>Followers</p>
+                    </div>
+                    <div class="following">
+                        <h2>42</h2>
+                        <p>Following</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="inputFields">
+                <div class="names close">
+                    <div class="closeHeader">
+                        <h3>Names</h3>
+                        <i class="fas fa-angle-down desktopIcon"></i>
+                    </div>
+                    <div class="hidden">
+                        <input placeholder="Full Name:" pattern=".{3,}" autocomplete="off" type="text">
+                        <input placeholder="User Name:" type="text" required minlength="2" maxlength="15"/>
+                    </div>
+                </div>
+                <div class="PersonalInfo close">
+                    <div class="closeHeader">
+                        <h3>Personal</h3>
+                        <i class="fas fa-angle-down desktopIcon"></i>
+                    </div>
+                    <div class="hidden">
+                        <input placeholder="*Email: " type="email" th:field="*{email}" id="email" required/>
+                        <div class="pwordOne container data-error">
+                            <input placeholder="*Password: " type="password" th:field="*{password}" id="password" minlength="10" required/>
+                        </div>
+                        <div class="pwordTwo container data-error">
+                            <input placeholder="*Confirm Password: " type="password" name="confirmPassword" id="confirmPassword" minlength="10" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="location close">
+                    <div class="closeHeader">
+                        <h3>Location</h3>
+                        <i class="fas fa-angle-down desktopIcon"></i>
+                    </div>
+                    <div class="hidden">
+                        <input placeholder="Country: America" type="text" th:field="*{currentCountry}" id="country" required/>
+                        <input placeholder="City: New York" type="text" th:field="*{currentCity}" id="city" required/>
+                    </div>
+                </div>
+                <div class="gender close">
+                    <div class="closeHeader">
+                        <h3>Gender And Description</h3>
+                        <i class="fas fa-angle-down desktopIcon"></i>
+                    </div>
+                  <div class="hidden">
+                    <select class="genderSelect selectContainer" id="genderSelect" th:field="*{gender}">
+                        <option value="" id="genderOption" class="edLevel-header" disabled selected>Select Your Gender</option>
+                    </select>
+    
+                    <textarea name="" id="" cols="30" rows="30">My name is Abdullah, I'm a backend web developer studying in college and while I've accomplished my amazing feats, I haven't and could not make two women from a bakery smile. Otherwise I guess I'm pretty cool.</textarea>
+                  </div>
+                </div>  
+            </div>
+    
+            <div class="buttons">
+                <button>Save</button>
+                <button>Cancle</button>
+            </div>
+        </div>
+
+    <div class="sideNav">
+        <a href="/userProfile.html">
+        <p>Home</p>
+    </a>
+        <p>Dashboard</p>
+        <p>Edit Profile</p>
+        <p>Social Profiles</p>
+        <p>Terms of Service</p>
+    </div>
+</div>
+    
+
+<script src="/all.min copy.js"></script>
+</body>
+</html>

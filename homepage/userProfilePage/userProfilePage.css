@@ -1,0 +1,47 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: #8F9BB4;
+}
+body {
+    background: var(--primary-color);
+    color: #8E9BB4;
+}
+:root {
+    --primary-color: #e6eef8;
+    --secondary-color: #cf4545;
+    --light-neu-color: #ffffff;
+    --dark-neu-color: #BCCAE4;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    z-index: 2;
+    position: relative;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+ }
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--dark-neu-color);
+    border-radius: 20px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    transition: 300ms;
+    cursor: pointer;
+    background: #cf4545;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}

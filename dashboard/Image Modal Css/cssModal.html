@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Modal</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cssModal.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="modalContainer">
+            <div class="imageContainer">
+                <div class="header">
+                    <a href="#"><i class="fas fa-arrow-left icon"></i></a>
+                    <h2>Flashy Lion</h2>
+                </div>
+                <div class="imageOverlay"></div>
+                <img src="images/lion.jpg" alt="Lion in a suit">
+                <div class="icons">
+                    <a href="#"><i class="fas fa-thumbs-up icon"></i></a>
+                    <a href="#"><i class="fas fa-heart icon"></i></a>
+                    <a href="#"><i class="fas fa-share-alt icon"></i></a>
+                </div>
+            </div>
+            <div class="commentsContainer">
+                <div class="innerCommentContainer">
+                    <div class="container">
+                        <div class="innerContainer">
+                            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                        <form action="saveImg" method="POST">
+                            <img src="images/lion.jpg" alt="">
+                            <button type="submit">Save</button>
+                        </form>
+                        
+                    </div>
+                    <div class="commentTrack">    
+                    </div>
+
+                </div>
+                <div class="noCommentsDiv">
+                    <div class="container">
+                        <div class="innerContainer">
+                            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                        <form action="saveImg" method="POST">
+                            <img src="images/lion.jpg" alt="">
+                            <button type="submit">Save</button>
+                        </form>
+                        
+                    </div>
+                    <header>
+                        <p>This post currently has no comments</p>
+                        <i class="fas fa-frown-open icon"></i>  
+                        <button class="addComment">Comment</button>
+                        
+                    </header>
+
+                </div>
+                <div class="textareaContainer">
+                    <a href="#"><i class="fas fa-angle-double-right icon"></i></a>
+                    <textarea class="textArea" name="comment" id="" cols="30" rows="10" placeholder="Leave a comment..."></textarea>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/all.js"></script>
+    <script src="js/cssModal.js"></script>
+    <script src="js/functionality.js"></script>
+</body>
+</html>

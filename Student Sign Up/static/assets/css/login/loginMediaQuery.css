@@ -1,0 +1,73 @@
+@media only screen and (min-width: 700px) {
+    .loginContainer {
+        animation-timing-function: ease-out;
+        animation-name: ipadSlide;
+        animation-duration: 1s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        line-height: 2em;
+        padding: 20px;
+        height: 500px;
+        margin: auto;
+        width: 85%;
+        overflow: auto;
+        border-radius: 50px;
+        background: linear-gradient(145deg, #f6ffff, #cfd6df);
+        box-shadow:  8px 8px 8px #adb4bd;
+    }
+    .logInHeader p {
+        display: block;
+        text-align: left;
+        color: #8f9bb4;
+    }
+    .logoWrapper {
+        display: none;
+    }
+}
+/*      ^ ipad ^     */
+/* 
+@media only screen and (min-width: 1024px)  {
+    .loginContainer {
+        height: 35%;
+    }
+} */
+/*    not sure    */
+
+@media only screen and (min-width: 800px)  {
+    .loginContainer {
+        animation-timing-function: ease-out;
+        animation-name: desktopSlide;
+        animation-duration: 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+        position: fixed;
+        border-radius: 0px;
+    }
+    .innerLoginContainer {
+        width: 90%;
+    }
+    .logoWrapper {
+        display: block;
+        margin-top: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        background: #cf4540;
+    }
+    
+}
+/*      laptops and desktops        */

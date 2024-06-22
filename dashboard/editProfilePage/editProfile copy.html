@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" th:href="@{/assets/css/profile_page/profile-edit/editProfile.css}">
+    <link th:replace="fragments/footerFrag.html :: navCss" rel="stylesheet" href="">
+    <link th:replace="fragments/footerFrag.html :: footCss" rel="stylesheet" href="">
+    <script src="https:kit.fontawesome.com/fd07ffd6f7.js" crossorigin="anonymous"></script> -->
+    <script src="https:kit.fontawesome.com/fd07ffd6f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="editProfile.css">
+</head>
+<body>
+<script th:replace="fragments/footerFrag.html :: themeSetter">
+</script>
+    <div class="accountModal-background" style="z-index: 101;">
+        <div class="deleteAccountWrapper">
+            <div class="account-profile">
+                <img class="profilePreview newProfile" src="" alt="">
+            </div>
+            <div class="account-body">
+                <div class="account-name">
+                    <h3 class="userRealName">Name of the guy</h3>
+                    <p class="newJobTitle">Occupation</p>
+                    <p class="warning">Are you sure you want to delete your account? This action cannot be undone!</p>
+                </div>
+            </div>
+            <div class="deleteAccount-footer">
+                <span class="cancelDeleteAccount">Cancel</span>
+                <span>Delete Account</span>
+            </div>
+        </div>
+    </div>
+    <div class="mainWrapper">
+        <div th:replace="fragments/footerFrag.html :: navbar"></div>
+        <div class="settingsWrapper">
+            <div class="settingOpt-wrapper">
+                <div class="settingOpt profileBtn">
+                    <p>Profile</p>
+                    <span class="settingOptNotification">3</span>
+                </div>
+                <div class="settingOpt educationBtn">
+                    <p>Education</p>
+                </div>
+                <div class="settingOpt resumeBtn">
+                    <p>Resume</p>
+                    <span class="settingOptNotification">3</span>
+                </div>
+                <div class="settingOpt socialBtn">
+                    <p>Social</p>
+                </div>
+                <div class="settingOpt walletBtn">
+                    <p>Wallet</p>
+                </div>
+                <div class="settingOpt notificationBtn">
+                    <p>Notifications</p>
+                </div>
+                <div class="settingOpt messageBtn">
+                    <p>Message</p>
+                </div>
+                <div class="settingOpt passwordBtn">
+                    <p>Password</p>
+                </div>
+                <div class="settingOpt accountBtn">
+                    <p>Account</p>
+                </div>
+            </div>
+            <!-- ^^^  Modal Button  ^^^ -->
+            <form method="POST" enctype="multipart/form-data" class="settingsModal profileModal">
+                <div class="modal-header">
+                    <h5>Profile.</h5>
+                </div>
+                <div class="avatar-slide">
+                    <p>Avatar Preview.</p>
+                    <div class="avatarBody">
+                        <div class="uploadOuter">
+                            <span class="dragBox">
+                                <input name="file" type="file" id="uploadUserProfile"  />
+                            </span>
+                            <div id="preview">
+                                <img class="profilePreview newProfile mainimg" src="" alt="">
+                            </div>
+                            <label for="uploadUserProfile" class="btn-primary">Click To Upload</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-slide">
+                    <p class="bannerSlideTitle">Banner Preview.</p>
+                    <div class="banner-wrapper">
+                        <span class="dragBoxBanner">
+                            <input type="file" id="read-bannerImageUrl"  />
+                        </span>
+                        <div class="banner-preview-wrapper">
+                            <div class="user-info">
+                                <div class="rightSideInfo">
+                                    <div class="user-slide-porfile">
+                                        <img class="profilePreview newProfile" src="" alt="">
+                                    </div>
+                                    <div class="userTitleInfo">
+                                        <h5>Name</h5>
+                                        <p><span>Job</span> | <span>Freelance</span></p>
+                                    </div>
+                                </div>
+                                <div class="leftSideInfo">
+                                    <span>Follow</span>
+                                    <span>Connect</span>
+                                </div>
+                            </div>
+
+                            <div class="bio-background">
+                                <div id="bottom-fade"></div>
+                                <input name="file" type="file">
+                                <img id="uploadBannerImage" th:src="${banner}" alt="">
+                            </div>
+                            <div id="bannerPreview" class="banner-image">
+
+                            </div>
+                        </div>
+                        <label for="read-bannerImageUrl" class="btn-upload">Click To Upload Banner</label>
+                    </div>
+                </div>
+                <div class="input-body">
+                    <div class="firstnameInput inputWrapper">
+                        <p>Full Name.</p>
+                        <input id="fullNameInput" data-field="fullname" class="inputDesign" type="text" placeholder="Full Name">
+                        <span class="error-message" data-error-for="fullname"></span>
+                    </div>
+                    <div class="userInput inputWrapper">
+                        <p>Username</p>
+                        <input class="inputDesign" data-field="username" id="usernameInput" type="text" placeholder="Username">
+                        <span class="error-message" data-error-for="username"></span>
+                    </div>
+                    <div class="emailInput inputWrapper">
+                        <p>Email.</p>
+                        <input class="inputDesign" data-field="email" type="text" placeholder="Email">
+                        <span class="error-message" data-error-for="email"></span>
+                    </div>
+                    <div class="flexInput">
+                        <div class="cityInput inputWrapper">
+                            <p>City.</p>
+                            <div class="inputCreditWrapper">
+                                <p><span class="plusCredit">+</span> 10</p>
+                                <img class="inputCreaditIcon" src="SVG/Asset 2.svg" alt="">
+                            </div>
+                            <input class="inputDesign" data-field="city" type="text" placeholder="City">
+                        </div>
+                        <div class="countryInput inputWrapper">
+                            <p>Country</p>
+                            <div class="inputCreditWrapper">
+                                <p><span class="plusCredit">+</span> 10</p>
+                                <img class="inputCreaditIcon" src="SVG/Asset 2.svg" alt="">
+                            </div>
+                            <input class="inputDesign" data-field="country" type="text" placeholder="Country">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <input type="submit" class="modalBtns saveBtn" value="Save" style="font-size: inherit;">
+                </div>
+            </form>
+            <div class="settingsModal educationModal">
+                <div class="modal-header">
+                    <h5>Education.</h5>
+                </div>
+                <div class="input-body">
+                    <div class="schoolNameWrapper inputWrapper">
+                        <div class="outerPlaceholder">
+                            <p>School Name</p>
+                        </div>
+                        <div class="schoolWrapper inputFields">
+                            <input autocomplete="off" type="text" data-field="schoolName" id="schoolName" placeholder="School Name" required>
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="dropDown-schoolName">
+                        </div>
+                        <div style="display: none;" class="errorSchoolnameMessage errorMessage">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="schoolStatus">
+                        <div class="schoolStatus-item">
+                            <p class="outerPlaceholder">Currently In School.</p>
+                            <label class="checkbox-btn checkBox-school">
+                                <input id="currentlySchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                        <div class="schoolStatus-item">
+                            <p class="outerPlaceholder">Completed School.</p>
+                            <label class="checkbox-btn checkBox-school">
+                                <input id="completedSchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="currentlyInSchool-wrapper">
+                        <div class="expectedYearWrapper inputWrapper">
+                            <p class="outerPlaceholder">Graduation Year</p>
+                            <input type="text" class="inputFields" id="expectedYearField" placeholder="05/23">
+                            <div style="display: none;" class="errorYearDateMessage errorMessage">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="completedSchool-wrapper">
+                        <div class="flexInput">
+                            <div class="DegreeWrapper inputWrapper">
+                                <p class="outerPlaceholder">Degree</p>
+                                <div class="degreeInputField inputFields">
+                                    <input type="text" data-field="degree" id="degree" placeholder="Enter Your Degree">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="dropDown-degree">
+                                    <p class="degree-items">High School Diploma</p>
+                                    <p class="degree-items">Associate Degree</p>
+                                    <p class="degree-items">Bachelor's Degree</p>
+                                    <p class="degree-items">Master's Degree</p>
+                                    <p class="degree-items">Doctoral Degree</p>
+                                </div>
+                                <div style="display: none;" class="errorgraduationDateMessage errorMessage">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="graduatedDate inputWrapper">
+                                <p class="outerPlaceholder">Date Of Graduation</p>
+                                <input type="text" class="inputFields" data-field="dateOfGraduation" id="graduation" placeholder="00/11">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputWrapper">
+                        <p>Major</p>
+                        <div class="inputCreditWrapper">
+                            <p>+ 10</p>
+                            <img class="inputCreaditIcon" src="SVG/Asset 2.svg" alt="">
+                        </div>
+                        <input class="inputDesign" data-field="major" type="text" placeholder="Field of Study.">
+                    </div>
+                    <div class="userInput inputWrapper">
+                        <p>Relevant Coursework</p>
+                        <input class="inputDesign" id="coursework" type="text" placeholder="Relevant Coursework">
+                    </div>
+                    <div class="userInput inputWrapper">
+                        <p>Academic Achievements</p>
+                        <input class="inputDesign" data-field="academicAchievements" type="text" placeholder="Honors, Awards, or Scholarships.">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal resumeModal">
+                <div class="modal-header">
+                    <h5>Resume.</h5>
+                </div>
+                <div class="careerFieldWrapper inputWrapper">
+                    <p class="outerPlaceholder">Career Field.</p>
+                    <div class="careerFieldInputField inputFields">
+                        <input type="text" data-field="careerField" id="careerField" placeholder="Select Your Career Field" readonly>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="dropDown-careerField">
+                        <p class="careerField-items">Administration and Management</p>
+                        <p class="careerField-items">Arts, Design, and Entertainment</p>
+                        <p class="careerField-items">Business and Finance</p>
+                        <p class="careerField-items">Construction and Architecture</p>
+                        <p class="careerField-items">Customer Service and Support</p>
+                        <p class="careerField-items">Education and Training</p>
+                        <p class="careerField-items">Engineering and Technology</p>
+                        <p class="careerField-items">Healthcare and Medical</p>
+                        <p class="careerField-items">Hospitality and Tourism</p>
+                        <p class="careerField-items">Human Resources</p>
+                        <p class="careerField-items">Information Technology and Computer Science</p>
+                        <p class="careerField-items">Legal and Law Enforcement</p>
+                        <p class="careerField-items">Marketing, Advertising, and Public Relations</p>
+                        <p class="careerField-items">Media and Communication</p>
+                        <p class="careerField-items">Non-profit and Community Service</p>
+                        <p class="careerField-items">Research and Development</p>
+                        <p class="careerField-items">Sales and Retail</p>
+                        <p class="careerField-items">Science and Research</p>
+                        <p class="careerField-items">Social Services and Counseling</p>
+                        <p class="careerField-items">Sports and Fitness</p>
+                        <p class="careerField-items">Transportation and Logistics</p>
+                        <p class="careerField-items">Writing and Content Creation</p>
+                    </div>
+                    <div style="display: none;" class="errorareerFieldMessage errorMessage">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="jobNameWrapper inputWrapper">
+                    <p class="outerPlaceholder">Occupation</p>
+                    <div class="inputFields workFields jobNameField">
+                        <input autocomplete="off" type="text" id="jobName" placeholder="What is your job title?" required>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="dropDown-jobName">
+                    </div>
+                    <div style="display: none;" class="errorMessage">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="hireType-wrapper">
+                    <div class="hireType-fullTime hireType">
+                        <div class="hireType-title">
+                            <label class="checkbox-btn">
+                                <input id="fullTime" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            <p>Full Time Job.</p>
+                        </div>
+                        <div class="hireType-body">
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>Relocate</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>Remote</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>Hybrid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hireType-freelance hireType">
+                        <div class="hireType-title">
+                            <label class="checkbox-btn jobCheckBox">
+                                <input id="freelance" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            <p>Freelance.</p>
+                        </div>
+                        <div class="freelancehireType-body">
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>International</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>Remote</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>Hybrid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hireType-freelance hireType">
+                        <div class="hireType-title">
+                            <label class="checkbox-btn jobCheckBox">
+                                <input id="contract" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            <p>Contract.</p>
+                        </div>
+                        <div class="contracthireType-body">
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>International</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>Remote</p>
+                            </div>
+                            <div class="hireType-checkbox">
+                                <label class="checkbox-btn jobCheckBox">
+                                    <input type="checkbox">
+                                    <div class="circle"></div>
+                                </label>
+                                <p>Hybrid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="userSummary-wrapper">
+                    <p class="summaryTitle">Summary</p>
+                    <textarea placeholder="A summary of your professional skills and experience." class="inputDesign" style="padding-top: 1em;" data-field="bio" cols="30" rows="10"></textarea>
+                </div>
+                <div class="skills-wrapper">
+                    <div class="skill-container">
+                        <div class="skill-containerHeader">
+                            <p>Skills</p>
+                        </div>
+                        <div class="skill-body">
+                        
+                        </div>
+                    </div>
+                    <div class="skill-input">
+                        <input class="inputDesign skillInput" type="text" placeholder="Add Skills">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal socialModal">
+                <div class="modal-header">
+                    <h5>Social.</h5>
+                </div>
+                <div class="social-input-wrapper">
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fa-solid fa-globe"></i>
+                            <p>Website</p>
+                        </div>
+                        <input id="websiteInput" class="inputDesign" type="text" placeholder="https://www.Website...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fa-brands fa-behance"></i>
+                            <p>Behance</p>
+                        </div>
+                        <input id="behanceInput" class="inputDesign" type="text" placeholder="https://www.Behance...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-pinterest"></i>
+                            <p>Pinterest</p>
+                        </div>
+                        <input id="pinterestInput" class="inputDesign" type="text" placeholder="https://www.Pinterest...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-dribbble"></i>
+                            <p>Dribbble</p>
+                        </div>
+                        <input id="dribbbleInput" class="inputDesign" type="text" placeholder="https://www.Dribbble...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-instagram"></i>
+                            <p>Instagram</p>
+                        </div>
+                        <input id="instagramInput" class="inputDesign" type="text" placeholder="https://www.Instagram...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-facebook"></i>
+                            <p>Facebook</p>
+                        </div>
+                        <input id="facebookInput" class="inputDesign" type="text" placeholder="https://www.Facebook...">
+                    </div>
+                    <div class="socialInput-item">
+                        <div class="social-title">
+                            <i class="fab fa-twitter"></i>
+                            <p>Twitter</p>
+                        </div>
+                        <input id="twitterInput" class="inputDesign" type="text" placeholder="https://www.Twitter...">
+                    </div>
+                </div>
+
+                <div class="social-icon-wrapper">
+                
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal walletModal">
+                <div class="modal-header">
+                    <h5>Credit / Wallet.</h5>
+                </div>
+                <div class="credit-wrapper">
+                    <div class="credit-header">
+                        <p>Total Credits</p>
+                        <p><span class="totalAmount">700</span> crd</p>
+                    </div>
+                    <div class="creditType-wrapper">
+                        <div class="creditType-item">
+                            <div class="creditType-body">
+                                <div class="credit-stats">
+                                    <div class="creditAmount creditAmountOne">
+                                        <p> <span class="userAmount userAmountOne"></span> / 500</p>
+                                    </div>
+                                    <div class="outerBar">
+                                        <div class="innerBar barAmount-one"></div>
+                                    </div>
+                                </div>
+                                <div class="credit-icon">
+                                    <img src="SVG/Asset 2.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="creditType-footer">
+                                <div class="purchaseBooster firstPurchase">
+                                    <div class="backgroundPurchase">
+                                        <p>Purchase</p>
+                                    </div>
+                                </div>
+                                <p>First Step</p>
+                            </div>
+                        </div>
+                        <div class="creditType-item">
+                            <div class="creditType-body">
+                                <div class="credit-stats">
+                                    <div class="creditAmount creditAmountTwo">
+                                        <p> <span class="userAmount userAmountTwo"></span> / 700</p>
+                                    </div>
+                                    <div class="outerBar">
+                                        <div class="innerBar barAmount-two" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="credit-icon">
+                                    <img src="SVG/Credit_two.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="creditType-footer">
+                                <div class="purchaseBooster secondPurchase">
+                                    <div class="backgroundPurchase">
+                                        <p>Purchase</p>
+                                    </div>
+                                </div>
+                                <p>Medium Step</p>
+                            </div>
+                        </div>
+                        <div class="creditType-item">
+                            <div class="creditType-body">
+                                <div class="credit-stats">
+                                    <div class="creditAmount creditAmountThree">
+                                        <p> <span class="userAmount userAmountThree"></span> / 900</p>
+                                    </div>
+                                    <div class="outerBar">
+                                        <div class="innerBar barAmount-three" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                <div class="credit-icon">
+                                    <img src="SVG/Credit_three.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="creditType-footer">
+                                <div class="purchaseBooster thirdPurchase">
+                                    <div class="backgroundPurchase">
+                                        <p>Purchase</p>
+                                    </div>
+                                </div>
+                                <p>Large Step</p>
+                            </div>
+                        </div>
+                        <div class="more">
+                            <p><a href="">More</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="linkCard-wrapper">
+                    <div class="linkCard-header">
+                        <p>Link A Card.</p>
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <div class="linkCard-body">
+                        <div class="userInput inputWrapper">
+                            <p>Debit Or Credit Card.</p>
+                            <input type="text" class="inputDesign" id="creditCardInput" maxlength="19" placeholder="1234 5678 9123 4567">
+                        </div>
+                        <div class="userInput inputWrapper">
+                            <select class="inputDesign" name="cards" id="cards" required>
+                                <option selected disabled>Select Card Type.</option>
+                                <option value="PayPal">American Express</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">Mastercard</option>
+                                <option value="americanexpress">American Express</option>
+                                <option value="discover">Discover</option>
+                            </select>
+                        </div>
+                        <div class="flexInput">
+                            <div class="firstnameInput inputWrapper">
+                                <p>Expiration Date.</p>
+                                <input class="inputDesign" type="tel" pattern="[0-9]*" maxlength="5" placeholder="mm/yy" required>
+                            </div>
+                            <div class="lastnameInput inputWrapper">
+                                <p>Security Code.</p>
+                                <input class="inputDesign" type="tel" pattern="[0-9]*" maxlength="4" placeholder="000" required>
+                            </div>
+                        </div>
+                        <div class="userInput inputWrapper">
+                            <p>Billing Address</p>
+                            <input class="inputDesign" type="text" placeholder="Reynolds Alley, Los Angeles, CA, 90014" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal notificationsModal">
+                <div class="modal-header">
+                    <h5>Notifications.</h5>
+                </div>
+                <div class="notify-body">
+                    <div class="notifyWrapper">
+                        <p>NextStep Notifications</p>
+                        <div class="notify-items">
+                            <label class="checkbox-btn">
+                                <input type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            <p>When someone likes my work</p>
+                        </div>
+                        <div class="notify-items">
+                            <label class="checkbox-btn">
+                                <input type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            <p>When someone comments on my work.</p>
+                        </div>
+                        <div class="notify-items">
+                            <label class="checkbox-btn">
+                                <input type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            <p>When someone follows me.</p>
+                        </div>
+                        <div class="notify-items">
+                            <label class="checkbox-btn">
+                                <input type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            <p>When someone likes my comment.</p>
+                        </div>
+                    </div>
+                    <div class="notifyWrapper">
+                        <p>NextStep Users.</p>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                            <label class="checkbox-btn">
+                                <input id="currentlySchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            </div>
+                            <p>When a user I'm following posts new work.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                            <label class="checkbox-btn">
+                                <input id="currentlySchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            </div>
+                            <p>When someone comments on my work.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                            <label class="checkbox-btn">
+                                <input id="currentlySchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            </div>
+                            <p>When someone follows me.</p>
+                        </div>
+                        <div class="notify-items">
+                            <div class="checkbox-btn">
+                            <label class="checkbox-btn">
+                                <input id="currentlySchool" type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                            </div>
+                            <p>When someone replies to my comment on a post.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal messagingModal">
+                <div class="modal-header">
+                    <h5>Messaging.</h5>
+                </div>
+                <div class="messaging-body">
+                    <div class="search-users-block">
+                        <div class="userInput inputWrapper">
+                            <p>Search User.</p>
+                            <input class="inputDesign" id="filter" type="text" autocomplete="off" placeholder="Enter user name to block...">
+                            <div id="userSearchDropdown" class="userSearch-dropdown">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blocking-wrapper">
+                        <p class="blockedUser-title">Blocked Users</p>
+
+                        <div class="no-block">
+                            <p>No users have been blocked.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal passwordModal">
+                <div class="modal-header">
+                    <h5>Password.</h5>
+                </div>
+                <div class="inputWrapper">
+                    <p>Current Password.</p>
+                    <input class="inputDesign" data-field="currentPassword" type="password" placeholder="Current Password">
+                    <span class="error-message" data-error-for="currentPassword"></span>
+                </div>
+                <div class="flexWrapper inputWrapper">
+                    <div class="passwordWrapper">
+                        <p class="outerPlaceholder">Password</p>
+                        <div class="passwordFields passwordInputField inputDesign">
+                            <input type="password" data-field="password" id="password" placeholder="Password" >
+                            <div class="togglePassword">
+                                <i class="fas seePassword fa-eye"></i>
+                                <i style="display: none;" class="fas hidePassword fa-eye-slash"></i>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="errorPasswordMessage errorMessage">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="confirmPasswordWrapper">
+                        <p class="outerPlaceholder">Confirm Password</p>
+                        <div class="passwordFields passwordInputField inputDesign">
+                            <input type="password" id="confirmPassword" placeholder="Confirm Password" >
+                            <div class="toggleConfirmPassword">
+                                <i class="fas seeConfirmPassword fa-eye"></i>
+                                <i style="display: none;" class="fas hideConfirmPassword fa-eye-slash"></i>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="errorConfirmPasswordMessage errorMessage">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="modalBtns">Cancel</span>
+                    <span class="modalBtns">Save</span>
+                </div>
+            </div>
+            <div class="settingsModal accountModal">
+                <div class="modal-header">
+                    <h5>Account.</h5>
+                </div>
+                <div class="accountWrapper">
+                    <div class="account-profile">
+                        <img class="accountProfile newProfile" src="" alt="">
+                    </div>
+                    <div class="account-body">
+                        <div class="account-name">
+                            <h3 class="userRealName"></h3>
+                            <p class="newJobTitle"></p>
+                            <div class="follow-account">
+                                <div class="followers">
+                                    <p>Followers</p>
+                                    <p>13k</p>
+                                </div>
+                                <div class="following">
+                                    <p>Following</p>
+                                    <p>1k</p>
+                                </div>
+                            </div>
+                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci error ea aperiam libero doloribus tenetur quos ullam, ipsam nihil autem?</p>
+                        </div>
+                    </div>
+                    <div class="account-footer">
+                        <span>Cancel Account</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script th:src="@{/assets/js/profile_page/profile-edit/editProfile.js}"></script>
+    <script th:replace="fragments/footerFrag.html :: navJS"></script>
+    <script th:replace="fragments/footerFrag.html :: changeTheme"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="editProfile.js"></script>
+
+    
+</body>
+</html>

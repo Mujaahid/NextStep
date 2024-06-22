@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="editImageGallery.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.1.1-web/css/all.css">
+</head>
+<body>
+    <div class="image_deleteGallery_wrapper">
+        <div class="image_deleteGallery">
+            <div class="imageGallery_preview previewModal">
+                <div class="inner_imageGallery_preview">
+                    <div class="imageGallery_preview_one">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/049/646/918/large/yizheng-ke-2021-10-1x.jpg?1652970655" alt="">
+                    </div>
+                    <div class="imageGalleryflex">
+                        <div class="imageGallery_preview_two">
+                            <img src="https://cdna.artstation.com/p/assets/images/images/003/006/078/large/eugene-korolev-9ljleuwtcgk.jpg?1468404841" alt="">
+                        </div>
+                        <div class="imageGallery_preview_three">
+                            <img src="https://cdnb.artstation.com/p/assets/images/images/008/130/911/large/eugene-korolev-petals3.jpg?1510680410" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteGallery_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Gallery -->
+
+    <div class="image_upload_modal_wrapper">
+        <div class="image_upload_modal">
+            <form action="">
+                <div class="modal_header">
+                    <div class="modal_title_flex">
+                        <p><a href="#">Dashboard</a> / Portfolio / Upload An Image</p>
+                        <h3>Upload Single Image</h3>
+                    </div>
+                    <div class="xBtn close_singleImageUpload">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="uploadGaller_wrapper uploadWrapper">
+                        <input type="file" id="readSingleImageUrl">
+                        <img id="uploadSingleImage" src="#" alt="">
+                    </div>
+                    <div class="singleImage-btn">
+                        <label for="readSingleImageUrl">Click To Upload</label>
+                    </div>
+                    <div class="inputBlock">
+                        <input class="titleInput inputModal" type="text" placeholder="Add Name">
+                    </div>
+                    <div class="inputBlock">
+                        <textarea class="TextareaModal inputModal" placeholder="Description" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="chipsContainer">
+                        <div class="chips">Art</div>
+                        <div class="chips">Science</div>
+                        <div class="chips">Computer Science</div>
+                        <div class="chips">Engineer</div>
+                        <div class="chips">UI/UX</div>
+                        <div class="chips">Industrial Design</div>
+                        <div class="chips">Graphic Design</div>
+                        <div class="chips">Architecture</div>
+                        <div class="chips">Branding</div>
+                        <div class="chips">Illustration</div>
+                        <div class="chips">Photography</div>
+                        <div class="chips">Web Design</div>
+                        <div class="chips">Product Design</div>
+                        <div class="chips">3D Modeling</div>
+                        <div class="chips">3D Motion</div>
+                        <div class="chips">Advertising</div>
+                        <div class="chips">Animation</div>
+                        <div class="chips">App Desing</div>
+                        <div class="chips">Concept Art</div>
+                        <div class="chips">Editing</div>
+                        <div class="chips">Programming</div>
+                    </div>
+                </div>
+                <div class="modal_footer">
+                    <div class="modalBtn close_singleImageUpload">
+                        <p>Cancel</p>
+                    </div>
+                    <div class="modalBtn">
+                        <p>Upload</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- upload single -->
+
+    <div class="image_delete_wrapper">
+        <div class="image_delete">
+            <div class="image_delete_preview singlePreview">
+                <img src="https://cdna.artstation.com/p/assets/images/images/049/646/918/large/yizheng-ke-2021-10-1x.jpg?1652970655" alt="">
+            </div>
+            <div class="deleteGallery_body">
+                <p>You are about to delete <span class="projectTitle_delete">"Title Of Project"</span> are you sure?</p>
+            </div>
+            <div class="modal_footer">
+                <div class="modalBtn cancelDeleteImage_btn">
+                    <p>Cancel</p>
+                </div>
+                <div class="modalBtn">
+                    <p>Delete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete single -->
+
+    <div class="mainWrapper">
+        <div class="navbar">
+            <div class="logo">
+                NextStep.
+            </div>
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" class="input" placeholder="Search Here...">
+            </div>
+
+            <div class="left_items">
+                <div class="navbar_notification">
+                    <i class="far fa-bell alert_icon"></i>
+                </div>
+                <div class="user_name">
+                    <h5 th:text="${username}"></h5>
+                </div>
+                <div class="nav_profile">
+                    <div class="nav_profile_drop">
+                        <div class="nav-profile-image">
+                            <img th:src="@{${profilePic}}" alt="">
+                        </div>
+                        <i class="fas dropdown_arrow fa-chevron-down"></i>
+                    </div>
+                    <div class="profile_dropdown">
+                        <div class="dark_theme_wrapper">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="dark" for="checkbox">
+                                <i class="far fa-moon theme_icon"></i>
+                                <i class="far fa-sun theme_icon"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                        <ul>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Friends</a></li>
+                            <li><a href="">Credit</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="playlist_container">
+            <div class="playlistInfo">
+                <div class="playlistInfoWrapper">
+                    <div class="playlistInfoHeader">
+                        <span>
+                            <a href="../portfolio.html">
+                                <i class="fas fa-arrow-left arrowBackBtn"></i>
+                            </a>
+                        </span>
+                        <div class="user">
+                            <h5>Abdullah</h5>
+                            <div class="userPreview">
+                                <img src="https://yt3.ggpht.com/ytc/AKedOLSkLXgltX9qgmwaLmiQZT62HVawKpv2xXkSKyAeHw=s176-c-k-c0x00ffffff-no-rj" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery_item_images">
+                        <div class="gallery_image">
+                            <div class="gallery_image_preview">
+                                <div class="image_preview_main ImagePreview">
+                                    <img src="https://cdna.artstation.com/p/assets/images/images/019/205/220/4k/eugene-korolev-dbc-10-otbor.jpg?1562501839" alt="">
+                                </div>
+                                <div class="image_preview_sigma ImagePreview">
+                                    <img src="https://cdna.artstation.com/p/assets/images/images/008/130/934/4k/eugene-korolev-kosa.jpg?1510680458" alt="">
+                                </div>
+                                <div class="image_preview_beta ImagePreview">
+                                    <img src="https://cdnb.artstation.com/p/assets/images/images/008/130/911/4k/eugene-korolev-petals3.jpg?1510680410" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlistInfoBody">
+                        <input class="inputModal changeName" type="text" placeholder="Title of the Playlist.">
+                        <textarea class="TextareaModal inputModal" placeholder="Description of Project" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="playlist-wrapper">
+                <div class="playlistInfoFooter">
+                    <div class="footerFlexOne singleUploadImage_btn">
+                        <span>Add To Playlist</span>
+                    </div>
+                    <div class="footerFlexTwo">
+                        <i class="far fa-trash-alt deleteImageGallery_btn"></i>
+                    </div>
+                </div>
+                <div class="image-playlist">
+                    <div class="image_items">
+                        <div class="image_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteImage_btn"></i>
+                            </div>
+                            <a class="ImageItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://cdna.artstation.com/p/assets/images/images/049/646/918/large/yizheng-ke-2021-10-1x.jpg?1652970655" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="image_items">
+                        <div class="image_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteImage_btn"></i>
+                            </div>
+                            <a class="ImageItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://cdna.artstation.com/p/assets/images/images/003/006/078/large/eugene-korolev-9ljleuwtcgk.jpg?1468404841" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="image_items">
+                        <div class="image_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteImage_btn"></i>
+                            </div>
+                            <a class="ImageItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://cdnb.artstation.com/p/assets/images/images/008/130/911/large/eugene-korolev-petals3.jpg?1510680410" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="image_items">
+                        <div class="image_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteImage_btn"></i>
+                            </div>
+                            <a class="ImageItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://cdnb.artstation.com/p/assets/images/images/025/986/673/large/eugene-korolev-day-7-ikki.jpg?1587543871" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="image_items">
+                        <div class="image_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteImage_btn"></i>
+                            </div>
+                            <a class="ImageItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://cdna.artstation.com/p/assets/images/images/009/552/224/large/eugene-korolev-lxxyuzjafok.jpg?1519640145" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="image_items">
+                        <div class="image_thumbnail">
+                            <div class="overlay_Icons">
+                                <i class="far fa-trash-alt delete_overlay singleDeleteImage_btn"></i>
+                            </div>
+                            <a class="ImageItemLink" href="https://www.youtube.com/">
+                                <div class="overlay_thumbnail">
+                                </div>
+                                <img src="https://cdna.artstation.com/p/assets/images/images/008/130/934/large/eugene-korolev-kosa.jpg?1510680458" alt="">
+                            </a>                                 
+                        </div>
+                        <div class="image_attribute">
+                                <h3>Da 5 Bloods</h3>
+                                <div class="flex_image_attribute">
+                                    <p>32k views</p>
+                                    <p>1 week ago</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="editImageGallery.js"></script>
+</body>
+</html>

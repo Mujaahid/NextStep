@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="video.css">
+    <script src="https:kit.fontawesome.com/fd07ffd6f7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="videoWrapper">
+        <i class="fas videoIcon animatingPlayButton fa-play"></i>
+        <i class="fas videoIcon animatingPauseButton fa-pause"></i>
+        <i class="fa animatingFoward fa-forward"></i>
+        <i class="fas animatingBackward fa-backward"></i>
+
+
+        <div class="videoControls">
+            <div class="videoBarWrapper">
+                <div class="videoBar">
+                    <div class="progressBar" style="width: 0px;"></div>
+                </div>
+                <div class="timeTrackerWrapper">
+                    <div class="timeTracker">
+                        <p>00:00</p>
+                    </div>
+                    <i class="fas arrowDownTracker fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="bottomControls">
+                <div class="playControls">
+                    <i class="fas videoIcon back-button fa-backward"></i>
+                    <div class="play-pause">
+                        <i class="fas videoIcon playButton fa-play"></i>
+                        <i class="fas videoIcon pauseButton fa-pause"></i>
+                    </div>
+                    <i class="fas videoIcon skip-button fa-forward"></i>
+                    <div class="volumeSettingWrapper">
+                        <div class="volumeIcon">
+                            <i class="fas fullVolIcon fa-volume-up"></i>
+                            <i class="fas muteIcon fa-volume-mute" style="display: none;"></i>
+                            <i class="fas quiteIcon fa-volume-down" style="display: none;"></i>
+                        </div>
+                        <div class="volumeSetting">
+                            <div class="volumeTrack">
+                                <div class="volumeProgress">
+                                    <div class="volumeDot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="currentTime">00:00</span>
+                    <span class="dash">/ </span>
+                    <span class="duration">00:00</span>
+                </div>
+                <div class="videoSettingsWrapper">
+                    <div class="videoSettingsWrapper">
+                        <i class="fas settingsButton videoIcon fa-cog"></i>
+                        <div class="settingModal">
+                            <!-- <div class="openQualityHeader QualityHeader">
+                                <i class="fas fa-chevron-down"></i>
+                                <p>Quality</p>
+                            </div>
+                            <div class="closeQualityHeader QualityHeader" style="display: none;">
+                                <i class="fas fa-chevron-up"></i>
+                                <p>Quality</p>
+                            </div>
+                            <div class="qualityWrapper">
+                                <div class="qualitySettings">
+                                    <span value="auto">Auto</span>
+                                    <span value="1080">1080p</span>
+                                    <span value="720">720p</span>
+                                    <span value="480">480p</span>
+                                    <span value="360">360p</span>
+                                </div>
+                            </div> -->
+
+                            <div class="openSpeedWrapperHeading QualityHeader">
+                                <i class="fas fa-chevron-down"></i>
+                                <p>Speed</p>
+                            </div>
+                            <div class="closeSpeedWrapperHeading QualityHeader" style="display: none;">
+                                <i class="fas fa-chevron-up"></i>
+                                <p>Speed</p>
+                            </div>
+                            <div class="speedWrapper">
+                                <div class="speedSettings">
+                                    <span class="speed-control">0.25</span>
+                                    <span class="speed-control">0.5</span>
+                                    <span class="speed-control">0.75</span>
+                                    <span class="speed-control">Normal</span>
+                                    <span class="speed-control">1.25</span>
+                                    <span class="speed-control">1.5</span>
+                                    <span class="speed-control">1.75</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fas videoIcon expandButton fa-expand"></i>
+                </div>
+            </div>
+        </div>
+        <video id="video" src="9convert.com - The Beauty Of Razorback_v720P.mp4"></video>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="video.js"></script>
+</body>
+</html>

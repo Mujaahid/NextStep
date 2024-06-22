@@ -1,0 +1,112 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+
+}
+
+
+
+.fullWrapper {
+    display: flex;
+    background: linear-gradient(145deg, #cf4545 50%, #edf6fb 50%);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 20%;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+/* .gradientOverlay {
+    position: absolute;
+    background-image: linear-gradient(145deg, #ff5a5a6c 10%, transparent 60%, #ff5a5a6c 90%);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+} */
+
+
+
+.verifyWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px -4px 10px #8f9bb465, 2px 4px 10px #8f9bb4;
+    height: 40%;
+    width: 30%;
+    background: linear-gradient(145deg, #f6ffff, #e6eaf0);
+    border-radius: 30px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    padding: 50px 70px;
+
+    min-width: 450px;
+    max-width: 470px;
+    min-height: 340px;
+    max-height: 360px;
+}
+.verifyWrapper .v-innerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+    height: 80%;
+}
+
+.verifyWrapper h2 {
+    color: #cf4545;
+}
+.verifyWrapper p{
+    font-size: 19px;
+    padding-bottom: 20px;
+    color: #8f9bb4;
+}
+.verifyBtn {
+    color: #8f9bb4;
+    padding: 10px 30px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    transition: 300ms;
+    border-radius: 50px;
+    background: #e6eaf0;
+    box-shadow:  5px 5px 10px #b5bed3, -5px -5px 10px #ffffff;
+}
+.verifyBtn:hover {
+    cursor: pointer;
+    color: #cf4545;
+    background: #e6eaf0;
+    box-shadow:  1px 1px 5px #8f9bb4, -2px -2px 6px #ffffff;
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+    .verifyWrapper {
+        min-width: 340px;
+        min-height: none;
+        width: 340px;
+        padding: 0;
+    }
+
+    .verifyWrapper h2 {
+        font-size: 1.2em;
+    }
+
+}
